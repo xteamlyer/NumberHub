@@ -3,7 +3,7 @@ versionCode = "1"
 versionName = "NumberHub"
 
 androidxBrowserBrowser = "1.8.0"
-androidGradlePlugin = "8.3.0"
+androidGradlePlugin = "8.3.2"
 androidxActivityActivityCompose = "1.9.0"
 androidxAppCompatAppCompat = "1.6.1"
 androidxCompose = "1.6.6"
