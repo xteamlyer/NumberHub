@@ -22,7 +22,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.data.userprefs"
+android.namespace = "app.myzel394.numberhub.data.userprefs"
 
 dependencies {
     implementation(libs.androidx.datastore.datastore.preferences)

@@ -23,7 +23,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sadellie.unitto.benchmark"
+    namespace = "app.myzel394.numberhub.benchmark"
     compileSdk = 34
 
     defaultConfig {

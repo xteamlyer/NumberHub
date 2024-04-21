@@ -17,7 +17,7 @@
  */
 
 import com.android.build.gradle.TestExtension
-import com.sadellie.unitto.configureKotlinAndroid
+import app.myzel394.numberhub.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

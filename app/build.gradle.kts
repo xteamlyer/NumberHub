@@ -28,11 +28,11 @@ plugins {
 }
 
 android {
-    namespace = "com.sadellie.unitto"
+    namespace = "app.myzel394.numberhub"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.sadellie.unitto"
+        applicationId = "app.myzel394.numberhub"
         minSdk = 21
         targetSdk = 34
         versionCode = libs.versions.versionCode.get().toInt()

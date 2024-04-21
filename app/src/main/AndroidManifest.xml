@@ -50,7 +50,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="com.sadellie.unitto"
+                    android:host="app.myzel394.numberhub"
                     android:scheme="app" />
             </intent-filter>
         </activity>

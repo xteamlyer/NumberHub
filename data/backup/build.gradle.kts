@@ -23,7 +23,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.data.backup"
+android.namespace = "app.myzel394.numberhub.data.backup"
 
 android {
     room {

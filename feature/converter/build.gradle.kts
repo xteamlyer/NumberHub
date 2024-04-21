@@ -25,7 +25,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.feature.converter"
+android.namespace = "app.myzel394.numberhub.feature.converter"
 android.testOptions.unitTests.isIncludeAndroidResources = true
 
 dependencies {

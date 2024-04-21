@@ -18,8 +18,8 @@
 
 package io.github.sadellie.evaluatto
 
-import com.sadellie.unitto.core.base.MAX_PRECISION
-import com.sadellie.unitto.core.base.Token
+import app.myzel394.numberhub.core.base.MAX_PRECISION
+import app.myzel394.numberhub.core.base.Token
 import java.math.BigDecimal
 import java.math.RoundingMode
 

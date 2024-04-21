@@ -23,7 +23,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.data.converter"
+android.namespace = "app.myzel394.numberhub.data.converter"
 android.testOptions.unitTests.isIncludeAndroidResources = true
 
 android {

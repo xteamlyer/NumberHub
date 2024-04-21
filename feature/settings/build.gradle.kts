@@ -24,7 +24,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.feature.settings"
+android.namespace = "app.myzel394.numberhub.feature.settings"
 
 dependencies {
     implementation(libs.com.github.sadellie.themmo)

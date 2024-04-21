@@ -24,7 +24,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.feature.glance"
+android.namespace = "app.myzel394.numberhub.feature.glance"
 
 dependencies {
     implementation(libs.androidx.glance.glance)

@@ -20,7 +20,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.sadellie.unitto.buildlogic"
+group = "app.myzel394.numberhub.buildlogic"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17

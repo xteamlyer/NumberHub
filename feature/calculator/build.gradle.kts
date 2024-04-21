@@ -24,7 +24,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.feature.calculator"
+android.namespace = "app.myzel394.numberhub.feature.calculator"
 android.testOptions.unitTests.isIncludeAndroidResources = true
 
 dependencies {

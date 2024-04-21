@@ -18,7 +18,7 @@
 
 package io.github.sadellie.evaluatto
 
-import com.sadellie.unitto.core.base.Token
+import app.myzel394.numberhub.core.base.Token
 
 sealed class TokenizerException(message: String) : Exception(message) {
     class TooManyFractionSymbols : TokenizerException("Number has multiple commas in it")

@@ -24,7 +24,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.feature.timezone"
+android.namespace = "app.myzel394.numberhub.feature.timezone"
 
 dependencies {
     testImplementation(libs.org.robolectric.robolectric)

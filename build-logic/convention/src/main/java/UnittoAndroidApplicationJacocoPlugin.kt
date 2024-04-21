@@ -17,7 +17,7 @@
  */
 
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.sadellie.unitto.configureJacoco
+import app.myzel394.numberhub.configureJacoco
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType

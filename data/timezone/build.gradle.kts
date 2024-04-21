@@ -22,7 +22,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.data.timezone"
+android.namespace = "app.myzel394.numberhub.data.timezone"
 
 dependencies {
     implementation(project(":core:base"))
