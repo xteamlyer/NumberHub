@@ -453,7 +453,7 @@ class UnitsRepositoryImpl @Inject constructor(
         unitToId: String,
         value: BigDecimal,
     ): ConverterResult = withContext(Dispatchers.IO) {
-        refreshCurrencyRates(unitFromId)
+        refreshCurrencyRates(unitFromId, unitToId)
 
         val latestRate = currencyRatesDao.getLatestRate(unitFromId, unitToId)
         if (latestRate?.pairUnitValue == null) return@withContext ConverterResult.Error.Currency
@@ -494,7 +494,7 @@ class UnitsRepositoryImpl @Inject constructor(
         return@withContext units
     }
 
-    private suspend fun refreshCurrencyRates(unitFromId: String) = withContext(Dispatchers.IO) {
+    private suspend fun refreshCurrencyRates(unitFromId: String, unitToId: String) = withContext(Dispatchers.IO) {
         val latestUpdateDate = currencyRatesDao.getLatestRateTimeStamp(unitFromId)
         val currentDate = LocalDate.now().toEpochDay()
 
@@ -513,7 +513,28 @@ class UnitsRepositoryImpl @Inject constructor(
                     }
                 currencyRatesDao.insertRates(rates)
             } catch (e: Exception) {
-                Log.d("UnitsRepositoryImpl", "Skipped update: $e")
+                Log.w("UnitsRepositoryImpl", "Updating currency rates failed: $e");
+                // If fails, try to get the currency `unitToId` and calculate the rate
+                // example:
+
+                val latestReverseData = currencyRatesDao.getLatestRate(unitToId, unitFromId);
+
+                if (latestReverseData != null) {
+                    val reverseRate = BigDecimal.ONE.divide(latestReverseData.pairUnitValue, 10, RoundingMode.HALF_EVEN)
+
+                    Log.d("UnitsRepositoryImpl", "Updated currency via reverse rate: $reverseRate");
+
+                    currencyRatesDao.insertRates(
+                        listOf(
+                            CurrencyRatesEntity(
+                                baseUnitId = unitFromId,
+                                date = currentDate,
+                                pairUnitId = unitToId,
+                                pairUnitValue = reverseRate,
+                            ),
+                        ),
+                    )
+                }
             }
         }
     }
