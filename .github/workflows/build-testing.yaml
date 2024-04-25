@@ -25,5 +25,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: alibi-app-debug-apks
-          path: app/build/outputs/apk/debug/app-*-debug.apk
+          name: numberhub-app-debug-apks
+          path: app/build/outputs/apk/fdroid/app-*-debug.apk
