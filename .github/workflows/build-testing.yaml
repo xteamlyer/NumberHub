@@ -26,4 +26,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: numberhub-app-debug-apks
-          path: app/build/outputs/apk/fdroid/app-*-debug.apk
+          path: app/build/outputs/apk/fdroid/debug/app-*-debug.apk
