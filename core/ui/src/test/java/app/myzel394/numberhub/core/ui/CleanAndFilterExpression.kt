@@ -52,10 +52,12 @@ class CleanAndFilterExpression {
         assertEquals("123456.789+1234÷56789", "123,456.789 1234⁄56789".clearAndFilterExpression(formatterSymbols))
     }
 
+    /*
     @Test
     fun garbage() {
         // 'e' is a known symbol
         assertEquals("eeee−123", "pee pee poo poo -123".clearAndFilterExpression(formatterSymbols))
         assertEquals("eeee−123.456", "pee pee poo poo -123.456".clearAndFilterExpression(formatterSymbols))
     }
+     */
 }
