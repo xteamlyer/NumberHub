@@ -39,7 +39,7 @@ android {
         getByName("fdroid") {
             stringConfigField(
                 "STORE_LINK",
-                "https://github.com/sadellie/unitto"
+                "https://github.com/Myzel394/NumberHub"
             )
         }
     }
