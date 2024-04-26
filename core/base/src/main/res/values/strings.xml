@@ -21,7 +21,7 @@
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/QNmUuI88wb1Fm5P8wRIZajZF.png -->
     <string name="add_label">Add</string>
-    <string name="app_name" translatable="false">Unitto</string>
+    <string name="app_name" translatable="false">NumberHub</string>
 
     <!-- Person's height -->
     <string name="body_mass_height">Height</string>
@@ -220,7 +220,7 @@ Used in this dialog window. Should be short -->
 https://s3.eu-west-1.amazonaws.com/po-pub/i/1oIHPj16krI0jyLmg4JaP2mk.png -->
     <!-- Screen readers (accessibility) -->
     <string name="selected_item">Selected item</string>
-    <string name="settings_about_unitto">About Unitto</string>
+    <string name="settings_about_unitto">About NumberHub</string>
     <string name="settings_about_unitto_support">Learn about the app</string>
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/p3aY3IWUI5m9Vjs6vZP3EXAo.png -->
