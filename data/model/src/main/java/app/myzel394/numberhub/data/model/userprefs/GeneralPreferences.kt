@@ -21,4 +21,5 @@ package app.myzel394.numberhub.data.model.userprefs
 interface GeneralPreferences {
     val lastReadChangelog: String
     val enableVibrations: Boolean
+    val hasSeenNewAppAnnouncement: Boolean
 }

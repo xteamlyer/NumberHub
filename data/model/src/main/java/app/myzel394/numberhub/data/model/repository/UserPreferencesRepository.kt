@@ -99,4 +99,6 @@ interface UserPreferencesRepository {
     suspend fun updateAdditionalButtons(enabled: Boolean)
 
     suspend fun updateInverseMode(enabled: Boolean)
+
+    suspend fun updateHasSeenNewAppAnnouncement(value: Boolean)
 }

@@ -50,6 +50,7 @@ import androidx.compose.material.icons.filled.RateReview
 import androidx.compose.material.icons.filled.SwapHoriz
 import androidx.compose.material.icons.filled.Vibration
 import androidx.compose.material.icons.filled._123
+import androidx.compose.material.icons.outlined.CheckCircle
 import androidx.compose.material.icons.outlined.NewReleases
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
@@ -119,6 +120,7 @@ internal fun SettingsRoute(
             uiState = uiState,
             openDrawer = openDrawer,
             navControllerAction = navControllerAction,
+            onHasSeenNewAppAnnouncement = viewModel::updateHasSeenNewAppAnnouncement,
             updateLastReadChangelog = viewModel::updateLastReadChangelog,
             updateVibrations = viewModel::updateVibrations,
             clearCache = viewModel::clearCache,
@@ -135,6 +137,7 @@ private fun SettingsScreen(
     navControllerAction: (String) -> Unit,
     updateLastReadChangelog: (String) -> Unit,
     updateVibrations: (Boolean) -> Unit,
+    onHasSeenNewAppAnnouncement: (Boolean) -> Unit,
     clearCache: () -> Unit,
     backup: (Context, Uri) -> Unit,
     restore: (Context, Uri) -> Unit,
@@ -197,6 +200,25 @@ private fun SettingsScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(padding),
         ) {
+            AnimatedVisibility(
+                visible = !uiState.hasSeenNewAppAnnouncement,
+                enter = expandVertically() + fadeIn(),
+                exit = shrinkVertically() + fadeOut(),
+            ) {
+                val title = stringResource(R.string.settings_numberhub_newApp)
+                AnnoyingBox(
+                    modifier = Modifier
+                        .padding(16.dp, 8.dp)
+                        .fillMaxWidth(),
+                    imageVector = Icons.Outlined.CheckCircle,
+                    imageVectorContentDescription = title,
+                    title = title,
+                    support = stringResource(R.string.settings_numberhub_newApp_message),
+                ) {
+                    //onHasSeenNewAppAnnouncement(true)
+                }
+            }
+
             AnimatedVisibility(
                 visible = uiState.showUpdateChangelog,
                 enter = expandVertically() + fadeIn(),
@@ -339,6 +361,7 @@ private fun PreviewSettingsScreen() {
                 cacheSize = 2,
                 backupInProgress = false,
                 showUpdateChangelog = true,
+                hasSeenNewAppAnnouncement = false,
             ),
         )
     }
@@ -347,6 +370,9 @@ private fun PreviewSettingsScreen() {
         uiState = uiState,
         openDrawer = {},
         navControllerAction = {},
+        onHasSeenNewAppAnnouncement = {
+            uiState = uiState.copy(hasSeenNewAppAnnouncement = true)
+        },
         updateLastReadChangelog = {
             uiState = uiState.copy(showUpdateChangelog = false)
         },

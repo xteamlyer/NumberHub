@@ -77,6 +77,10 @@ internal fun Preferences.getRadianMode(): Boolean {
     return this[PrefsKeys.RADIAN_MODE] ?: true
 }
 
+internal fun Preferences.getHasSeenNewAppAnnouncement(): Boolean {
+    return this[PrefsKeys.HAS_SEEN_NEW_APP_ANNOUNCEMENT] ?: false
+}
+
 internal fun Preferences.getFormatterSymbols(): FormatterSymbols {
     val grouping = this[PrefsKeys.FORMATTER_GROUPING]
     val fractional = this[PrefsKeys.FORMATTER_FRACTIONAL]

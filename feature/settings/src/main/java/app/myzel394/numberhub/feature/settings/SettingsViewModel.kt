@@ -62,6 +62,7 @@ internal class SettingsViewModel @Inject constructor(
             cacheSize = cacheSize,
             backupInProgress = backupInProgress,
             showUpdateChangelog = prefs.lastReadChangelog != BuildConfig.VERSION_CODE,
+            hasSeenNewAppAnnouncement = prefs.hasSeenNewAppAnnouncement,
         )
     }
         .stateIn(viewModelScope, SettingsUIState.Loading)
@@ -98,6 +99,10 @@ internal class SettingsViewModel @Inject constructor(
             }
             backupInProgress.update { false }
         }
+    }
+
+    fun updateHasSeenNewAppAnnouncement(value: Boolean) = viewModelScope.launch {
+        userPrefsRepository.updateHasSeenNewAppAnnouncement(value)
     }
 
     /**

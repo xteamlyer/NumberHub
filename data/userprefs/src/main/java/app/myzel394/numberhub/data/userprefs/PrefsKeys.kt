@@ -37,6 +37,7 @@ object PrefsKeys {
     val ENABLE_VIBRATIONS = booleanPreferencesKey("ENABLE_VIBRATIONS_PREF_KEY")
     val MIDDLE_ZERO = booleanPreferencesKey("MIDDLE_ZERO_PREF_KEY")
     val AC_BUTTON = booleanPreferencesKey("AC_BUTTON_PREF_KEY")
+    val HAS_SEEN_NEW_APP_ANNOUNCEMENT = booleanPreferencesKey("HAS_SEEN_NEW_APP_ANNOUNCEMENT_PREF_KEY")
     // val RPN_MODE = booleanPreferencesKey("RPN_MODE_PREF_KEY")
 
     // FORMATTER

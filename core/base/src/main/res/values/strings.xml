@@ -322,6 +322,9 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_view_source_code">View source code</string>
     <string name="time_zone_add_title">Add time zone</string>
 
+    <string name="settings_numberhub_newApp">Unitto is now NumberHub!</string>
+    <string name="settings_numberhub_newApp_message">Unitto has been discontinued. You\'re one of the first users to try NumberHub! Please spread the word and share the app with your friends. Thank you for your support!</string>
+
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/UCrz06kaEYxCGAE73ZLl9EtX.png -->
     <string name="time_zone_no_results_button">Read the article</string>
 

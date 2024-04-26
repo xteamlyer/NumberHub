@@ -50,6 +50,7 @@ data class AppPreferencesImpl(
 data class GeneralPreferencesImpl(
     override val lastReadChangelog: String,
     override val enableVibrations: Boolean,
+    override val hasSeenNewAppAnnouncement: Boolean,
 ) : GeneralPreferences
 
 data class CalculatorPreferencesImpl(

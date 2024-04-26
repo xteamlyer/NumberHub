@@ -70,6 +70,7 @@ class UserPreferencesRepositoryImpl @Inject constructor(
             GeneralPreferencesImpl(
                 lastReadChangelog = preferences.getLastReadChangelog(),
                 enableVibrations = preferences.getEnableVibrations(),
+                hasSeenNewAppAnnouncement = preferences.getHasSeenNewAppAnnouncement(),
             )
         }
 
@@ -323,6 +324,12 @@ class UserPreferencesRepositoryImpl @Inject constructor(
     override suspend fun updateInverseMode(enabled: Boolean) {
         dataStore.edit { preferences ->
             preferences[PrefsKeys.INVERSE_MODE] = enabled
+        }
+    }
+
+    override suspend fun updateHasSeenNewAppAnnouncement(value: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[PrefsKeys.HAS_SEEN_NEW_APP_ANNOUNCEMENT] = value
         }
     }
 }

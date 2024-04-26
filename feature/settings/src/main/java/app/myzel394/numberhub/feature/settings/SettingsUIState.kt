@@ -26,5 +26,6 @@ internal sealed class SettingsUIState {
         val cacheSize: Int,
         val backupInProgress: Boolean,
         val showUpdateChangelog: Boolean,
+        val hasSeenNewAppAnnouncement: Boolean,
     ) : SettingsUIState()
 }
