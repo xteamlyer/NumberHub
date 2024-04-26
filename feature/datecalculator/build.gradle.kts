@@ -24,7 +24,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.feature.datecalculator"
+android.namespace = "app.myzel394.numberhub.feature.datecalculator"
 
 dependencies {
     implementation(project(":data:common"))

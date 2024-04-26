@@ -23,7 +23,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.core.ui"
+android.namespace = "app.myzel394.numberhub.core.ui"
 // Workaround from https://github.com/robolectric/robolectric/pull/4736
 android.testOptions.unitTests.isIncludeAndroidResources = true
 

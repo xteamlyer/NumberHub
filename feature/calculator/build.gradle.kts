@@ -24,16 +24,12 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.feature.calculator"
+android.namespace = "app.myzel394.numberhub.feature.calculator"
 android.testOptions.unitTests.isIncludeAndroidResources = true
 
 dependencies {
     testImplementation(libs.org.robolectric.robolectric)
     testImplementation(libs.org.jetbrains.kotlinx.kotlinx.coroutines.test)
-
-    implementation(libs.androidx.glance.glance)
-    implementation(libs.androidx.glance.glance.appwidget)
-    implementation(libs.androidx.glance.glance.material3)
 
     implementation(project(":data:calculator"))
     implementation(project(":data:common"))

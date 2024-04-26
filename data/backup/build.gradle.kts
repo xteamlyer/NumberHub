@@ -23,7 +23,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.data.backup"
+android.namespace = "app.myzel394.numberhub.data.backup"
 
 android {
     room {
@@ -34,10 +34,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.datastore.datastore.preferences)
-    implementation(libs.com.github.sadellie.themmo.core)
-
     implementation(project(":data:database"))
-    implementation(project(":data:model"))
     implementation(project(":data:userprefs"))
 }

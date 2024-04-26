@@ -22,7 +22,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.data.calculator"
+android.namespace = "app.myzel394.numberhub.data.calculator"
 
 dependencies {
     implementation(project(":data:database"))

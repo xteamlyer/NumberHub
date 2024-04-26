@@ -31,7 +31,7 @@ Look for <b>Calculator</b> on your home screen after installing the app.
 
 <b>Permissions</b>
 
-com.sadellie.unitto.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+app.myzel394.numberhub.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 Read (boring): https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported
 
 android.permission.INTERNET

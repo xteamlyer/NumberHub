@@ -21,7 +21,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.data.model"
+android.namespace = "app.myzel394.numberhub.data.model"
 
 dependencies {
     implementation(libs.com.github.sadellie.themmo.core)

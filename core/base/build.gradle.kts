@@ -22,7 +22,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sadellie.unitto.core.base"
+    namespace = "app.myzel394.numberhub.core.base"
 
     defaultConfig {
         stringConfigField("VERSION_NAME", libs.versions.versionName.get())
@@ -33,13 +33,13 @@ android {
         getByName("playStore") {
             stringConfigField(
                 "STORE_LINK",
-                "http://play.google.com/store/apps/details?id=com.sadellie.unitto"
+                "http://play.google.com/store/apps/details?id=app.myzel394.numberhub"
             )
         }
         getByName("fdroid") {
             stringConfigField(
                 "STORE_LINK",
-                "https://github.com/sadellie/unitto"
+                "https://github.com/Myzel394/NumberHub"
             )
         }
     }

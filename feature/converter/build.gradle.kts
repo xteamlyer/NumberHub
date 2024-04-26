@@ -25,7 +25,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.feature.converter"
+android.namespace = "app.myzel394.numberhub.feature.converter"
 android.testOptions.unitTests.isIncludeAndroidResources = true
 
 dependencies {
@@ -35,9 +35,6 @@ dependencies {
     testImplementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
     testImplementation(libs.androidx.datastore.datastore.preferences)
-
-    implementation(libs.com.squareup.moshi.moshi.kotlin)
-    implementation(libs.com.squareup.retrofit2.converter.moshi)
 
     implementation(project(":data:common"))
     implementation(project(":data:database"))

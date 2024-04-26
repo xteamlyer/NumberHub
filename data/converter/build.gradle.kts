@@ -23,7 +23,7 @@ plugins {
     id("unitto.android.library.jacoco")
 }
 
-android.namespace = "com.sadellie.unitto.data.converter"
+android.namespace = "app.myzel394.numberhub.data.converter"
 android.testOptions.unitTests.isIncludeAndroidResources = true
 
 android {
@@ -35,14 +35,13 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.lifecycle.lifecycle.runtime.compose)
-    implementation(libs.androidx.datastore.datastore.preferences)
-
+    testImplementation(libs.org.robolectric.robolectric)
     implementation(libs.com.squareup.moshi.moshi.kotlin)
     implementation(libs.com.squareup.retrofit2.converter.moshi)
 
     implementation(project(":core:base"))
     implementation(project(":data:common"))
     implementation(project(":data:database"))
+    implementation(project(":data:evaluatto"))
     implementation(project(":data:model"))
 }

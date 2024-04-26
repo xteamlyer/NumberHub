@@ -21,7 +21,7 @@
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/QNmUuI88wb1Fm5P8wRIZajZF.png -->
     <string name="add_label">Add</string>
-    <string name="app_name" translatable="false">Unitto</string>
+    <string name="app_name" translatable="false">NumberHub</string>
 
     <!-- Person's height -->
     <string name="body_mass_height">Height</string>
@@ -220,7 +220,7 @@ Used in this dialog window. Should be short -->
 https://s3.eu-west-1.amazonaws.com/po-pub/i/1oIHPj16krI0jyLmg4JaP2mk.png -->
     <!-- Screen readers (accessibility) -->
     <string name="selected_item">Selected item</string>
-    <string name="settings_about_unitto">About Unitto</string>
+    <string name="settings_about_unitto">About NumberHub</string>
     <string name="settings_about_unitto_support">Learn about the app</string>
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/p3aY3IWUI5m9Vjs6vZP3EXAo.png -->
@@ -245,6 +245,7 @@ Alternatively you can use "Export" -->
     <string name="settings_currency_rates_note_text">Currency rates are updated daily. There\'s no real-time market monitoring in the app</string>
     <string name="settings_currency_rates_note_title">Wrong currency rates?</string>
     <string name="settings_dark_mode">Dark</string>
+    <string name="settings_decimal_separator">Decimal separator</string>
     <string name="settings_disable_unit_group_description">Disable unit group</string>
     <string name="settings_display">Display</string>
     <string name="settings_display_support">App look and feel</string>
@@ -301,6 +302,7 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_system_font_support">Use system font for texts in app</string>
     <string name="settings_terms_and_conditions">Terms and Conditions</string>
     <string name="settings_third_party_licenses">Third party licenses</string>
+    <string name="settings_thousands_separator">Thousands separator</string>
     <string name="settings_title">Settings</string>
     <string name="settings_translate_app">Translate this app</string>
     <string name="settings_translate_app_support">Join POEditor project to help</string>
@@ -319,6 +321,10 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_vibrations_support">Haptic feedback when clicking keyboard buttons</string>
     <string name="settings_view_source_code">View source code</string>
     <string name="time_zone_add_title">Add time zone</string>
+
+    <string name="settings_numberhub_newApp">Unitto is now NumberHub!</string>
+    <string name="settings_numberhub_newApp_message">Unitto has been discontinued. You\'re one of the first users to try NumberHub! Please spread the word and share the app with your friends. Thank you for your support!</string>
+    <string name="settings_numberhub_newApp_announcement">NumberHub serves as a drop-in replacement for Unitto. It has the same features and more. NumberHub is still in beta and changes may occur. Please report any issues you find. Thanks for being one of the first to try it out!</string>
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/UCrz06kaEYxCGAE73ZLl9EtX.png -->
     <string name="time_zone_no_results_button">Read the article</string>
