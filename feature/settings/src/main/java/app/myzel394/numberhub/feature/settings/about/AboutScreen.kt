@@ -121,7 +121,7 @@ private fun AboutScreen(
                     modifier = Modifier.clickable {
                         openLink(
                             mContext,
-                            "https://github.com/sadellie/unitto",
+                            "https://github.com/Myzel394/NumberHub",
                         )
                     },
                 )
