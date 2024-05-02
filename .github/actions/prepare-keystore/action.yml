@@ -19,6 +19,7 @@ runs:
   using: composite
   steps:
     - name: Write Keystore file 🗄️
+      shell: bash
       run: echo "${{ inputs.keyStoreBase64 }}" | base64 -d > ~/key.jks
 
     - name: Write Keystore properties 🗝️
