@@ -342,7 +342,9 @@ class UnitsRepositoryImpl @Inject constructor(
             val conversion = unitFrom.convert(unitTo, value)
 
             ConverterResult.NumberBase(conversion)
-        } catch (e: Exception) {
+        } catch (error: Exception) {
+            Log.e("UnitsRepositoryImpl", "Failed to convert number base $unitFromId -> $unitToId: $error")
+            error.printStackTrace()
             ConverterResult.Error.ConversionError
         }
     }

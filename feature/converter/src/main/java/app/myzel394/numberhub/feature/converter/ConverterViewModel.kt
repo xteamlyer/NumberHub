@@ -23,6 +23,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.myzel394.numberhub.core.base.OutputFormat
+import app.myzel394.numberhub.core.base.Token
 import app.myzel394.numberhub.core.ui.common.textfield.getTextField
 import app.myzel394.numberhub.data.common.combine
 import app.myzel394.numberhub.data.common.stateIn
@@ -175,11 +176,13 @@ internal class ConverterViewModel @Inject constructor(
     fun convertNumberBase() {
         conversionJob?.cancel()
         conversionJob = viewModelScope.launch {
-            unitsRepo.convertNumberBase(
+            val result = unitsRepo.convertNumberBase(
                 unitFromId = unitFromId.value ?: return@launch,
                 unitToId = unitToId.value ?: return@launch,
-                value = input1.value.text,
+                value = input1.value.text.ifEmpty { Token.Digit._0 }
             )
+
+            output.update { result }
         }
     }
 

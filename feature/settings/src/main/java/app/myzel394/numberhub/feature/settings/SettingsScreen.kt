@@ -248,7 +248,8 @@ private fun SettingsScreen(
             }
 
             AnimatedVisibility(
-                visible = uiState.showUpdateChangelog,
+                // TODO: Restore this line for next update
+                visible = false,
                 enter = expandVertically() + fadeIn(),
                 exit = shrinkVertically() + fadeOut(),
             ) {
