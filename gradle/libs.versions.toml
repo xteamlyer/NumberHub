@@ -1,5 +1,5 @@
 [versions]
-versionCode = "2"
+versionCode = "3"
 versionName = "NumberHub"
 
 androidxBrowserBrowser = "1.8.0"
