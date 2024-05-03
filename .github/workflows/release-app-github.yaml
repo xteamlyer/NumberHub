@@ -47,7 +47,7 @@ jobs:
         run: ./gradlew bundleRelease
 
       - name: Rename APK
-        run: mv app/build/outputs/bundle/fdroidRelease/release/app-fdroid-release.aab NumberHub.aab
+        run: mv app/build/outputs/bundle/fdroidRelease/app-fdroid-release.aab NumberHub.aab
 
       - name: Upload APKs bundles 🚀
         uses: softprops/action-gh-release@v1
