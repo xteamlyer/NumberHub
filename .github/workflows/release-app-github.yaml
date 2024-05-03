@@ -32,8 +32,8 @@ jobs:
       - name: Build APKs 📱
         run: ./gradlew assembleRelease
 
-      - name: Build AABs 📱
-        run: ./gradlew bundleRelease
+      - name: Rename APK
+        run: mv app/build/outputs/apk/fdroid/release/app-fdroid-release.apk NumberHub.apk
 
       - name: Upload APKs 🚀
         uses: softprops/action-gh-release@v1
@@ -42,6 +42,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           files: app/build/outputs/apk/fdroid/release/*.apk
+
+      - name: Build AABs 📱
+        run: ./gradlew bundleRelease
+
+      - name: Rename APK
+        run: mv app/build/outputs/bundle/fdroidRelease/release/app-fdroid-release.aab NumberHub.aab
 
       - name: Upload APKs bundles 🚀
         uses: softprops/action-gh-release@v1
