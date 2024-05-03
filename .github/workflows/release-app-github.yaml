@@ -41,7 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          files: app/build/outputs/apk/fdroid/release/*.apk
+          files: NumberHub.apk
 
       - name: Build AABs 📱
         run: ./gradlew bundleRelease
@@ -55,4 +55,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          files: app/build/outputs/bundle/fdroidRelease/*.aab
+          files: NumberHub.aab
