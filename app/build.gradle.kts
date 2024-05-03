@@ -1,3 +1,5 @@
+import java.util.Properties
+
 /*
  * Unitto is a calculator for Android
  * Copyright (c) 2023-2024 Elshan Agaev
@@ -30,6 +32,18 @@ plugins {
 android {
     namespace = "app.myzel394.numberhub"
     compileSdk = 34
+
+    signingConfigs {
+        create("release") {
+            val properties = Properties().apply {
+                load(file("keystore.properties").reader())
+            }
+            storeFile = File(properties.getProperty("storeFile"))
+            storePassword = properties.getProperty("storePassword")
+            keyPassword = properties.getProperty("keyPassword")
+            keyAlias = properties.getProperty("keyAlias")
+        }
+    }
 
     defaultConfig {
         applicationId = "app.myzel394.numberhub"
@@ -72,6 +86,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            signingConfig = signingConfigs.getByName("release")
         }
         create("benchmark") {
             initWith(buildTypes.getByName("release"))

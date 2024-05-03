@@ -38,8 +38,8 @@ rootProject {
                 target("**/*.kt")
                 targetExclude(
                     "**/build/**/*.kt",
-                    "**/com/sadellie/unitto/data/converter/collections/*.kt",
-                    "**/com/sadellie/unitto/core/ui/common/icons/iconpack/*.kt",
+                    "**/app/myzel394/numberhub/data/converter/collections/*.kt",
+                    "**/app/myzel394/numberhub/core/ui/common/icons/iconpack/*.kt",
                 )
                 ktlint(ktlintVersion).editorConfigOverride(
                     mapOf(
