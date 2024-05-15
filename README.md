@@ -35,10 +35,11 @@ To add a translation, update the strings in `core/base/src/main/res/LANG/strings
 ## Donate
 
 It might sound crazy, but if you would just donate 1$, it would totally mean to world to me, since
-it's a really small amount and if everyone did that, I can totally focus on Alibi and my other open
-source projects. :)
+it's a really small amount and if everyone did that, I can totally focus on NumberHub
+and my other open source projects. :)
 
-You can donate via [GitHub Sponsors](https://github.com/sponsors/Myzel394) or via [crypto currencies](https://github.com/Myzel394/contact-me?tab=readme-ov-file#donations).
+You can donate via [GitHub Sponsors](https://github.com/sponsors/Myzel394)
+or via [crypto currencies](https://github.com/Myzel394/contact-me?tab=readme-ov-file#donations).
 
 ## Help
 See [HELP.md](HELP.md)
