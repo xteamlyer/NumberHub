@@ -132,8 +132,6 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_precision_info">Dönüştürülen değerler tercih edilen değerden daha yüksek bir kesinliğe sahip olabilir.</string>
     <string name="settings_precision_max">%1$s (Maks)</string>
     <string name="settings_precision_support">Ondalık basamak sayısı</string>
-    <string name="settings_privacy_policy">Gizlilik Politikası</string>
-    <string name="settings_rate_this_app">Bu uygulamayı oyla</string>
     <string name="settings_reorder_unit_group_description">Birim grubunu yeniden sırala</string>
     <string name="settings_selected_color">Seçilen renk</string>
     <string name="settings_selected_style">Seçilen stil</string>
@@ -152,7 +150,6 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_system">Sistem</string>
     <string name="settings_system_font">Sistem yazı tipi</string>
     <string name="settings_system_font_support">Uygulamadaki metinler için sistem yazı tipini kullan</string>
-    <string name="settings_terms_and_conditions">Şartlar ve Koşullar</string>
     <string name="settings_third_party_licenses">Üçüncü taraf lisansları</string>
     <string name="settings_title">Ayarlar</string>
     <string name="settings_translate_app">Bu uygulamayı çevir</string>

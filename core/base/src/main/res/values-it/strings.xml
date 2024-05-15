@@ -193,8 +193,6 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_precision_info">Valori convertiti potrebbero avere una precisione maggiore di quella preferita.</string>
     <string name="settings_precision_max">%1$s (Max)</string>
     <string name="settings_precision_support">Numero di posti decimali</string>
-    <string name="settings_privacy_policy">Politica sulla riservatezza</string>
-    <string name="settings_rate_this_app">Valuta questa app</string>
     <string name="settings_reorder_unit_group_description">Riordina gruppo unità</string>
 
     <!-- Option in menu. Verb (action). Alternatively you can use "Import" -->
@@ -216,7 +214,6 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_system">Sistema</string>
     <string name="settings_system_font">Font di sistema</string>
     <string name="settings_system_font_support">Usa font di sistema per i testi nell\'app</string>
-    <string name="settings_terms_and_conditions">Termini e condizioni</string>
     <string name="settings_third_party_licenses">Licenze terze parti</string>
     <string name="settings_title">Impostazioni</string>
     <string name="settings_translate_app">Traduci questa app</string>

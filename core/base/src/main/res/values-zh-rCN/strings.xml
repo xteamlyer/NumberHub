@@ -172,8 +172,6 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_precision_info">转换后的值可能具有高于首选值的精度。</string>
     <string name="settings_precision_max">%1$s (大)</string>
     <string name="settings_precision_support">小数点后位数</string>
-    <string name="settings_privacy_policy">隐私政策</string>
-    <string name="settings_rate_this_app">评价此应用</string>
     <string name="settings_reorder_unit_group_description">重排序单位组</string>
     <string name="settings_selected_color">选择颜色</string>
     <string name="settings_selected_style">选择风格</string>
@@ -184,7 +182,6 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_space">空间</string>
     <string name="settings_starting_screen">启动屏幕</string>
     <string name="settings_starting_screen_support">选择在启动应用程序时显示的屏幕</string>
-    <string name="settings_terms_and_conditions">条款与条件</string>
     <string name="settings_third_party_licenses">第三方许可</string>
     <string name="settings_title">设置</string>
     <string name="settings_translate_app">翻译此应用</string>
