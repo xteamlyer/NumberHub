@@ -135,7 +135,7 @@ Used in this dialog window. Should be short -->
 https://s3.eu-west-1.amazonaws.com/po-pub/i/1oIHPj16krI0jyLmg4JaP2mk.png -->
     <!-- Screen readers (accessibility) -->
     <string name="selected_item">已选定项目</string>
-    <string name="settings_about_unitto">关于 Unitto</string>
+    <string name="settings_about_unitto">关于 NumberHub</string>
     <string name="settings_about_unitto_support">了解此应用</string>
     <string name="settings_additional">额外的</string>
     <string name="settings_amoled_dark">AMOLED 黑</string>
