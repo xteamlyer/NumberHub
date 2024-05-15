@@ -329,14 +329,6 @@ private fun SettingsScreen(
                 )
             }
 
-            if (BuildConfig.STORE_LINK.isNotEmpty()) {
-                ListItem(
-                    icon = Icons.Default.RateReview,
-                    headlineText = stringResource(R.string.settings_rate_this_app),
-                    modifier = Modifier.clickable { openLink(mContext, BuildConfig.STORE_LINK) },
-                )
-            }
-
             ListItem(
                 icon = Icons.Default.Info,
                 headlineText = stringResource(R.string.settings_about_unitto),

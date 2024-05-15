@@ -146,7 +146,7 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_space">Boşluk</string>
     <string name="settings_starting_screen">Başlangıç ekranı</string>
     <string name="settings_starting_screen_support">Uygulamayı başlattığınızda hangi ekranın gösterileceğini seçin</string>
-
+    
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/r1VikAn70eXQP4da2hrntTGQ.jpg -->
     <!-- Option name to use system default setting -->
     <string name="settings_system">Sistem</string>
