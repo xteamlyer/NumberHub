@@ -83,7 +83,7 @@ Used in this dialog window. Should be short -->
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/uWOHJmIq9riqsq7PO82ZQp3a.png -->
     <string name="select_time_label">Zeit auswählen</string>
-    <string name="settings_about_unitto">Über Unitto</string>
+    <string name="settings_about_unitto">Über NumberHub</string>
     <string name="settings_about_unitto_support">Mehr über die App erfahren</string>
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/p3aY3IWUI5m9Vjs6vZP3EXAo.png -->

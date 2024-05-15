@@ -78,7 +78,7 @@ Used in this dialog window. Should be short -->
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/uWOHJmIq9riqsq7PO82ZQp3a.png -->
     <string name="select_time_label">Pilih waktu</string>
-    <string name="settings_about_unitto">Tentang Unitto</string>
+    <string name="settings_about_unitto">Tentang NumberHub</string>
     <string name="settings_about_unitto_support">Pelajari tentang aplikasi</string>
     <string name="settings_amoled_dark">Gelap AMOLED</string>
     <string name="settings_amoled_dark_support">Gunakan latar hitam untuk tema gelap</string>

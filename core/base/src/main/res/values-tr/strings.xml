@@ -80,7 +80,7 @@ Used in this dialog window. Should be short -->
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/uWOHJmIq9riqsq7PO82ZQp3a.png -->
     <string name="select_time_label">Zaman seçin</string>
-    <string name="settings_about_unitto">Unitto hakkında</string>
+    <string name="settings_about_unitto">NumberHub hakkında</string>
     <string name="settings_about_unitto_support">Uygulama hakkında bilgi edinin</string>
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/p3aY3IWUI5m9Vjs6vZP3EXAo.png -->

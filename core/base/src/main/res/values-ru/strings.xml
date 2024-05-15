@@ -203,7 +203,7 @@ Used in this dialog window. Should be short -->
 https://s3.eu-west-1.amazonaws.com/po-pub/i/1oIHPj16krI0jyLmg4JaP2mk.png -->
     <!-- Screen readers (accessibility) -->
     <string name="selected_item">Выбранные элемент</string>
-    <string name="settings_about_unitto">О Unitto</string>
+    <string name="settings_about_unitto">О NumberHub</string>
     <string name="settings_about_unitto_support">Узнайте больше о приложении</string>
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/p3aY3IWUI5m9Vjs6vZP3EXAo.png -->
