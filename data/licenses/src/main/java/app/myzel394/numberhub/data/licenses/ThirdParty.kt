@@ -31,7 +31,7 @@ val ALL_THIRD_PARTY by lazy {
         ThirdParty(
             name = "currency-api",
             dev = "Fawaz Ahmed (fawazahmed0)",
-            website = "https://github.com/fawazahmed0/currency-api",
+            website = "https://github.com/fawazahmed0/exchange-api",
             license = "The Unlicense",
             description = "Free Currency Rates API",
         ),
