@@ -24,5 +24,10 @@ alt="Download from GitHub releases" align="center" height="80" /></a>
 <img src="https://github.com/ImranR98/Obtainium/blob/main/assets/graphics/badge_obtainium.png"
 alt="Get it on Obtainium" align="center" height="54" /></a>
 
+## Contribute
+To translate, update the strings in `core/base/src/main/res/LANG/strings.xml` and open a PR
+
+If you can help with code, open a PR
+
 ## Help
 See [HELP.md](HELP.md)
