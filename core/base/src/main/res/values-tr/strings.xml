@@ -80,7 +80,7 @@ Used in this dialog window. Should be short -->
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/uWOHJmIq9riqsq7PO82ZQp3a.png -->
     <string name="select_time_label">Zaman seçin</string>
-    <string name="settings_about_unitto">Unitto hakkında</string>
+    <string name="settings_about_unitto">NumberHub hakkında</string>
     <string name="settings_about_unitto_support">Uygulama hakkında bilgi edinin</string>
 
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/p3aY3IWUI5m9Vjs6vZP3EXAo.png -->
@@ -146,7 +146,7 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_space">Boşluk</string>
     <string name="settings_starting_screen">Başlangıç ekranı</string>
     <string name="settings_starting_screen_support">Uygulamayı başlattığınızda hangi ekranın gösterileceğini seçin</string>
-
+    
     <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/r1VikAn70eXQP4da2hrntTGQ.jpg -->
     <!-- Option name to use system default setting -->
     <string name="settings_system">Sistem</string>

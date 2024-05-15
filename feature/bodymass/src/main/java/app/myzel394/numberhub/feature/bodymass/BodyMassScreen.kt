@@ -204,7 +204,7 @@ private fun BodyMassScreen(
 
             ElevatedButton(
                 onClick = {
-                    openLink(mContext, "https://sadellie.github.io/unitto/help#body-mass-index")
+                    openLink(mContext, "https://github.com/Myzel394/NumberHub/blob/master/HELP.md#body-mass-index")
                 },
             ) {
                 Text(text = stringResource(R.string.time_zone_no_results_button)) // TODO Rename
