@@ -91,6 +91,7 @@ android {
         }
         create("benchmark") {
             initWith(getByName("debug"))
+            signingConfig = signingConfigs.getByName("debug")
             isDebuggable = false
             isMinifyEnabled = true
             isShrinkResources = true
