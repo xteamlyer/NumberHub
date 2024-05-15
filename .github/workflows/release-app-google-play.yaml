@@ -1,0 +1,46 @@
+name: Build and publish app to Google Play (Google Play variant)
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  release-app-google-play:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: gradle/wrapper-validation-action@v2
+
+      - name: Write KeyStore 🗝️
+        uses: ./.github/actions/prepare-keystore
+        with:
+          signingStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
+          signingKeyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          signingKeyAlias: ${{ secrets.SIGNING_KEY_ALIAS }}
+          keyStoreBase64: ${{ secrets.KEYSTORE }}
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'adopt'
+          java-version: 21
+          cache: 'gradle'
+
+      - name: Build Bundles 📱
+        run: ./gradlew bundleRelease
+
+      - name: Rename APK
+        run: mv app/build/outputs/bundle/playStoreRelease/app-playStore-release.aab NumberHub.aab
+
+      - name: Upload Bundles 🚀
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_STORE_SERVICE_ACCOUNT }}
+          packageName: app.myzel394.numberhub
+          releaseFiles: NumberHub.aab
+          track: production
+          status: inProgress
+          userFraction: 0.5
