@@ -14,20 +14,31 @@
     <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/slide5.png" width="19%" />
 </p>
 
-## Download
+# Download NumberHub
 
-<a href="https://github.com/Myzel394/NumberHub/releases">
-<img src="https://user-images.githubusercontent.com/69304392/148696068-0cfea65d-b18f-4685-82b5-329a330b1c0d.png"
-alt="Download from GitHub releases" align="center" height="80" /></a>
+[<img src="readme_content/google-play-badge.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=app.myzel394.numberhub)
+[<img src="readme_content/github-badge.webp" alt="Get it on GitHub" height="80">](https://github.com/Myzel394/NumberHub/releases)
+[<img src="readme_content/obtainium-badge.png" alt="Get it on Obtainium" height="80">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/Myzel394/NumberHub//)
 
-<a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/Myzel394/NumberHub//">
-<img src="https://github.com/ImranR98/Obtainium/blob/main/assets/graphics/badge_obtainium.png"
-alt="Get it on Obtainium" align="center" height="54" /></a>
+# Support NumberHub
 
-## Contribute
-To translate, update the strings in `core/base/src/main/res/LANG/strings.xml` and open a PR
+You can support NumberHub in various ways:
 
-If you can help with code, open a PR
+## Contribute to the project
+
+Add a new feature or fix bugs.
+
+## Add translations
+
+To add a translation, update the strings in `core/base/src/main/res/LANG/strings.xml` and open a PR
+
+## Donate
+
+It might sound crazy, but if you would just donate 1$, it would totally mean to world to me, since
+it's a really small amount and if everyone did that, I can totally focus on Alibi and my other open
+source projects. :)
+
+You can donate via [GitHub Sponsors](https://github.com/sponsors/Myzel394) or via [crypto currencies](https://github.com/Myzel394/contact-me?tab=readme-ov-file#donations).
 
 ## Help
 See [HELP.md](HELP.md)
