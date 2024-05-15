@@ -90,9 +90,16 @@ android {
             signingConfig = signingConfigs.getByName("release")
         }
         create("benchmark") {
-            initWith(buildTypes.getByName("release"))
+            initWith(getByName("debug"))
+            isDebuggable = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            applicationIdSuffix = ""
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
             matchingFallbacks.add("release")
-            signingConfig = signingConfigs.getByName("debug")
             // Only use benchmark proguard rules
             proguardFiles("benchmark-rules.pro")
             isMinifyEnabled = true
