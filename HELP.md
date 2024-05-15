@@ -2,10 +2,7 @@
 
 ## ⌚ Add more time zones?
 
-No.
-
-<details>
-<summary>But... why?</summary>
+This is not planned.
 
 Each time zone has its' own set of rules:
 - Offset from GMT
@@ -22,38 +19,40 @@ There are 3 solutions:
 - Always up-to-date
 
 **❌Cons:**
-- Costs money
+- Extra money costs
 - Needs Internet, can go down, needs a caching mechanism
-- Can change API and break Unitto
+- The API might change and we'd need to keep it up-to-date
 - Needs to be translated
 
 ### 2. Create my own API service
-Pros and cons are same, except this one is free cheaper (you still need to pay).
+Pros and cons are same, except being a bit cheaper (you still need to pay).
 
-### 3. Android's time zone provider (this is what Unitto uses)
+### 3. Android's time zone provider (this is what NumberHub uses)
 
 read more: https://source.android.com/docs/core/permissions/timezone-rules
 
 **✅Pros:**
 - Almost all time zones
-- Free
-- No need to translate (provided by system)
-- Doesn't break Unitto
+- Completely for free
+- No extra translations (automatically provided by the system)
+- No sudden API changes
 - Works offline, never goes down
 
 **❌Cons:**
 - Less cities
-- Less frequent updates (or none if you are unlucky)
+- Less frequent updates
 </details>
 
 ## 👩‍⚕️ Body Mass Index
 
-Please note that the values displayed in the app are intended for entertainment purposes only. They can not replace professional medical advice. Please don't use Body Mass calculator if you are:
-- Under 21
+Please note that the values displayed in the app are intended for entertainment purposes only. They can not replace professional medical advice.
+
+Please don't use the Body Mass calculator if you are:
+- Under 21 years old
 - Pregnant
 - Diagnosed with an eating disorder
 
 Please contact your care provider for more information.
 
 ## 💵 Wrong Currency Rates?
-Currency rates are updated daily. There's no real-time market monitoring in the app.
+Currency rates are updated daily. There's no real-time market monitoring on NumberHub.
