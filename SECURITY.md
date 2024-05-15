@@ -1,4 +1,4 @@
-### `com.sadellie.unitto.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`
+### `com.sadellie.numberhub.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`
 
 Read (boring): https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported
 
@@ -24,6 +24,7 @@ Not used explicitly. Added automatically by Widget feature.
 
 ### Non-free network service
 
-Non-free doesn't mean that you need to pay, put your credit card away. In this context it means that you can't host it on your machine (why would anyone want to host a currency API service?).
+Non-free means that you can't host the given service on your machine.
 
-The app uses [Free Currency Rates API by fawazahmed0](https://github.com/fawazahmed0/exchange-api). Requests are send to `cdn.jsdelivr.net`.
+The app uses [Free Currency Rates API by fawazahmed0](https://github.com/fawazahmed0/exchange-api). Requests are send to `cdn.jsdelivr.net`. 
+
