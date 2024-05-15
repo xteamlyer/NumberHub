@@ -259,6 +259,8 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_precision_info">Переводимые значения могут иметь точность выше предпочтительной.</string>
     <string name="settings_precision_max">%1$s (Максимум)</string>
     <string name="settings_precision_support">Количество десятичных знаков</string>
+    <string name="settings_privacy_policy">Политика конфиденциальности</string>
+    <string name="settings_rate_this_app">Оценить приложение</string>
     <string name="settings_reorder_unit_group_description">Переместить группу величин</string>
 
     <!-- Option in menu. Verb (action). Alternatively you can use "Import" -->
@@ -280,6 +282,7 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_system">Системный</string>
     <string name="settings_system_font">Системный шрифт</string>
     <string name="settings_system_font_support">Использовать системный шрифт для текстов в приложении</string>
+    <string name="settings_terms_and_conditions">Условия и положения</string>
     <string name="settings_third_party_licenses">Лицензии третьих лиц</string>
     <string name="settings_title">Настройки</string>
     <string name="settings_translate_app">Перевести приложение</string>

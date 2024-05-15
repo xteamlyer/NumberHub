@@ -123,6 +123,8 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_precision_info">Hasil konversi mungkin memiliki nilai ketepatan lebih tinggi dari yang diinginkan.</string>
     <string name="settings_precision_max">%1$s (Maks)</string>
     <string name="settings_precision_support">Jumlah bilangan desimal</string>
+    <string name="settings_privacy_policy">Kebijakan Privasi</string>
+    <string name="settings_rate_this_app">Nilai aplikasi ini</string>
     <string name="settings_reorder_unit_group_description">Urutkan grup unit</string>
     <string name="settings_selected_color">Warna terpilih</string>
     <string name="settings_selected_style">Gaya terpilih</string>
@@ -141,6 +143,7 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_system">Sistem</string>
     <string name="settings_system_font">Fon sistem</string>
     <string name="settings_system_font_support">Gunakan fon sistem untuk teks aplikasi</string>
+    <string name="settings_terms_and_conditions">Syarat dan Ketentuan</string>
     <string name="settings_third_party_licenses">Lisensi pihak ketiga</string>
     <string name="settings_title">Pengaturan</string>
     <string name="settings_translate_app">Terjemahkan apl ini</string>

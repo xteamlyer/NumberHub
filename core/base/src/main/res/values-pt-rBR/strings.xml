@@ -135,6 +135,8 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_precision_info">Os valores convertidos podem ter uma precisão superior à desejada.</string>
     <string name="settings_precision_max">%1$s (Máximo)</string>
     <string name="settings_precision_support">Número de casas decimais</string>
+    <string name="settings_privacy_policy">Política de Privacidade</string>
+    <string name="settings_rate_this_app">Avalie o aplicativo</string>
     <string name="settings_reorder_unit_group_description">Reordenar grupo de unidades</string>
     <string name="settings_selected_color">Cor selecionada</string>
     <string name="settings_selected_style">Estilo Selecionado</string>
@@ -153,6 +155,7 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_system">Sistema</string>
     <string name="settings_system_font">Fonte do sistema</string>
     <string name="settings_system_font_support">Usar a fonte do sistema para textos no aplicativo</string>
+    <string name="settings_terms_and_conditions">Termos e Condições</string>
     <string name="settings_third_party_licenses">Licenças de terceiros</string>
     <string name="settings_title">Configurações</string>
     <string name="settings_translate_app">Traduzir este aplicativo</string>

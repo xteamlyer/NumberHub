@@ -259,6 +259,8 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_precision_info">Geconverteerde waarden kunnen een hogere nauwkeurigheid hebben dan de voorkeurswaarde.</string>
     <string name="settings_precision_max">%1$s (Maximum)</string>
     <string name="settings_precision_support">Aantal decimalen</string>
+    <string name="settings_privacy_policy">Privacybeleid</string>
+    <string name="settings_rate_this_app">Beoordeel deze app</string>
     <string name="settings_reorder_unit_group_description">Herschik eenheidsgroep</string>
 
     <!-- Option in menu. Verb (action). Alternatively you can use "Import" -->
@@ -280,6 +282,7 @@ Maybe this can be labeled better? Let me know. It should be something that can d
     <string name="settings_system">Systeem</string>
     <string name="settings_system_font">Systeemlettertype</string>
     <string name="settings_system_font_support">Gebruik systeemlettertype voor tekst in de app</string>
+    <string name="settings_terms_and_conditions">Voorwaarden</string>
     <string name="settings_third_party_licenses">Licenties van derden</string>
     <string name="settings_title">Instellingen</string>
     <string name="settings_translate_app">Vertaal deze app</string>
