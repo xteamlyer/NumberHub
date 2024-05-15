@@ -18,6 +18,14 @@ jobs:
           java-version: 21
           cache: "gradle"
 
+      - name: Write debug key
+        shell: bash
+        run: |
+          echo "storeFile=~/.android/debug.keystore" > key.properties
+          echo "storePassword=android" >> key.properties
+          echo "keyPassword=android" >> key.properties
+          echo "keyAlias=androiddebugkey" >> key.properties
+
       - name: Run tests
         run: ./gradlew test
 
