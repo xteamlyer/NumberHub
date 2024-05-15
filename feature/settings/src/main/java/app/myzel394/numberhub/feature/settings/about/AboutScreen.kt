@@ -85,6 +85,34 @@ private fun AboutScreen(
                 )
             }
 
+            // TERMS AND CONDITIONS
+            // item {
+            //     ListItem(
+            //         icon = Icons.Default.PrivacyTip,
+            //         headlineText = stringResource(R.string.settings_terms_and_conditions),
+            //         modifier = Modifier.clickable {
+            //             openLink(
+            //                 mContext,
+            //                 "https://sadellie.github.io/unitto/terms",
+            //             )
+            //         },
+            //     )
+            // }
+
+            // PRIVACY POLICY
+            item {
+                ListItem(
+                    icon = Icons.Default.Policy,
+                    headlineText = stringResource(R.string.settings_privacy_policy),
+                    modifier = Modifier.clickable {
+                        openLink(
+                            mContext,
+                            "https://github.com/Myzel394/NumberHub/blob/master/PRIVACY.md",
+                        )
+                    },
+                )
+            }
+
             // OPEN SOURCE
             item {
                 ListItem(
