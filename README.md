@@ -41,4 +41,5 @@ You can donate via [GitHub Sponsors](https://github.com/sponsors/Myzel394)
 or via [crypto currencies](https://github.com/Myzel394/contact-me?tab=readme-ov-file#donations).
 
 ## Help
-See [HELP.md](HELP.md)
+For help with the app see [HELP](HELP.md)
+For details about the permissions used in the app see [SECURITY](SECURITY.md)

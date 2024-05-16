@@ -1,3 +1,7 @@
+# Permissions
+
+The following permissions are used in the NumberHub app
+
 ### `com.sadellie.numberhub.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`
 
 Read (boring): https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported
@@ -21,6 +25,10 @@ Not used explicitly. Added automatically by Widget feature.
 ### `android.permission.FOREGROUND_SERVICE`
 
 Not used explicitly. Added automatically by Widget feature.
+
+# F-Droid Anti-Features
+
+These may appear on F-Droid app page
 
 ### Non-free network service
 
