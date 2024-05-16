@@ -17,7 +17,7 @@
 
 [<img src="readme_content/google-play-badge.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=app.myzel394.numberhub)
 [<img src="readme_content/github-badge.png" alt="Get it on GitHub" height="80">](https://github.com/Myzel394/NumberHub/releases)
-[<img src="readme_content/badge-obtainium.png" alt="Get it on Obtainium" height="80">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/Myzel394/NumberHub//)
+[<img src="readme_content/obtainium-badge.png" alt="Get it on Obtainium" height="80">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/Myzel394/NumberHub//)
 
 # Support NumberHub
 
