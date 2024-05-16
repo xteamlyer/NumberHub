@@ -42,4 +42,5 @@ or via [crypto currencies](https://github.com/Myzel394/contact-me?tab=readme-ov-
 
 ## Help
 For help with the app see [HELP](HELP.md)
+
 For details about the permissions used in the app see [SECURITY](SECURITY.md)
