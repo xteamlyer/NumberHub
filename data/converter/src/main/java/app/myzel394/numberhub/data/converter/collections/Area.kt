@@ -27,19 +27,100 @@ import java.math.BigDecimal
 
 internal val areaCollection: List<BasicUnit> by lazy {
     listOf(
-        NormalUnit(UnitID.cent,                      BigDecimal("6083246572000000000000000000000000"),        UnitGroup.AREA, R.string.unit_cent,                      R.string.unit_cent_short),
-        NormalUnit(UnitID.acre,                      BigDecimal("60832465720000000000000000000000"),        UnitGroup.AREA, R.string.unit_acre,                      R.string.unit_acre_short),
-        NormalUnit(UnitID.hectare,                   BigDecimal("150320296400000000000000000000000"),        UnitGroup.AREA, R.string.unit_hectare,                   R.string.unit_hectare_short ),
-        NormalUnit(UnitID.square_foot,               BigDecimal("1396521251000000000000000000"),        UnitGroup.AREA, R.string.unit_square_foot,               R.string.unit_square_foot_short),
-        NormalUnit(UnitID.square_mile,               BigDecimal("38932778060000000000000000000000000"),        UnitGroup.AREA, R.string.unit_square_mile,               R.string.unit_square_mile_short),
-        NormalUnit(UnitID.square_yard,               BigDecimal("12568691260000000000000000000"),        UnitGroup.AREA, R.string.unit_square_yard,               R.string.unit_square_yard_short),
-        NormalUnit(UnitID.square_inch,               BigDecimal("9698064247000000000000000"),        UnitGroup.AREA, R.string.unit_square_inch,               R.string.unit_square_inch_short),
-        NormalUnit(UnitID.square_micrometer,         BigDecimal("15032029640000000"),        UnitGroup.AREA, R.string.unit_square_micrometer,         R.string.unit_square_micrometer_short),
-        NormalUnit(UnitID.square_millimeter,         BigDecimal("15032029640000000000000"),        UnitGroup.AREA, R.string.unit_square_millimeter,         R.string.unit_square_millimeter_short),
-        NormalUnit(UnitID.square_centimeter,         BigDecimal("1503202964000000000000000"),        UnitGroup.AREA, R.string.unit_square_centimeter,         R.string.unit_square_centimeter_short),
-        NormalUnit(UnitID.square_decimeter,          BigDecimal("150320296400000000000000000"),        UnitGroup.AREA, R.string.unit_square_decimeter,          R.string.unit_square_decimeter_short),
-        NormalUnit(UnitID.square_meter,              BigDecimal("15032029640000000000000000000"),        UnitGroup.AREA, R.string.unit_square_meter,              R.string.unit_square_meter_short),
-        NormalUnit(UnitID.square_kilometer,          BigDecimal("15032029640000000000000000000000000"),        UnitGroup.AREA, R.string.unit_square_kilometer,          R.string.unit_square_kilometer_short),
+        // https://www.gowebtool.com/unit-conversion/area/convert.php?from=electron_cross_section&to=acre
+        NormalUnit(
+            UnitID.acre,
+            BigDecimal("60832465720659000000000000000000"),
+            UnitGroup.AREA,
+            R.string.unit_acre,
+            R.string.unit_acre_short,
+        ),
+        // https://www.gowebtool.com/unit-conversion/area/convert.php?from=electron_cross_section&to=cent
+        NormalUnit(
+            UnitID.cent,
+            BigDecimal("608324656845820000000000000000"),
+            UnitGroup.AREA,
+            R.string.unit_cent,
+            R.string.unit_cent_short,
+        ),
+        NormalUnit(
+            UnitID.hectare,
+            BigDecimal("150320296474920000000000000000000"),
+            UnitGroup.AREA,
+            R.string.unit_hectare,
+            R.string.unit_hectare_short,
+        ),
+        NormalUnit(
+            UnitID.square_foot,
+            BigDecimal("1396526843537100000000000000"),
+            UnitGroup.AREA,
+            R.string.unit_square_foot,
+            R.string.unit_square_foot_short,
+        ),
+        // https://www.gowebtool.com/unit-conversion/area/convert.php?from=electron_cross_section&to=square_mile_survey_us_statute
+        NormalUnit(
+            UnitID.square_mile,
+            BigDecimal("38932934238959000000000000000000000"),
+            UnitGroup.AREA,
+            R.string.unit_square_mile,
+            R.string.unit_square_mile_short,
+        ),
+        NormalUnit(
+            UnitID.square_yard,
+            BigDecimal("12568691264599000000000000000"),
+            UnitGroup.AREA,
+            R.string.unit_square_yard,
+            R.string.unit_square_yard_short,
+        ),
+        NormalUnit(
+            UnitID.square_inch,
+            BigDecimal("9698064247375700000000000"),
+            UnitGroup.AREA,
+            R.string.unit_square_inch,
+            R.string.unit_square_inch_short,
+        ),
+        NormalUnit(
+            UnitID.square_micrometer,
+            BigDecimal("15032029647492000"),
+            UnitGroup.AREA,
+            R.string.unit_square_micrometer,
+            R.string.unit_square_micrometer_short,
+        ),
+        NormalUnit(
+            UnitID.square_millimeter,
+            BigDecimal("15032029647492000000000"),
+            UnitGroup.AREA,
+            R.string.unit_square_millimeter,
+            R.string.unit_square_millimeter_short,
+        ),
+        NormalUnit(
+            UnitID.square_centimeter,
+            BigDecimal("1503202964749200000000000"),
+            UnitGroup.AREA,
+            R.string.unit_square_centimeter,
+            R.string.unit_square_centimeter_short,
+        ),
+        NormalUnit(
+            UnitID.square_decimeter,
+            BigDecimal("150320296474920000000000000"),
+            UnitGroup.AREA,
+            R.string.unit_square_decimeter,
+            R.string.unit_square_decimeter_short,
+        ),
+        NormalUnit(
+            UnitID.square_meter,
+            BigDecimal("15032029647492000000000000000"),
+            UnitGroup.AREA,
+            R.string.unit_square_meter,
+            R.string.unit_square_meter_short,
+        ),
+        NormalUnit(
+            UnitID.square_kilometer,
+            BigDecimal("15032029647492000000000000000000000"),
+            UnitGroup.AREA,
+            R.string.unit_square_kilometer,
+            R.string.unit_square_kilometer_short,
+        ),
         NormalUnit(UnitID.electron_cross_section,    BigDecimal("1"),                    UnitGroup.AREA, R.string.unit_electron_cross_section,    R.string.unit_electron_cross_section_short),
     )
 }
