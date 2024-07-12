@@ -18,18 +18,24 @@
 
 package app.myzel394.numberhub.feature.converter.components
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import app.myzel394.numberhub.core.base.R
 import app.myzel394.numberhub.core.base.Token
 import app.myzel394.numberhub.core.ui.LocalWindowSize
 import app.myzel394.numberhub.core.ui.WindowHeightSizeClass
+import app.myzel394.numberhub.core.ui.common.ColumnWithConstraints
 import app.myzel394.numberhub.core.ui.common.KeyboardButtonFilled
 import app.myzel394.numberhub.core.ui.common.KeyboardButtonLight
 import app.myzel394.numberhub.core.ui.common.KeyboardButtonTertiary
@@ -65,6 +71,8 @@ import app.myzel394.numberhub.core.ui.common.icons.iconpack.Plus
 import app.myzel394.numberhub.core.ui.common.icons.iconpack.Power
 import app.myzel394.numberhub.core.ui.common.icons.iconpack.RightBracket
 import app.myzel394.numberhub.core.ui.common.icons.iconpack.Root
+import app.myzel394.numberhub.data.model.converter.unit.BasicUnit
+import kotlin.math.ceil
 
 @Composable
 internal fun DefaultKeyboard(
@@ -86,7 +94,9 @@ internal fun DefaultKeyboard(
         rows = 5,
         columns = 4,
     ) { width, height ->
-        val bModifier = Modifier.fillMaxWidth(width).fillMaxHeight(height)
+        val bModifier = Modifier
+            .fillMaxWidth(width)
+            .fillMaxHeight(height)
 
         if (acButton) {
             KeyboardButtonTertiary(bModifier, IconPack.Clear, stringResource(R.string.delete_label), contentHeight) { clearInput() }
@@ -125,46 +135,200 @@ internal fun DefaultKeyboard(
     }
 }
 
+val AVAILABLE_NUMBERS = mapOf<String, ImageVector>(
+    Token.Digit._0 to IconPack.Key0,
+    Token.Digit._1 to IconPack.Key1,
+    Token.Digit._2 to IconPack.Key2,
+    Token.Digit._3 to IconPack.Key3,
+    Token.Digit._4 to IconPack.Key4,
+    Token.Digit._5 to IconPack.Key5,
+    Token.Digit._6 to IconPack.Key6,
+    Token.Digit._7 to IconPack.Key7,
+    Token.Digit._8 to IconPack.Key8,
+    Token.Digit._9 to IconPack.Key9,
+    Token.Letter._A to IconPack.KeyA,
+    Token.Letter._B to IconPack.KeyB,
+    Token.Letter._C to IconPack.KeyC,
+    Token.Letter._D to IconPack.KeyD,
+    Token.Letter._E to IconPack.KeyE,
+    Token.Letter._F to IconPack.KeyF,
+)
+
 @Composable
 internal fun NumberBaseKeyboard(
     modifier: Modifier,
     addDigit: (String) -> Unit,
     clearInput: () -> Unit,
     deleteDigit: () -> Unit,
+    basis: BasicUnit.NumberBase,
 ) {
     val contentHeight: Float = if (LocalWindowSize.current.heightSizeClass < WindowHeightSizeClass.Medium) KeyboardButtonToken.CONTENT_HEIGHT_SHORT else KeyboardButtonToken.CONTENT_HEIGHT_TALL
+    val amount = basis.factor.toInt()
 
-    KeypadFlow(
-        modifier = modifier,
-        rows = 6,
-        columns = 3,
-    ) { width, height ->
-        val bModifier = Modifier.fillMaxWidth(width).fillMaxHeight(height)
-        val wideButtonModifier = Modifier.fillMaxHeight(height).fillMaxWidth(width * 2)
+    val columns: Int = when {
+        amount == 5 -> 2
+        amount == 3 -> 2
+        amount == 7 -> 2
+        amount == 10 -> 3
+        amount < 10 -> if (amount.and(1) == 0) 2 else if (amount % 3 == 0) 3 else amount % 3
+        else -> 3
+    }
+    val rows = when {
+        amount == 5 -> 3
+        amount == 3 -> 2
+        amount == 7 -> 4
+        amount == 10 -> 4
+        amount < 10 -> ceil(amount.toDouble() / columns.toDouble()).toInt() + 1
+        amount == 11 -> 5
+        amount == 12 -> 5
+        amount == 13 -> 5
+        else -> 6
+    }
 
-        KeyboardButtonFilled(bModifier, IconPack.KeyA, Token.Letter._A, contentHeight) { addDigit(Token.Letter._A) }
-        KeyboardButtonFilled(bModifier, IconPack.KeyB, Token.Letter._B, contentHeight) { addDigit(Token.Letter._B) }
-        KeyboardButtonFilled(bModifier, IconPack.KeyC, Token.Letter._C, contentHeight) { addDigit(Token.Letter._C) }
+    ColumnWithConstraints(Modifier) { constraints ->
+        val horizontalSpacing = 8.dp
+        val verticalSpacing = 12.dp
+        val height: Float = (1f - (verticalSpacing * (rows - 1) / constraints.maxHeight)) / rows
 
-        KeyboardButtonFilled(bModifier, IconPack.KeyD, Token.Letter._D, contentHeight) { addDigit(Token.Letter._D) }
-        KeyboardButtonFilled(bModifier, IconPack.KeyE, Token.Letter._E, contentHeight) { addDigit(Token.Letter._E) }
-        KeyboardButtonFilled(bModifier, IconPack.KeyF, Token.Letter._F, contentHeight) { addDigit(Token.Letter._F) }
+        FlowRow(
+            modifier = modifier,
+            maxItemsInEachRow = columns,
+            horizontalArrangement = Arrangement.spacedBy(horizontalSpacing),
+            verticalArrangement = Arrangement.spacedBy(verticalSpacing),
+        ) {
+            val bModifier = Modifier
+                .fillMaxHeight(height)
+                .fillMaxWidth()
 
-        KeyboardButtonLight(bModifier, IconPack.Key7, Token.Digit._7, contentHeight) { addDigit(Token.Digit._7) }
-        KeyboardButtonLight(bModifier, IconPack.Key8, Token.Digit._8, contentHeight) { addDigit(Token.Digit._8) }
-        KeyboardButtonLight(bModifier, IconPack.Key9, Token.Digit._9, contentHeight) { addDigit(Token.Digit._9) }
+            when {
+                amount in arrayOf(3, 5, 7) -> {
+                    for (int in createSortedArray(1..<amount, columns)) {
+                        val key = AVAILABLE_NUMBERS.keys.elementAt(int)
+                        val icon = AVAILABLE_NUMBERS[key]!!
+                        KeyboardButtonLight(
+                            bModifier.weight(1f),
+                            icon,
+                            key,
+                            contentHeight,
+                        ) { addDigit(key) }
+                    }
 
-        KeyboardButtonLight(bModifier, IconPack.Key4, Token.Digit._4, contentHeight) { addDigit(Token.Digit._4) }
-        KeyboardButtonLight(bModifier, IconPack.Key5, Token.Digit._5, contentHeight) { addDigit(Token.Digit._5) }
-        KeyboardButtonLight(bModifier, IconPack.Key6, Token.Digit._6, contentHeight) { addDigit(Token.Digit._6) }
+                    KeyboardButtonLight(
+                        bModifier.weight(1f),
+                        IconPack.Key0,
+                        Token.Digit._0,
+                        contentHeight,
+                    ) { addDigit(Token.Digit._0) }
+                    KeyboardButtonTertiary(
+                        bModifier.weight(1f),
+                        IconPack.Backspace,
+                        stringResource(R.string.delete_label),
+                        contentHeight,
+                        clearInput,
+                    ) { deleteDigit() }
+                }
 
-        KeyboardButtonLight(bModifier, IconPack.Key1, Token.Digit._1, contentHeight) { addDigit(Token.Digit._1) }
-        KeyboardButtonLight(bModifier, IconPack.Key2, Token.Digit._2, contentHeight) { addDigit(Token.Digit._2) }
-        KeyboardButtonLight(bModifier, IconPack.Key3, Token.Digit._3, contentHeight) { addDigit(Token.Digit._3) }
+                amount < 10 -> {
+                    for (int in createSortedArray(0..<amount.coerceAtMost(10), columns)) {
+                        val key = AVAILABLE_NUMBERS.keys.elementAt(int)
+                        val icon = AVAILABLE_NUMBERS[key]!!
+                        KeyboardButtonLight(
+                            bModifier.weight(1f),
+                            icon,
+                            key,
+                            contentHeight,
+                        ) { addDigit(key) }
+                    }
 
-        // TODO Should be a separate o use custom widthFillFactors and heightFillFactors
-        KeyboardButtonLight(bModifier, IconPack.Key0, Token.Digit._0, contentHeight) { addDigit(Token.Digit._0) }
-        KeyboardButtonLight(wideButtonModifier, IconPack.Backspace, stringResource(R.string.delete_label), contentHeight, clearInput) { deleteDigit() }
+                    KeyboardButtonTertiary(
+                        bModifier,
+                        IconPack.Backspace,
+                        stringResource(R.string.delete_label),
+                        contentHeight,
+                        clearInput,
+                    ) { deleteDigit() }
+                }
+
+                amount == 10 -> {
+                    for (int in createSortedArray(1..9, columns)) {
+                        val key = AVAILABLE_NUMBERS.keys.elementAt(int)
+                        val icon = AVAILABLE_NUMBERS[key]!!
+                        KeyboardButtonLight(
+                            bModifier.weight(1f),
+                            icon,
+                            key,
+                            contentHeight,
+                        ) { addDigit(key) }
+                    }
+
+                    KeyboardButtonLight(
+                        bModifier.weight(1f),
+                        IconPack.Key0,
+                        Token.Digit._0,
+                        contentHeight,
+                    ) { addDigit(Token.Digit._0) }
+                    KeyboardButtonTertiary(
+                        bModifier.weight(2f),
+                        IconPack.Backspace,
+                        stringResource(R.string.delete_label),
+                        contentHeight,
+                        clearInput,
+                    ) { deleteDigit() }
+                }
+
+                else -> {
+                    val lettersAmount = (10..<amount.coerceAtMost(16)).count().toFloat()
+                    val rowsAmount = ceil(lettersAmount / columns.toFloat()).toInt()
+
+                    for (row in rowsAmount downTo 0) {
+                        Row(
+                            Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(horizontalSpacing),
+                        ) {
+                            val rowStart = 10 + (row) * columns
+                            val rowEnd = (rowStart + 3).coerceAtMost(amount.coerceAtMost(16))
+
+                            for (index in createSortedArray(rowStart..<rowEnd, columns)) {
+                                val key = AVAILABLE_NUMBERS.keys.elementAt(index)
+                                val icon = AVAILABLE_NUMBERS[key]!!
+                                KeyboardButtonFilled(
+                                    bModifier.weight(1f),
+                                    icon,
+                                    key,
+                                    contentHeight,
+                                ) { addDigit(key) }
+                            }
+                        }
+                    }
+
+                    for (int in createSortedArray(1..9, columns)) {
+                        val key = AVAILABLE_NUMBERS.keys.elementAt(int)
+                        val icon = AVAILABLE_NUMBERS[key]!!
+                        KeyboardButtonLight(
+                            bModifier.weight(1f),
+                            icon,
+                            key,
+                            contentHeight,
+                        ) { addDigit(key) }
+                    }
+
+                    KeyboardButtonLight(
+                        bModifier.weight(1f),
+                        IconPack.Key0,
+                        Token.Digit._0,
+                        contentHeight,
+                    ) { addDigit(Token.Digit._0) }
+
+                    KeyboardButtonTertiary(
+                        bModifier.weight(2f),
+                        IconPack.Backspace,
+                        stringResource(R.string.delete_label),
+                        contentHeight,
+                        clearInput,
+                    ) { deleteDigit() }
+                }
+            }
+        }
     }
 }
 
@@ -191,5 +355,28 @@ private fun PreviewConverterKeyboardNumberBase() {
         addDigit = {},
         clearInput = {},
         deleteDigit = {},
+        basis = BasicUnit.NumberBase.Hexadecimal,
     )
+}
+
+// So here's the problem. If we just go down from 3 downto 0 with columns 2, this results in:
+// [3, 2]
+// [1, 0]
+// While this is correct, the ordering is incorrect. It should be
+// [2, 3]
+// [0, 1]
+// TODO: Add support for rtl languages
+internal fun createSortedArray(range: IntRange, columns: Int): List<Int> {
+    val result = mutableListOf<Int>()
+    val rows = ceil(range.count().toDouble() / columns.toDouble()).toInt()
+    for (row in rows downTo 0) {
+        for (column in 0 until columns) {
+            val index = row * columns + column + range.first
+            if (index <= range.last) {
+                result.add(index)
+            }
+        }
+    }
+
+    return result
 }

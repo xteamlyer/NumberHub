@@ -250,6 +250,7 @@ private fun NumberBase(
                 addDigit = { updateInput1(uiState.input.addTokens(it)) },
                 deleteDigit = { updateInput1(uiState.input.deleteTokens()) },
                 clearInput = { updateInput1(TextFieldValue()) },
+                basis = uiState.unitFrom,
             )
         },
     )
