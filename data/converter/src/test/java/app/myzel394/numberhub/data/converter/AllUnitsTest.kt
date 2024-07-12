@@ -119,12 +119,19 @@ class AllUnitsTest {
 
     @Test
     fun testArea() = testWithUnits {
-        cent.checkWith(acre, "75.9", "7590")
+        cent.checkWith(acre, "75.9", "0.759")
+        cent.checkWith(square_meter, "1", "40.469")
         acre.checkWith(square_kilometer, "75.9", "0.30716")
+        acre.checkWith(square_yard, "1", "4840")
+        acre.checkWith(square_meter, "1", "4046.856")
+        acre.checkWith(cent, "1", "4046.856")
+        hectare.checkWith(acre, "1", "2.471");
+        hectare.checkWith(acre, "1", "2.471");
         hectare.checkWith(square_foot, "75.9", "8169808.00585")
         square_foot.checkWith(square_decimeter, "75.9", "705.13407")
         square_mile.checkWith(square_foot, "75.9", "2115970560.8762")
         square_yard.checkWith(square_foot, "75.9", "683.1")
+        square_yard.checkWith(square_foot, "1", "9")
         square_inch.checkWith(square_foot, "75.9", "0.52708")
         square_micrometer.checkWith(square_millimeter, "75.9", "0.00008")
         square_millimeter.checkWith(square_centimeter, "75.9", "0.759")
