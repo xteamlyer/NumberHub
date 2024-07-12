@@ -25,7 +25,6 @@ import androidx.compose.foundation.layout.FlowRowScope
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 
 /**
@@ -51,8 +50,8 @@ fun KeypadFlow(
     @IntRange(0, 100) verticalPadding: Int = 10,
     content: @Composable FlowRowScope.(width: Float, height: Float) -> Unit,
 ) {
-    val height: Float = remember { (1f - verticalPadding / 100f) / rows }
-    val width: Float = remember { (1f - horizontalPadding / 100f) / columns }
+    val height: Float = (1f - verticalPadding / 100f) / rows
+    val width: Float = (1f - horizontalPadding / 100f) / columns
 
     FlowRow(
         modifier = modifier,
