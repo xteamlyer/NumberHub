@@ -440,10 +440,9 @@ internal fun NumberBaseKeyboard(
                     }
 
                     else -> {
-                        val lettersAmount = (10..<amount.coerceAtMost(16)).count().toFloat()
-                        val rowsAmount = ceil(lettersAmount / columns.toFloat()).toInt()
+                        val rowsAmount = ceil((amount - 10) / 3f).toInt()
 
-                        for (row in rowsAmount downTo 0) {
+                        for (row in (rowsAmount - 1) downTo 0) {
                             Row(
                                 Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.spacedBy(horizontalSpacing),
