@@ -262,6 +262,11 @@ private fun NumberBase(
                             .then(with(density) { Modifier.height(dragState.offset.absoluteValue.toDp()) }),
                         basis = uiState.unitTo,
                         result = uiState.result,
+                        onResultChange = { newValue ->
+                            val valueConverted = uiState.unitTo.convert(uiState.unitFrom, newValue)
+
+                            updateInput1(TextFieldValue(valueConverted))
+                        },
                     )
                 }
 
