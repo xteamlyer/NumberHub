@@ -43,6 +43,7 @@ import app.myzel394.numberhub.core.base.R
 import app.myzel394.numberhub.core.base.Token
 import app.myzel394.numberhub.core.ui.LocalWindowSize
 import app.myzel394.numberhub.core.ui.WindowHeightSizeClass
+import app.myzel394.numberhub.core.ui.WindowWidthSizeClass
 import app.myzel394.numberhub.core.ui.common.ColumnWithConstraints
 import app.myzel394.numberhub.core.ui.common.KeyboardButtonFilled
 import app.myzel394.numberhub.core.ui.common.KeyboardButtonLight
@@ -95,7 +96,8 @@ internal fun DefaultKeyboard(
 ) {
     val fractionalIcon = remember(fractional) { if (fractional == Token.PERIOD) IconPack.Dot else IconPack.Comma }
     val fractionalIconDescription = remember(fractional) { if (fractional == Token.PERIOD) R.string.keyboard_dot else R.string.comma }
-    val contentHeight: Float = if (LocalWindowSize.current.heightSizeClass < WindowHeightSizeClass.Medium) KeyboardButtonToken.CONTENT_HEIGHT_SHORT else KeyboardButtonToken.CONTENT_HEIGHT_TALL
+    val height: Float =
+        if (LocalWindowSize.current.heightSizeClass < WindowHeightSizeClass.Medium) KeyboardButtonToken.CONTENT_HEIGHT_SHORT else KeyboardButtonToken.CONTENT_HEIGHT_TALL
 
     KeypadFlow(
         modifier = modifier,
@@ -107,39 +109,160 @@ internal fun DefaultKeyboard(
             .fillMaxHeight(height)
 
         if (acButton) {
-            KeyboardButtonTertiary(bModifier, IconPack.Clear, stringResource(R.string.delete_label), contentHeight) { clearInput() }
-            KeyboardButtonFilled(bModifier, IconPack.Brackets, stringResource(R.string.keyboard_brackets), contentHeight) { addBracket() }
+            KeyboardButtonTertiary(
+                bModifier,
+                IconPack.Clear,
+                stringResource(R.string.delete_label),
+                height,
+            ) { clearInput() }
+            KeyboardButtonFilled(
+                bModifier,
+                IconPack.Brackets,
+                stringResource(R.string.keyboard_brackets),
+                height,
+            ) { addBracket() }
         } else {
-            KeyboardButtonFilled(bModifier, IconPack.LeftBracket, stringResource(R.string.keyboard_left_bracket), contentHeight) { addDigit(Token.Operator.leftBracket) }
-            KeyboardButtonFilled(bModifier, IconPack.RightBracket, stringResource(R.string.keyboard_right_bracket), contentHeight) { addDigit(Token.Operator.rightBracket) }
+            KeyboardButtonFilled(
+                bModifier,
+                IconPack.LeftBracket,
+                stringResource(R.string.keyboard_left_bracket),
+                height,
+            ) { addDigit(Token.Operator.leftBracket) }
+            KeyboardButtonFilled(
+                bModifier,
+                IconPack.RightBracket,
+                stringResource(R.string.keyboard_right_bracket),
+                height,
+            ) { addDigit(Token.Operator.rightBracket) }
         }
-        KeyboardButtonFilled(bModifier, IconPack.Power, stringResource(R.string.keyboard_power), contentHeight) { addDigit(Token.Operator.power) }
-        KeyboardButtonFilled(bModifier, IconPack.Root, stringResource(R.string.keyboard_root), contentHeight) { addDigit(Token.Operator.sqrt) }
+        KeyboardButtonFilled(
+            bModifier,
+            IconPack.Power,
+            stringResource(R.string.keyboard_power),
+            height,
+        ) { addDigit(Token.Operator.power) }
+        KeyboardButtonFilled(
+            bModifier,
+            IconPack.Root,
+            stringResource(R.string.keyboard_root),
+            height,
+        ) { addDigit(Token.Operator.sqrt) }
 
-        KeyboardButtonLight(bModifier, IconPack.Key7, Token.Digit._7, contentHeight) { addDigit(Token.Digit._7) }
-        KeyboardButtonLight(bModifier, IconPack.Key8, Token.Digit._8, contentHeight) { addDigit(Token.Digit._8) }
-        KeyboardButtonLight(bModifier, IconPack.Key9, Token.Digit._9, contentHeight) { addDigit(Token.Digit._9) }
-        KeyboardButtonFilled(bModifier, IconPack.Divide, stringResource(R.string.keyboard_divide), contentHeight) { addDigit(Token.Operator.divide) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Key7,
+            Token.Digit._7,
+            height,
+        ) { addDigit(Token.Digit._7) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Key8,
+            Token.Digit._8,
+            height,
+        ) { addDigit(Token.Digit._8) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Key9,
+            Token.Digit._9,
+            height,
+        ) { addDigit(Token.Digit._9) }
+        KeyboardButtonFilled(
+            bModifier,
+            IconPack.Divide,
+            stringResource(R.string.keyboard_divide),
+            height,
+        ) { addDigit(Token.Operator.divide) }
 
-        KeyboardButtonLight(bModifier, IconPack.Key4, Token.Digit._4, contentHeight) { addDigit(Token.Digit._4) }
-        KeyboardButtonLight(bModifier, IconPack.Key5, Token.Digit._5, contentHeight) { addDigit(Token.Digit._5) }
-        KeyboardButtonLight(bModifier, IconPack.Key6, Token.Digit._6, contentHeight) { addDigit(Token.Digit._6) }
-        KeyboardButtonFilled(bModifier, IconPack.Multiply, stringResource(R.string.keyboard_multiply), contentHeight) { addDigit(Token.Operator.multiply) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Key4,
+            Token.Digit._4,
+            height,
+        ) { addDigit(Token.Digit._4) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Key5,
+            Token.Digit._5,
+            height,
+        ) { addDigit(Token.Digit._5) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Key6,
+            Token.Digit._6,
+            height,
+        ) { addDigit(Token.Digit._6) }
+        KeyboardButtonFilled(
+            bModifier,
+            IconPack.Multiply,
+            stringResource(R.string.keyboard_multiply),
+            height,
+        ) { addDigit(Token.Operator.multiply) }
 
-        KeyboardButtonLight(bModifier, IconPack.Key1, Token.Digit._1, contentHeight) { addDigit(Token.Digit._1) }
-        KeyboardButtonLight(bModifier, IconPack.Key2, Token.Digit._2, contentHeight) { addDigit(Token.Digit._2) }
-        KeyboardButtonLight(bModifier, IconPack.Key3, Token.Digit._3, contentHeight) { addDigit(Token.Digit._3) }
-        KeyboardButtonFilled(bModifier, IconPack.Minus, stringResource(R.string.keyboard_minus), contentHeight) { addDigit(Token.Operator.minus) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Key1,
+            Token.Digit._1,
+            height,
+        ) { addDigit(Token.Digit._1) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Key2,
+            Token.Digit._2,
+            height,
+        ) { addDigit(Token.Digit._2) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Key3,
+            Token.Digit._3,
+            height,
+        ) { addDigit(Token.Digit._3) }
+        KeyboardButtonFilled(
+            bModifier,
+            IconPack.Minus,
+            stringResource(R.string.keyboard_minus),
+            height,
+        ) { addDigit(Token.Operator.minus) }
 
         if (middleZero) {
-            KeyboardButtonLight(bModifier, fractionalIcon, stringResource(fractionalIconDescription), contentHeight) { addDigit(Token.Digit.dot) }
-            KeyboardButtonLight(bModifier, IconPack.Key0, Token.Digit._0, contentHeight) { addDigit(Token.Digit._0) }
+            KeyboardButtonLight(
+                bModifier,
+                fractionalIcon,
+                stringResource(fractionalIconDescription),
+                height,
+            ) { addDigit(Token.Digit.dot) }
+            KeyboardButtonLight(
+                bModifier,
+                IconPack.Key0,
+                Token.Digit._0,
+                height,
+            ) { addDigit(Token.Digit._0) }
         } else {
-            KeyboardButtonLight(bModifier, IconPack.Key0, Token.Digit._0, contentHeight) { addDigit(Token.Digit._0) }
-            KeyboardButtonLight(bModifier, fractionalIcon, stringResource(fractionalIconDescription), contentHeight) { addDigit(Token.Digit.dot) }
+            KeyboardButtonLight(
+                bModifier,
+                IconPack.Key0,
+                Token.Digit._0,
+                height,
+            ) { addDigit(Token.Digit._0) }
+            KeyboardButtonLight(
+                bModifier,
+                fractionalIcon,
+                stringResource(fractionalIconDescription),
+                height,
+            ) { addDigit(Token.Digit.dot) }
         }
-        KeyboardButtonLight(bModifier, IconPack.Backspace, stringResource(R.string.delete_label), contentHeight, onLongClick = clearInput) { deleteDigit() }
-        KeyboardButtonFilled(bModifier, IconPack.Plus, stringResource(R.string.keyboard_plus), contentHeight) { addDigit(Token.Operator.plus) }
+        KeyboardButtonLight(
+            bModifier,
+            IconPack.Backspace,
+            stringResource(R.string.delete_label),
+            height,
+            onLongClick = clearInput,
+        ) { deleteDigit() }
+        KeyboardButtonFilled(
+            bModifier,
+            IconPack.Plus,
+            stringResource(R.string.keyboard_plus),
+            height,
+        ) { addDigit(Token.Operator.plus) }
     }
 }
 
@@ -171,24 +294,32 @@ internal fun NumberBaseKeyboard(
     basis: BasicUnit.NumberBase,
 ) {
     val contentHeight: Float = if (LocalWindowSize.current.heightSizeClass < WindowHeightSizeClass.Medium) KeyboardButtonToken.CONTENT_HEIGHT_SHORT else KeyboardButtonToken.CONTENT_HEIGHT_TALL
+    val isUsingColumn =
+        (LocalWindowSize.current.widthSizeClass > WindowWidthSizeClass.Expanded) or (LocalWindowSize.current.heightSizeClass > WindowHeightSizeClass.Compact)
 
     var direction by remember {
         mutableStateOf(AnimatedContentTransitionScope.SlideDirection.Right)
     }
 
-    LaunchedEffect(basis) {
-        when (direction) {
-            AnimatedContentTransitionScope.SlideDirection.Left -> {
-                direction = AnimatedContentTransitionScope.SlideDirection.Right
-            }
-
-            AnimatedContentTransitionScope.SlideDirection.Right -> {
-                direction = AnimatedContentTransitionScope.SlideDirection.Left
-            }
+    LaunchedEffect(isUsingColumn) {
+        direction = if (isUsingColumn) {
+            AnimatedContentTransitionScope.SlideDirection.Right
+        } else {
+            AnimatedContentTransitionScope.SlideDirection.Up
         }
     }
 
-    ColumnWithConstraints(Modifier) { constraints ->
+    LaunchedEffect(basis) {
+        direction = when (direction) {
+            AnimatedContentTransitionScope.SlideDirection.Up -> AnimatedContentTransitionScope.SlideDirection.Down
+            AnimatedContentTransitionScope.SlideDirection.Down -> AnimatedContentTransitionScope.SlideDirection.Up
+            AnimatedContentTransitionScope.SlideDirection.Left -> AnimatedContentTransitionScope.SlideDirection.Right
+            AnimatedContentTransitionScope.SlideDirection.Right -> AnimatedContentTransitionScope.SlideDirection.Left
+            else -> direction
+        }
+    }
+
+    ColumnWithConstraints(modifier) { constraints ->
         AnimatedContent(
             transitionSpec = {
                 slideIntoContainer(animationSpec = tween(600), towards = direction).togetherWith(
@@ -222,145 +353,144 @@ internal fun NumberBaseKeyboard(
             val height: Float = (1f - (verticalSpacing * (rows - 1) / constraints.maxHeight)) / rows
 
             FlowRow(
-            modifier = modifier,
-            maxItemsInEachRow = columns,
-            horizontalArrangement = Arrangement.spacedBy(horizontalSpacing),
-            verticalArrangement = Arrangement.spacedBy(verticalSpacing),
-        ) {
-            val bModifier = Modifier
-                .fillMaxHeight(height)
-                .fillMaxWidth()
+                modifier = modifier,
+                maxItemsInEachRow = columns,
+                horizontalArrangement = Arrangement.spacedBy(horizontalSpacing),
+                verticalArrangement = Arrangement.spacedBy(verticalSpacing),
+            ) {
+                val bModifier = Modifier
+                    .fillMaxHeight(height)
+                    .fillMaxWidth()
 
-            when {
-                amount in arrayOf(3, 5, 7) -> {
-                    for (int in createSortedArray(1..<amount, columns)) {
-                        val key = AVAILABLE_NUMBERS.keys.elementAt(int)
-                        val icon = AVAILABLE_NUMBERS[key]!!
+                when {
+                    amount in arrayOf(3, 5, 7) -> {
+                        for (int in createSortedArray(1..<amount, columns)) {
+                            val key = AVAILABLE_NUMBERS.keys.elementAt(int)
+                            val icon = AVAILABLE_NUMBERS[key]!!
+                            KeyboardButtonLight(
+                                bModifier.weight(1f),
+                                icon,
+                                key,
+                                contentHeight,
+                            ) { addDigit(key) }
+                        }
+
                         KeyboardButtonLight(
                             bModifier.weight(1f),
-                            icon,
-                            key,
+                            IconPack.Key0,
+                            Token.Digit._0,
                             contentHeight,
-                        ) { addDigit(key) }
+                        ) { addDigit(Token.Digit._0) }
+                        KeyboardButtonTertiary(
+                            bModifier.weight(1f),
+                            IconPack.Backspace,
+                            stringResource(R.string.delete_label),
+                            contentHeight,
+                            clearInput,
+                        ) { deleteDigit() }
                     }
 
-                    KeyboardButtonLight(
-                        bModifier.weight(1f),
-                        IconPack.Key0,
-                        Token.Digit._0,
-                        contentHeight,
-                    ) { addDigit(Token.Digit._0) }
-                    KeyboardButtonTertiary(
-                        bModifier.weight(1f),
-                        IconPack.Backspace,
-                        stringResource(R.string.delete_label),
-                        contentHeight,
-                        clearInput,
-                    ) { deleteDigit() }
-                }
+                    amount < 10 -> {
+                        for (int in createSortedArray(0..<amount.coerceAtMost(10), columns)) {
+                            val key = AVAILABLE_NUMBERS.keys.elementAt(int)
+                            val icon = AVAILABLE_NUMBERS[key]!!
+                            KeyboardButtonLight(
+                                bModifier.weight(1f),
+                                icon,
+                                key,
+                                contentHeight,
+                            ) { addDigit(key) }
+                        }
 
-                amount < 10 -> {
-                    for (int in createSortedArray(0..<amount.coerceAtMost(10), columns)) {
-                        val key = AVAILABLE_NUMBERS.keys.elementAt(int)
-                        val icon = AVAILABLE_NUMBERS[key]!!
+                        KeyboardButtonTertiary(
+                            bModifier,
+                            IconPack.Backspace,
+                            stringResource(R.string.delete_label),
+                            contentHeight,
+                            clearInput,
+                        ) { deleteDigit() }
+                    }
+
+                    amount == 10 -> {
+                        for (int in createSortedArray(1..9, columns)) {
+                            val key = AVAILABLE_NUMBERS.keys.elementAt(int)
+                            val icon = AVAILABLE_NUMBERS[key]!!
+                            KeyboardButtonLight(
+                                bModifier.weight(1f),
+                                icon,
+                                key,
+                                contentHeight,
+                            ) { addDigit(key) }
+                        }
+
                         KeyboardButtonLight(
                             bModifier.weight(1f),
-                            icon,
-                            key,
+                            IconPack.Key0,
+                            Token.Digit._0,
                             contentHeight,
-                        ) { addDigit(key) }
+                        ) { addDigit(Token.Digit._0) }
+                        KeyboardButtonTertiary(
+                            bModifier.weight(2f),
+                            IconPack.Backspace,
+                            stringResource(R.string.delete_label),
+                            contentHeight,
+                            clearInput,
+                        ) { deleteDigit() }
                     }
 
-                    KeyboardButtonTertiary(
-                        bModifier,
-                        IconPack.Backspace,
-                        stringResource(R.string.delete_label),
-                        contentHeight,
-                        clearInput,
-                    ) { deleteDigit() }
-                }
+                    else -> {
+                        val lettersAmount = (10..<amount.coerceAtMost(16)).count().toFloat()
+                        val rowsAmount = ceil(lettersAmount / columns.toFloat()).toInt()
 
-                amount == 10 -> {
-                    for (int in createSortedArray(1..9, columns)) {
-                        val key = AVAILABLE_NUMBERS.keys.elementAt(int)
-                        val icon = AVAILABLE_NUMBERS[key]!!
-                        KeyboardButtonLight(
-                            bModifier.weight(1f),
-                            icon,
-                            key,
-                            contentHeight,
-                        ) { addDigit(key) }
-                    }
+                        for (row in rowsAmount downTo 0) {
+                            Row(
+                                Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(horizontalSpacing),
+                            ) {
+                                val rowStart = 10 + (row) * columns
+                                val rowEnd = (rowStart + 3).coerceAtMost(amount.coerceAtMost(16))
 
-                    KeyboardButtonLight(
-                        bModifier.weight(1f),
-                        IconPack.Key0,
-                        Token.Digit._0,
-                        contentHeight,
-                    ) { addDigit(Token.Digit._0) }
-                    KeyboardButtonTertiary(
-                        bModifier.weight(2f),
-                        IconPack.Backspace,
-                        stringResource(R.string.delete_label),
-                        contentHeight,
-                        clearInput,
-                    ) { deleteDigit() }
-                }
-
-                else -> {
-                    val lettersAmount = (10..<amount.coerceAtMost(16)).count().toFloat()
-                    val rowsAmount = ceil(lettersAmount / columns.toFloat()).toInt()
-
-                    for (row in rowsAmount downTo 0) {
-                        Row(
-                            Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.spacedBy(horizontalSpacing),
-                        ) {
-                            val rowStart = 10 + (row) * columns
-                            val rowEnd = (rowStart + 3).coerceAtMost(amount.coerceAtMost(16))
-
-                            for (index in createSortedArray(rowStart..<rowEnd, columns)) {
-                                val key = AVAILABLE_NUMBERS.keys.elementAt(index)
-                                val icon = AVAILABLE_NUMBERS[key]!!
-                                KeyboardButtonFilled(
-                                    bModifier.weight(1f),
-                                    icon,
-                                    key,
-                                    contentHeight,
-                                ) { addDigit(key) }
+                                for (index in createSortedArray(rowStart..<rowEnd, columns)) {
+                                    val key = AVAILABLE_NUMBERS.keys.elementAt(index)
+                                    val icon = AVAILABLE_NUMBERS[key]!!
+                                    KeyboardButtonFilled(
+                                        bModifier.weight(1f),
+                                        icon,
+                                        key,
+                                        contentHeight,
+                                    ) { addDigit(key) }
+                                }
                             }
                         }
-                    }
 
-                    for (int in createSortedArray(1..9, columns)) {
-                        val key = AVAILABLE_NUMBERS.keys.elementAt(int)
-                        val icon = AVAILABLE_NUMBERS[key]!!
+                        for (int in createSortedArray(1..9, columns)) {
+                            val key = AVAILABLE_NUMBERS.keys.elementAt(int)
+                            val icon = AVAILABLE_NUMBERS[key]!!
+                            KeyboardButtonLight(
+                                bModifier.weight(1f),
+                                icon,
+                                key,
+                                contentHeight,
+                            ) { addDigit(key) }
+                        }
+
                         KeyboardButtonLight(
                             bModifier.weight(1f),
-                            icon,
-                            key,
+                            IconPack.Key0,
+                            Token.Digit._0,
                             contentHeight,
-                        ) { addDigit(key) }
+                        ) { addDigit(Token.Digit._0) }
+
+                        KeyboardButtonTertiary(
+                            bModifier.weight(2f),
+                            IconPack.Backspace,
+                            stringResource(R.string.delete_label),
+                            contentHeight,
+                            clearInput,
+                        ) { deleteDigit() }
                     }
-
-                    KeyboardButtonLight(
-                        bModifier.weight(1f),
-                        IconPack.Key0,
-                        Token.Digit._0,
-                        contentHeight,
-                    ) { addDigit(Token.Digit._0) }
-
-                    KeyboardButtonTertiary(
-                        bModifier.weight(2f),
-                        IconPack.Backspace,
-                        stringResource(R.string.delete_label),
-                        contentHeight,
-                        clearInput,
-                    ) { deleteDigit() }
                 }
             }
-        }
-
         }
     }
 }
