@@ -106,6 +106,7 @@ import app.myzel394.numberhub.feature.converter.components.BaseCalculationSummar
 import app.myzel394.numberhub.feature.converter.components.DefaultKeyboard
 import app.myzel394.numberhub.feature.converter.components.NumberBaseKeyboard
 import app.myzel394.numberhub.feature.converter.components.UnitSelectionButton
+import app.myzel394.numberhub.feature.converter.components.ValueOneSummary
 import java.math.BigDecimal
 import java.util.Locale
 import kotlin.math.absoluteValue
@@ -331,6 +332,20 @@ private fun Default(
     }
     var focusedOnInput1 by rememberSaveable { mutableStateOf(true) }
 
+    val density = LocalDensity.current
+    val dragState = remember {
+        AnchoredDraggableState(
+            initialValue = DragState.CLOSED,
+            anchors = DraggableAnchors {
+                DragState.CLOSED at 0f
+                DragState.OPEN at with(density) { -60.dp.toPx() }
+            },
+            positionalThreshold = { 0f },
+            velocityThreshold = { 0f },
+            animationSpec = tween(easing = LinearEasing, durationMillis = 50),
+        )
+    }
+
     LaunchedEffect(connection) {
         if ((connection == ConnectionState.Available) and (uiState.result is ConverterResult.Error)) {
             val unitFrom = uiState.unitFrom
@@ -351,7 +366,13 @@ private fun Default(
     PortraitLandscape(
         modifier = modifier.fillMaxSize(),
         content1 = { contentModifier ->
-            ColumnWithConstraints(modifier = contentModifier) { boxWithConstraintsScope ->
+            ColumnWithConstraints(
+                modifier = contentModifier
+                    .anchoredDraggable(
+                        state = dragState,
+                        orientation = Orientation.Vertical,
+                    ),
+            ) { boxWithConstraintsScope ->
                 val textFieldModifier = Modifier
                     .fillMaxWidth()
                     .weight(2f)
@@ -470,6 +491,16 @@ private fun Default(
                             else -> uiState.unitTo.shortName
                         },
                     ),
+                )
+
+                ValueOneSummary(
+                    modifier = with(density) {
+                        Modifier
+                            .fillMaxWidth()
+                            .height(dragState.offset.absoluteValue.toDp())
+                            .horizontalScroll(rememberScrollState())
+                    },
+                    uiState = uiState,
                 )
 
                 Spacer(modifier = Modifier.height(boxWithConstraintsScope.maxHeight * 0.03f))
