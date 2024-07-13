@@ -97,7 +97,7 @@ internal fun DefaultKeyboard(
 ) {
     val fractionalIcon = remember(fractional) { if (fractional == Token.PERIOD) IconPack.Dot else IconPack.Comma }
     val fractionalIconDescription = remember(fractional) { if (fractional == Token.PERIOD) R.string.keyboard_dot else R.string.comma }
-    val height: Float =
+    val contentHeight: Float =
         if (LocalWindowSize.current.heightSizeClass < WindowHeightSizeClass.Medium) KeyboardButtonToken.CONTENT_HEIGHT_SHORT else KeyboardButtonToken.CONTENT_HEIGHT_TALL
 
     KeypadFlow(
@@ -114,114 +114,114 @@ internal fun DefaultKeyboard(
                 bModifier,
                 IconPack.Clear,
                 stringResource(R.string.delete_label),
-                height,
+                contentHeight,
             ) { clearInput() }
             KeyboardButtonFilled(
                 bModifier,
                 IconPack.Brackets,
                 stringResource(R.string.keyboard_brackets),
-                height,
+                contentHeight,
             ) { addBracket() }
         } else {
             KeyboardButtonFilled(
                 bModifier,
                 IconPack.LeftBracket,
                 stringResource(R.string.keyboard_left_bracket),
-                height,
+                contentHeight,
             ) { addDigit(Token.Operator.leftBracket) }
             KeyboardButtonFilled(
                 bModifier,
                 IconPack.RightBracket,
                 stringResource(R.string.keyboard_right_bracket),
-                height,
+                contentHeight,
             ) { addDigit(Token.Operator.rightBracket) }
         }
         KeyboardButtonFilled(
             bModifier,
             IconPack.Power,
             stringResource(R.string.keyboard_power),
-            height,
+            contentHeight,
         ) { addDigit(Token.Operator.power) }
         KeyboardButtonFilled(
             bModifier,
             IconPack.Root,
             stringResource(R.string.keyboard_root),
-            height,
+            contentHeight,
         ) { addDigit(Token.Operator.sqrt) }
 
         KeyboardButtonLight(
             bModifier,
             IconPack.Key7,
             Token.Digit._7,
-            height,
+            contentHeight,
         ) { addDigit(Token.Digit._7) }
         KeyboardButtonLight(
             bModifier,
             IconPack.Key8,
             Token.Digit._8,
-            height,
+            contentHeight,
         ) { addDigit(Token.Digit._8) }
         KeyboardButtonLight(
             bModifier,
             IconPack.Key9,
             Token.Digit._9,
-            height,
+            contentHeight,
         ) { addDigit(Token.Digit._9) }
         KeyboardButtonFilled(
             bModifier,
             IconPack.Divide,
             stringResource(R.string.keyboard_divide),
-            height,
+            contentHeight,
         ) { addDigit(Token.Operator.divide) }
 
         KeyboardButtonLight(
             bModifier,
             IconPack.Key4,
             Token.Digit._4,
-            height,
+            contentHeight,
         ) { addDigit(Token.Digit._4) }
         KeyboardButtonLight(
             bModifier,
             IconPack.Key5,
             Token.Digit._5,
-            height,
+            contentHeight,
         ) { addDigit(Token.Digit._5) }
         KeyboardButtonLight(
             bModifier,
             IconPack.Key6,
             Token.Digit._6,
-            height,
+            contentHeight,
         ) { addDigit(Token.Digit._6) }
         KeyboardButtonFilled(
             bModifier,
             IconPack.Multiply,
             stringResource(R.string.keyboard_multiply),
-            height,
+            contentHeight,
         ) { addDigit(Token.Operator.multiply) }
 
         KeyboardButtonLight(
             bModifier,
             IconPack.Key1,
             Token.Digit._1,
-            height,
+            contentHeight,
         ) { addDigit(Token.Digit._1) }
         KeyboardButtonLight(
             bModifier,
             IconPack.Key2,
             Token.Digit._2,
-            height,
+            contentHeight,
         ) { addDigit(Token.Digit._2) }
         KeyboardButtonLight(
             bModifier,
             IconPack.Key3,
             Token.Digit._3,
-            height,
+            contentHeight,
         ) { addDigit(Token.Digit._3) }
         KeyboardButtonFilled(
             bModifier,
             IconPack.Minus,
             stringResource(R.string.keyboard_minus),
-            height,
+            contentHeight,
         ) { addDigit(Token.Operator.minus) }
 
         if (middleZero) {
@@ -229,40 +229,40 @@ internal fun DefaultKeyboard(
                 bModifier,
                 fractionalIcon,
                 stringResource(fractionalIconDescription),
-                height,
+                contentHeight,
             ) { addDigit(Token.Digit.dot) }
             KeyboardButtonLight(
                 bModifier,
                 IconPack.Key0,
                 Token.Digit._0,
-                height,
+                contentHeight,
             ) { addDigit(Token.Digit._0) }
         } else {
             KeyboardButtonLight(
                 bModifier,
                 IconPack.Key0,
                 Token.Digit._0,
-                height,
+                contentHeight,
             ) { addDigit(Token.Digit._0) }
             KeyboardButtonLight(
                 bModifier,
                 fractionalIcon,
                 stringResource(fractionalIconDescription),
-                height,
+                contentHeight,
             ) { addDigit(Token.Digit.dot) }
         }
         KeyboardButtonLight(
             bModifier,
             IconPack.Backspace,
             stringResource(R.string.delete_label),
-            height,
+            contentHeight,
             onLongClick = clearInput,
         ) { deleteDigit() }
         KeyboardButtonFilled(
             bModifier,
             IconPack.Plus,
             stringResource(R.string.keyboard_plus),
-            height,
+            contentHeight,
         ) { addDigit(Token.Operator.plus) }
     }
 }
