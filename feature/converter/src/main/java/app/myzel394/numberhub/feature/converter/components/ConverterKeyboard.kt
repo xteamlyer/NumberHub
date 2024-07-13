@@ -18,6 +18,10 @@
 
 package app.myzel394.numberhub.feature.converter.components
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
@@ -25,7 +29,11 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
@@ -163,34 +171,57 @@ internal fun NumberBaseKeyboard(
     basis: BasicUnit.NumberBase,
 ) {
     val contentHeight: Float = if (LocalWindowSize.current.heightSizeClass < WindowHeightSizeClass.Medium) KeyboardButtonToken.CONTENT_HEIGHT_SHORT else KeyboardButtonToken.CONTENT_HEIGHT_TALL
-    val amount = basis.factor.toInt()
 
-    val columns: Int = when {
-        amount == 5 -> 2
-        amount == 3 -> 2
-        amount == 7 -> 2
-        amount == 10 -> 3
-        amount < 10 -> if (amount.and(1) == 0) 2 else if (amount % 3 == 0) 3 else amount % 3
-        else -> 3
+    var direction by remember {
+        mutableStateOf(AnimatedContentTransitionScope.SlideDirection.Right)
     }
-    val rows = when {
-        amount == 5 -> 3
-        amount == 3 -> 2
-        amount == 7 -> 4
-        amount == 10 -> 4
-        amount < 10 -> ceil(amount.toDouble() / columns.toDouble()).toInt() + 1
-        amount == 11 -> 5
-        amount == 12 -> 5
-        amount == 13 -> 5
-        else -> 6
+
+    LaunchedEffect(basis) {
+        when (direction) {
+            AnimatedContentTransitionScope.SlideDirection.Left -> {
+                direction = AnimatedContentTransitionScope.SlideDirection.Right
+            }
+
+            AnimatedContentTransitionScope.SlideDirection.Right -> {
+                direction = AnimatedContentTransitionScope.SlideDirection.Left
+            }
+        }
     }
 
     ColumnWithConstraints(Modifier) { constraints ->
-        val horizontalSpacing = 8.dp
-        val verticalSpacing = 12.dp
-        val height: Float = (1f - (verticalSpacing * (rows - 1) / constraints.maxHeight)) / rows
+        AnimatedContent(
+            transitionSpec = {
+                slideIntoContainer(animationSpec = tween(600), towards = direction).togetherWith(
+                    slideOutOfContainer(animationSpec = tween(600), towards = direction),
+                )
+            },
+            targetState = basis.factor.toInt(),
+            label = "ConverterKeyboard-FlowRow",
+        ) { amount ->
+            val columns: Int = when {
+                amount == 5 -> 2
+                amount == 3 -> 2
+                amount == 7 -> 2
+                amount == 10 -> 3
+                amount < 10 -> if (amount.and(1) == 0) 2 else if (amount % 3 == 0) 3 else amount % 3
+                else -> 3
+            }
+            val rows = when {
+                amount == 5 -> 3
+                amount == 3 -> 2
+                amount == 7 -> 4
+                amount == 10 -> 4
+                amount < 10 -> ceil(amount.toDouble() / columns.toDouble()).toInt() + 1
+                amount == 11 -> 5
+                amount == 12 -> 5
+                amount == 13 -> 5
+                else -> 6
+            }
+            val horizontalSpacing = 8.dp
+            val verticalSpacing = 12.dp
+            val height: Float = (1f - (verticalSpacing * (rows - 1) / constraints.maxHeight)) / rows
 
-        FlowRow(
+            FlowRow(
             modifier = modifier,
             maxItemsInEachRow = columns,
             horizontalArrangement = Arrangement.spacedBy(horizontalSpacing),
@@ -328,6 +359,8 @@ internal fun NumberBaseKeyboard(
                     ) { deleteDigit() }
                 }
             }
+        }
+
         }
     }
 }
