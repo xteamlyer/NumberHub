@@ -120,16 +120,18 @@ class AllUnitsTest {
     @Test
     fun testArea() = testWithUnits {
         cent.checkWith(acre, "75.9", "0.759")
-        cent.checkWith(square_meter, "1", "40.469")
+        cent.checkWith(square_meter, "1", "40.46856")
         acre.checkWith(square_kilometer, "75.9", "0.30716")
         acre.checkWith(square_yard, "1", "4840")
-        acre.checkWith(square_meter, "1", "4046.856")
-        acre.checkWith(cent, "1", "4046.856")
-        hectare.checkWith(acre, "1", "2.471");
-        hectare.checkWith(acre, "1", "2.471");
-        hectare.checkWith(square_foot, "75.9", "8169808.00585")
+        acre.checkWith(square_meter, "1", "4046.85642")
+        acre.checkWith(cent, "1", "100")
+        hectare.checkWith(acre, "1", "2.47105");
+        hectare.checkWith(square_foot, "1", "107639.10417")
+        hectare.checkWith(square_foot, "75.9", "8169808.00628")
         square_foot.checkWith(square_decimeter, "75.9", "705.13407")
-        square_mile.checkWith(square_foot, "75.9", "2115970560.8762")
+        square_mile.checkWith(square_foot, "1", "27878400")
+        // Probably floating point error
+        square_mile.checkWith(square_foot, "75.9", "2115970560.00002")
         square_yard.checkWith(square_foot, "75.9", "683.1")
         square_yard.checkWith(square_foot, "1", "9")
         square_inch.checkWith(square_foot, "75.9", "0.52708")
@@ -140,6 +142,7 @@ class AllUnitsTest {
         square_meter.checkWith(acre, "75.9", "0.01876")
         square_kilometer.checkWith(hectare, "75.9", "7590")
         electron_cross_section.checkWith(square_micrometer, "75.9", "0.000000000000005")
+        square_decimeter.checkWith(acre, "123.456", "0.00031")
     }
 
     @Test

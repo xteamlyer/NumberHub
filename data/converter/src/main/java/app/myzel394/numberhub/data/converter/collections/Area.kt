@@ -52,7 +52,7 @@ internal val areaCollection: List<BasicUnit> by lazy {
         ),
         NormalUnit(
             UnitID.square_foot,
-            BigDecimal("1396526843537100000000000000"),
+            BigDecimal("1396521251622100000000000000"),
             UnitGroup.AREA,
             R.string.unit_square_foot,
             R.string.unit_square_foot_short,
@@ -60,7 +60,7 @@ internal val areaCollection: List<BasicUnit> by lazy {
         // https://www.gowebtool.com/unit-conversion/area/convert.php?from=electron_cross_section&to=square_mile_survey_us_statute
         NormalUnit(
             UnitID.square_mile,
-            BigDecimal("38932934238959000000000000000000000"),
+            BigDecimal("38932778061222000000000000000000000"),
             UnitGroup.AREA,
             R.string.unit_square_mile,
             R.string.unit_square_mile_short,
