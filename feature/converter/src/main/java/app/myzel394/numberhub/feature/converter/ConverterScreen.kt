@@ -493,15 +493,17 @@ private fun Default(
                     ),
                 )
 
-                ValueOneSummary(
-                    modifier = with(density) {
-                        Modifier
-                            .fillMaxWidth()
-                            .height(dragState.offset.absoluteValue.toDp())
-                            .horizontalScroll(rememberScrollState())
-                    },
-                    uiState = uiState,
-                )
+                if (uiState.result is ConverterResult.Default && uiState.unitTo.factor >= BigDecimal.ZERO) {
+                    ValueOneSummary(
+                        modifier = with(density) {
+                            Modifier
+                                .fillMaxWidth()
+                                .height(dragState.offset.absoluteValue.toDp())
+                                .horizontalScroll(rememberScrollState())
+                        },
+                        uiState = uiState,
+                    )
+                }
 
                 Spacer(modifier = Modifier.height(boxWithConstraintsScope.maxHeight * 0.03f))
 
