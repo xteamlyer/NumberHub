@@ -155,7 +155,7 @@ private fun UnitToSelectorPreview() {
             query = TextFieldValue("test"),
             units = units,
             showFavoritesOnly = false,
-            sorting = UnitsListSorting.USAGE,
+            sorting = UnitsListSorting.SCALE_ASC,
             input = "100",
             scale = 3,
             outputFormat = OutputFormat.PLAIN,

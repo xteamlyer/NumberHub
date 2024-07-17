@@ -37,6 +37,16 @@ sealed interface BasicUnit {
 
     interface NumberBase : BasicUnit {
         fun convert(unitTo: NumberBase, value: String): String
+
+        companion object {
+            val Hexadecimal = NumberBaseUnit(
+                "hexadecimal",
+                BigDecimal(16),
+                UnitGroup.NUMBER_BASE,
+                0,
+                0,
+            )
+        }
     }
 
     interface Default : BasicUnit {

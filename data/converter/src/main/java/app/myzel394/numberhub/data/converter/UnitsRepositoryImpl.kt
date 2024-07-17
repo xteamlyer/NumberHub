@@ -102,17 +102,232 @@ class UnitsRepositoryImpl @Inject constructor(
 
     suspend fun getPairId(id: String): String = withContext(Dispatchers.IO) {
         val basedUnitPair = getUnitStats(id).pairedUnitId
-        if (basedUnitPair != null) return@withContext basedUnitPair
+        if (basedUnitPair != null) {
+            return@withContext basedUnitPair
+        }
 
         val inMemoryUnit = inMemory.first { it.id == id }
         val collection = inMemory.filter { it.group == inMemoryUnit.group }
 
-        val pair = collection
-            .map { getById(it.id) to getUnitStats(it.id) }
-            .sortedByDescending { it.second.frequency }
-            .firstOrNull { it.second.isFavorite }?.first ?: collection.first()
+        return@withContext when (inMemoryUnit.id) {
+            // === === === Length === === ===
+            UnitID.nanometer -> UnitID.micrometer
+            UnitID.micrometer -> UnitID.millimeter
+            UnitID.millimeter -> UnitID.centimeter
 
-        return@withContext pair.id
+            UnitID.centimeter -> UnitID.inch
+            UnitID.inch -> UnitID.centimeter
+            UnitID.decimeter -> UnitID.centimeter
+            UnitID.foot -> UnitID.meter
+            UnitID.yard -> UnitID.meter
+            UnitID.meter -> UnitID.foot
+
+            UnitID.kilometer -> UnitID.mile
+            UnitID.mile -> UnitID.kilometer
+            UnitID.nautical_mile -> UnitID.kilometer
+
+            UnitID.mercury_equatorial_radius -> UnitID.kilometer
+            UnitID.mars_equatorial_radius -> UnitID.kilometer
+            UnitID.venus_equatorial_radius -> UnitID.kilometer
+            UnitID.earth_equatorial_radius -> UnitID.kilometer
+            UnitID.neptune_equatorial_radius -> UnitID.kilometer
+            UnitID.uranus_equatorial_radius -> UnitID.kilometer
+            UnitID.saturn_equatorial_radius -> UnitID.kilometer
+            UnitID.jupiter_equatorial_radius -> UnitID.kilometer
+            UnitID.sun_equatorial_radius -> UnitID.kilometer
+
+            UnitID.light_year -> UnitID.kilometer
+
+            UnitID.parsec -> UnitID.light_year
+            UnitID.kiloparsec -> UnitID.parsec
+            UnitID.megaparsec -> UnitID.kiloparsec
+
+
+            // === === === Mass === === ===
+            UnitID.electron_mass_rest -> UnitID.atomic_mass_unit
+            UnitID.atomic_mass_unit -> UnitID.electron_mass_rest
+
+            UnitID.microgram -> UnitID.milligram
+            UnitID.milligram -> UnitID.gram
+            UnitID.grain -> UnitID.gram
+            UnitID.carat -> UnitID.gram
+
+            UnitID.gram -> UnitID.carat
+            UnitID.ounce -> UnitID.gram
+            UnitID.pound -> UnitID.kilogram
+            UnitID.kilogram -> UnitID.pound
+
+            UnitID.metric_ton -> UnitID.kilogram
+            UnitID.imperial_ton -> UnitID.pound
+
+            UnitID.mercury_mass -> UnitID.kilogram
+            UnitID.mars_mass -> UnitID.kilogram
+            UnitID.venus_mass -> UnitID.kilogram
+            UnitID.earth_mass -> UnitID.kilogram
+            UnitID.uranus_mass -> UnitID.kilogram
+            UnitID.neptune_mass -> UnitID.kilogram
+            UnitID.saturn_mass -> UnitID.kilogram
+            UnitID.jupiter_mass -> UnitID.kilogram
+            UnitID.sun_mass -> UnitID.kilogram
+
+
+            // === === === Speed === === ===
+            UnitID.millimeter_per_hour -> UnitID.millimeter_per_second
+            UnitID.millimeter_per_second -> UnitID.millimeter_per_hour
+            UnitID.millimeter_per_minute -> UnitID.millimeter_per_second
+            UnitID.centimeter_per_hour -> UnitID.centimeter_per_second
+            UnitID.centimeter_per_second -> UnitID.centimeter_per_hour
+            UnitID.centimeter_per_minute -> UnitID.centimeter_per_second
+            UnitID.meter_per_hour -> UnitID.meter_per_second
+            UnitID.meter_per_second -> UnitID.meter_per_hour
+            UnitID.meter_per_minute -> UnitID.meter_per_second
+
+            UnitID.kilometer_per_hour -> UnitID.mile_per_hour
+            UnitID.kilometer_per_second -> UnitID.mile_per_second
+            UnitID.kilometer_per_minute -> UnitID.kilometer_per_second
+            UnitID.mile_per_hour -> UnitID.kilometer_per_hour
+            UnitID.mile_per_second -> UnitID.kilometer_per_second
+            UnitID.mile_per_minute -> UnitID.mile_per_second
+
+            UnitID.foot_per_hour -> UnitID.foot_per_second
+            UnitID.foot_per_second -> UnitID.foot_per_hour
+            UnitID.foot_per_minute -> UnitID.foot_per_second
+            UnitID.yard_per_hour -> UnitID.yard_per_second
+            UnitID.yard_per_second -> UnitID.yard_per_hour
+            UnitID.yard_per_minute -> UnitID.yard_per_second
+
+            UnitID.knot -> UnitID.kilometer_per_hour
+            UnitID.mach -> UnitID.kilometer_per_hour
+            UnitID.velocity_of_light_in_vacuum -> UnitID.kilometer_per_hour
+            UnitID.earths_orbital_speed -> UnitID.kilometer_per_hour
+
+            UnitID.cosmic_velocity_first -> UnitID.kilometer_per_hour
+            UnitID.cosmic_velocity_second -> UnitID.kilometer_per_hour
+            UnitID.cosmic_velocity_third -> UnitID.kilometer_per_hour
+
+
+            // === === === Temperature === === ===
+            UnitID.celsius -> UnitID.fahrenheit
+            UnitID.fahrenheit -> UnitID.celsius
+            UnitID.kelvin -> UnitID.celsius
+
+
+            // === === === Area === === ===
+            UnitID.square_micrometer -> UnitID.square_millimeter
+            UnitID.square_millimeter -> UnitID.square_centimeter
+            UnitID.square_centimeter -> UnitID.square_meter
+            UnitID.square_decimeter -> UnitID.square_meter
+            UnitID.square_meter -> UnitID.square_kilometer
+
+            UnitID.square_kilometer -> UnitID.square_meter
+
+            UnitID.square_inch -> UnitID.square_foot
+            UnitID.square_foot -> UnitID.square_inch
+            UnitID.square_yard -> UnitID.square_meter
+            UnitID.square_mile -> UnitID.square_kilometer
+
+            UnitID.acre -> UnitID.square_meter
+            UnitID.hectare -> UnitID.square_meter
+            UnitID.cent -> UnitID.square_meter
+
+
+            // === === === Time === === ===
+            UnitID.attosecond -> UnitID.nanosecond
+            UnitID.nanosecond -> UnitID.microsecond
+            UnitID.microsecond -> UnitID.millisecond
+            UnitID.millisecond -> UnitID.second
+
+            UnitID.jiffy -> UnitID.millisecond
+
+            UnitID.second -> UnitID.millisecond
+            UnitID.minute -> UnitID.second
+            UnitID.hour -> UnitID.minute
+            UnitID.day -> UnitID.hour
+            UnitID.week -> UnitID.day
+
+
+            // === === === Data === === ===
+            // TODO: Add tibibyte, exibyte
+            UnitID.bit -> UnitID.byte
+            UnitID.byte -> UnitID.kilobyte
+            UnitID.kilobyte -> UnitID.megabyte
+            UnitID.megabyte -> UnitID.gigabyte
+            UnitID.gigabyte -> UnitID.terabyte
+            UnitID.terabyte -> UnitID.petabyte
+            UnitID.petabyte -> UnitID.exabyte
+
+            UnitID.kilobit -> UnitID.kilobyte
+            UnitID.megabit -> UnitID.megabyte
+            UnitID.gigabit -> UnitID.gigabyte
+            UnitID.terabit -> UnitID.terabyte
+            UnitID.petabit -> UnitID.petabyte
+            UnitID.exabit -> UnitID.exabyte
+
+            UnitID.kibibit -> UnitID.kilobyte
+            UnitID.mebibit -> UnitID.megabyte
+            UnitID.gibibit -> UnitID.gigabyte
+
+            UnitID.kibibyte -> UnitID.kilobyte
+            UnitID.mebibyte -> UnitID.megabyte
+            UnitID.gibibyte -> UnitID.gigabyte
+
+
+            // === === === Acceleration === === ===
+            UnitID.millimeter_per_square_second -> UnitID.centimeter_per_square_second
+            UnitID.centimeter_per_square_second -> UnitID.meter_per_square_second
+            UnitID.decimeter_per_square_second -> UnitID.meter_per_square_second
+            UnitID.meter_per_square_second -> UnitID.kilometer_per_square_second
+
+            UnitID.mercury_surface_gravity -> UnitID.meter_per_square_second
+            UnitID.mars_surface_gravity -> UnitID.meter_per_square_second
+            UnitID.venus_surface_gravity -> UnitID.meter_per_square_second
+            UnitID.uranus_surface_gravity -> UnitID.meter_per_square_second
+            UnitID.earth_surface_gravity -> UnitID.meter_per_square_second
+            UnitID.saturn_surface_gravity -> UnitID.meter_per_square_second
+            UnitID.neptune_surface_gravity -> UnitID.meter_per_square_second
+            UnitID.jupiter_surface_gravity -> UnitID.meter_per_square_second
+            UnitID.sun_surface_gravity -> UnitID.meter_per_square_second
+
+
+            // === === === Power === === ===
+            UnitID.attowatt -> UnitID.watt
+            UnitID.watt -> UnitID.kilowatt
+            UnitID.kilowatt -> UnitID.watt
+            UnitID.megawatt -> UnitID.kilowatt
+
+
+            // === === === Angle === === ===
+            UnitID.degree -> UnitID.radian
+            UnitID.radian -> UnitID.degree
+
+
+            // === === === Data Transfer === === ===
+            UnitID.bit_per_second -> UnitID.byte_per_second
+            UnitID.kilobit_per_second -> UnitID.kilobyte_per_second
+            UnitID.megabit_per_second -> UnitID.megabyte_per_second
+            UnitID.gigabit_per_second -> UnitID.gigabyte_per_second
+            UnitID.terabit_per_second -> UnitID.terabyte_per_second
+            UnitID.petabit_per_second -> UnitID.petabyte_per_second
+            UnitID.exabit_per_second -> UnitID.exabyte_per_second
+
+            UnitID.byte_per_second -> UnitID.kilobyte_per_second
+            UnitID.kilobyte_per_second -> UnitID.megabyte_per_second
+            UnitID.megabyte_per_second -> UnitID.gigabyte_per_second
+            UnitID.gigabyte_per_second -> UnitID.megabyte_per_second
+            UnitID.terabyte_per_second -> UnitID.gigabyte_per_second
+            UnitID.petabyte_per_second -> UnitID.terabyte_per_second
+
+
+            // === === === Fuel === === ===
+            UnitID.kilometer_per_liter -> UnitID.mile_us_per_liter
+            UnitID.mile_us_per_liter -> UnitID.kilometer_per_liter
+
+            else ->
+                (collection
+                    .map { getById(it.id) to getUnitStats(it.id) }
+                    .sortedByDescending { it.second.frequency }
+                    .firstOrNull { it.second.isFavorite }?.first ?: collection.first()).id
+        }
     }
 
     suspend fun incrementCounter(id: String) = withContext(Dispatchers.IO) {
