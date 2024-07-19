@@ -1,33 +1,25 @@
-Calculator, converter and more.
+Calculator, converter and so much more!
 
-Look for <b>Calculator</b> on your home screen after installing the app.
+NumberHub will be installed as "Calculator" on your home screen.
 
-• Deep customization: themes, number formatter and etc.
-• No ads, in-app purchases or asking for donations
+• No ads or in-app purchases
 • Open source
 
-<b>Calculator</b>
+Calculator
 
 • Copy, paste, save and share expression results
 • Trigonometric functions
 • Fractional output
 
-<b>Unit converter</b>
+Unit converter
 
-• 570 units
-• Built-in currency converter
-• Favorite units
-• Organize unit groups
-• Smart search algorithm
+Over 500 units! Convert miles to kilometers, Dollar to Euro, Bytes to Gigabytes and so much more!
 
-<b>Date calculator</b>
-• Add and subtract dates
-• Calculate difference
-• Create events in calendar
+Date calculator
+Add and subtract dates with ease
 
-<b>Time converter</b>
-• Add to favorites
-• Add labels to time zones
+Time converter
+Convert time zones
 
 The app uses https://github.com/fawazahmed0/currency-api by https://github.com/fawazahmed0
-Requests are send to cdn.jsdelivr.net.
+Requests are sent to cdn.jsdelivr.net.
