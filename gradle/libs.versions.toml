@@ -1,6 +1,6 @@
 [versions]
-versionCode = "4"
-versionName = "NumberHub"
+versionCode = "5"
+versionName = "0.5.0"
 
 androidxBrowserBrowser = "1.8.0"
 androidGradlePlugin = "8.3.2"
