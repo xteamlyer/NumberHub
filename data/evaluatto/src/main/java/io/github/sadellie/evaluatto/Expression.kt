@@ -93,10 +93,10 @@ class Expression(
                 }
 
                 moveIfMatched(Token.Operator.divide) -> {
-                    val divisor = parseFactor()
+                    val divisor = parseFactor().setScale(MAX_PRECISION)
                     if (divisor.compareTo(BigDecimal.ZERO) == 0) throw ExpressionException.DivideByZero()
 
-                    expression = expression.divide(divisor, roundingMode)
+                    expression = expression.setScale(MAX_PRECISION).divide(divisor, roundingMode)
                 }
             }
         }
