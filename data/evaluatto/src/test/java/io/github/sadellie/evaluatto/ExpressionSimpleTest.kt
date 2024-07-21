@@ -143,7 +143,7 @@ class ExpressionSimpleTest {
     fun zeroExponent() = assertExpr("5^0", "1")
 
     @Test
-    fun negativeExponent() = assertExpr("5^-1", "0.2")
+    fun negativeExponent() = assertExpr("5^(-2)", "0.04")
 
     @Test
     fun trigonometricLimits() = assertExpr("sin(0)", "0")

@@ -218,7 +218,7 @@ class Expression(
         if (moveIfMatched(Token.Operator.power)) {
             val factor = parseFactor()
 
-            if (factor.compareTo(BigDecimal.ZERO) == 0) {
+            if (factor.compareTo(BigDecimal.ZERO) == 0 && expr.compareTo(BigDecimal.ZERO) == 0) {
                 throw ExpressionException.BadExpression()
             }
 
