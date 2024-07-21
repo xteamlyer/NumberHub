@@ -3,6 +3,9 @@ name: Build and push debug app
 on:
   pull_request:
 
+env:
+  JAVA_OPTS: -Xmx12G
+
 jobs:
   debug-builds:
     runs-on: ubuntu-latest
