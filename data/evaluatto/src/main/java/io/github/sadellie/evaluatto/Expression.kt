@@ -93,6 +93,10 @@ class Expression(
                 }
 
                 moveIfMatched(Token.Operator.divide) -> {
+                    // Adding those `setScale` calls have been added in
+                    // 36a931c7d175b5cad52ff3abceb7784b0bb82aac to fix #18
+                    // I'm not sure if this is the correct way to fix it, but it
+                    // seems to be working
                     val divisor = parseFactor().setScale(MAX_PRECISION)
                     if (divisor.compareTo(BigDecimal.ZERO) == 0) throw ExpressionException.DivideByZero()
 
@@ -166,7 +170,8 @@ class Expression(
 
         // sin
         if (moveIfMatched(Token.Func.sin)) {
-            expr = parseFuncParentheses().sin(radianMode)
+            val x = parseFuncParentheses()
+            expr = x.sin(radianMode)
         }
 
         // cos

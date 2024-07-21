@@ -26,9 +26,19 @@ import kotlin.math.asin
 import kotlin.math.atan
 import kotlin.math.pow
 
+// Dirty hack to avoid -0.000000000001
+val PI_THRESHOLD = BigDecimal("0.000000000000001")
+
 internal fun BigDecimal.sin(radianMode: Boolean): BigDecimal {
     val angle: Double = if (radianMode) this.toDouble() else Math.toRadians(this.toDouble())
-    return kotlin.math.sin(angle).toBigDecimal()
+
+    val result = kotlin.math.sin(angle).toBigDecimal()
+
+    if (result.abs() < PI_THRESHOLD) {
+        return BigDecimal.ZERO
+    }
+
+    return result
 }
 
 internal fun BigDecimal.arsin(radianMode: Boolean): BigDecimal {
@@ -38,7 +48,14 @@ internal fun BigDecimal.arsin(radianMode: Boolean): BigDecimal {
 
 internal fun BigDecimal.cos(radianMode: Boolean): BigDecimal {
     val angle: Double = if (radianMode) this.toDouble() else Math.toRadians(this.toDouble())
-    return kotlin.math.cos(angle).toBigDecimal()
+
+    val result = kotlin.math.cos(angle).toBigDecimal()
+
+    if (result.abs() < PI_THRESHOLD) {
+        return BigDecimal.ZERO
+    }
+
+    return result
 }
 
 internal fun BigDecimal.arcos(radianMode: Boolean): BigDecimal {
