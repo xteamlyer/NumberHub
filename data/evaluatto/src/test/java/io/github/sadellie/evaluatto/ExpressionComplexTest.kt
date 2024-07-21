@@ -57,4 +57,50 @@ class ExpressionComplexTest {
 
     @Test
     fun expression12() = assertExpr("2×(3+4)×(5−2)÷6", "7")
+
+    @Test
+    fun shouldDivideRootAndDivideInCorrectOrder() = assertExpr("(√9)÷6", "0.5")
+
+    @Test
+    fun singleNumber() = assertExpr("42", "42")
+
+    @Test(expected = NumberFormatException::class)
+    fun divisionByZero() = assertExpr("1÷0", "")
+
+    @Test(expected = NumberFormatException::class)
+    fun invalidExpressionMissingOperand() = assertExpr("42+", "")
+
+    @Test
+    fun largeNumbers() = assertExpr("9999999999*9999999999", "99999999980000000001")
+
+    @Test
+    fun highPrecision() = assertExpr("1÷3", "0.3333333333")
+
+    @Test
+    fun deeplyNestedParentheses() = assertExpr("((((((42))))))", "42")
+
+    @Test
+    fun constantsAndFunctions() = assertExpr("π+e", "${Math.PI + Math.E}")
+
+    @Test
+    fun edgeMathematicalCases() =
+        assertExpr("0^0", "1") // Depending on the mathematical interpretation used
+
+    @Test
+    fun trigonometricLimits() = assertExpr("sin(0)", "0")
+
+    @Test
+    fun sinAtPi() = assertExpr("sin(π)", "0")
+
+    @Test
+    fun sinAtHalfPi() = assertExpr("sin(π÷2)", "1")
+
+    @Test
+    fun cosAtPi() = assertExpr("cos(π)", "-1")
+
+    @Test
+    fun cosAtHalfPi() = assertExpr("cos(π÷2)", "0")
+
+    @Test
+    fun cosAtPiOverThree() = assertExpr("cos(π÷3)", "0.5")
 }
