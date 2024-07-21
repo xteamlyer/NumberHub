@@ -216,7 +216,13 @@ class Expression(
 
         // Power
         if (moveIfMatched(Token.Operator.power)) {
-            expr = expr.pow(parseFactor())
+            val factor = parseFactor()
+
+            if (factor.compareTo(BigDecimal.ZERO) == 0) {
+                throw ExpressionException.BadExpression()
+            }
+
+            expr = expr.pow(factor)
         }
 
         // Modulo
