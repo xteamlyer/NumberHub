@@ -139,7 +139,7 @@ private fun PreviewConverterSettingsScreen() {
             precision = 3,
             outputFormat = OutputFormat.PLAIN,
             unitConverterFormatTime = false,
-            unitConverterSorting = UnitsListSorting.USAGE,
+            unitConverterSorting = UnitsListSorting.SCALE_ASC,
             shownUnitGroups = UnitGroup.entries,
             unitConverterFavoritesOnly = false,
             enableToolsExperiment = false,

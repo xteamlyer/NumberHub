@@ -120,7 +120,7 @@ internal fun Preferences.getUnitConverterFormatTime(): Boolean {
 
 internal fun Preferences.getUnitConverterSorting(): UnitsListSorting {
     return this[PrefsKeys.UNIT_CONVERTER_SORTING]
-        ?.let { UnitsListSorting.valueOf(it) } ?: UnitsListSorting.USAGE
+        ?.let { UnitsListSorting.valueOf(it) } ?: UnitsListSorting.SCALE_ASC
 }
 
 internal fun Preferences.getShownUnitGroups(): List<UnitGroup> {

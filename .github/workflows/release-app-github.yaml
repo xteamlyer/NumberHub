@@ -4,6 +4,9 @@ on:
   release:
     types: [ published ]
 
+env:
+  JAVA_OPTS: -Xmx12G
+
 jobs:
   release-app-github:
     runs-on: ubuntu-latest

@@ -156,7 +156,7 @@ private fun UnitFromSelectorScreenPreview() {
             selectedUnitGroup = UnitGroup.SPEED,
             shownUnitGroups = UnitGroup.entries,
             showFavoritesOnly = false,
-            sorting = UnitsListSorting.USAGE,
+            sorting = UnitsListSorting.SCALE_ASC,
         ),
         onQueryChange = {},
         toggleFavoritesOnly = {},

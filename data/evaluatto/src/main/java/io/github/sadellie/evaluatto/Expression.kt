@@ -93,10 +93,14 @@ class Expression(
                 }
 
                 moveIfMatched(Token.Operator.divide) -> {
-                    val divisor = parseFactor()
+                    // Adding those `setScale` calls have been added in
+                    // 36a931c7d175b5cad52ff3abceb7784b0bb82aac to fix #18
+                    // I'm not sure if this is the correct way to fix it, but it
+                    // seems to be working
+                    val divisor = parseFactor().setScale(MAX_PRECISION)
                     if (divisor.compareTo(BigDecimal.ZERO) == 0) throw ExpressionException.DivideByZero()
 
-                    expression = expression.divide(divisor, roundingMode)
+                    expression = expression.setScale(MAX_PRECISION).divide(divisor, roundingMode)
                 }
             }
         }
@@ -166,7 +170,8 @@ class Expression(
 
         // sin
         if (moveIfMatched(Token.Func.sin)) {
-            expr = parseFuncParentheses().sin(radianMode)
+            val x = parseFuncParentheses()
+            expr = x.sin(radianMode)
         }
 
         // cos
@@ -211,7 +216,13 @@ class Expression(
 
         // Power
         if (moveIfMatched(Token.Operator.power)) {
-            expr = expr.pow(parseFactor())
+            val factor = parseFactor()
+
+            if (factor.compareTo(BigDecimal.ZERO) == 0 && expr.compareTo(BigDecimal.ZERO) == 0) {
+                throw ExpressionException.BadExpression()
+            }
+
+            expr = expr.pow(factor)
         }
 
         // Modulo

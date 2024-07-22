@@ -57,4 +57,7 @@ class ExpressionComplexTest {
 
     @Test
     fun expression12() = assertExpr("2×(3+4)×(5−2)÷6", "7")
+
+    @Test
+    fun shouldDivideRootAndDivideInCorrectOrder() = assertExpr("(√9)÷6", "0.5")
 }

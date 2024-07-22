@@ -22,6 +22,7 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandHorizontally
@@ -31,6 +32,11 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.shrinkVertically
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.AnchoredDraggableState
+import androidx.compose.foundation.gestures.DraggableAnchors
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.anchoredDraggable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -40,6 +46,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.SwapHoriz
@@ -64,6 +71,7 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
@@ -94,11 +102,14 @@ import app.myzel394.numberhub.data.common.isExpression
 import app.myzel394.numberhub.data.converter.ConverterResult
 import app.myzel394.numberhub.data.converter.UnitID
 import app.myzel394.numberhub.data.model.converter.UnitGroup
+import app.myzel394.numberhub.feature.converter.components.BaseCalculationSummary
 import app.myzel394.numberhub.feature.converter.components.DefaultKeyboard
 import app.myzel394.numberhub.feature.converter.components.NumberBaseKeyboard
 import app.myzel394.numberhub.feature.converter.components.UnitSelectionButton
+import app.myzel394.numberhub.feature.converter.components.ValueOneSummary
 import java.math.BigDecimal
 import java.util.Locale
+import kotlin.math.absoluteValue
 
 @Composable
 internal fun ConverterRoute(
@@ -203,10 +214,30 @@ private fun NumberBase(
         convert()
     }
 
+    val density = LocalDensity.current
+    val dragState = remember {
+        AnchoredDraggableState(
+            initialValue = DragState.CLOSED,
+            anchors = DraggableAnchors {
+                DragState.CLOSED at 0f
+                DragState.OPEN at with(density) { -60.dp.toPx() }
+            },
+            positionalThreshold = { 0f },
+            velocityThreshold = { 0f },
+            animationSpec = tween(easing = LinearEasing, durationMillis = 50),
+        )
+    }
+
     PortraitLandscape(
         modifier = modifier.fillMaxSize(),
         content1 = { contentModifier ->
-            ColumnWithConstraints(modifier = contentModifier) {
+            ColumnWithConstraints(
+                modifier = contentModifier
+                    .anchoredDraggable(
+                        state = dragState,
+                        orientation = Orientation.Vertical,
+                    ),
+            ) {
                 val textFieldModifier = Modifier.weight(2f)
 
                 NumberBaseTextField(
@@ -223,6 +254,22 @@ private fun NumberBase(
                     result = uiState.result,
                 )
                 AnimatedUnitShortName(stringResource(uiState.unitTo.shortName))
+
+                if (uiState.result is ConverterResult.NumberBase) {
+                    BaseCalculationSummary(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .horizontalScroll(rememberScrollState())
+                            .then(with(density) { Modifier.height(dragState.offset.absoluteValue.toDp()) }),
+                        basis = uiState.unitTo,
+                        result = uiState.result,
+                        onResultChange = { newValue ->
+                            val valueConverted = uiState.unitTo.convert(uiState.unitFrom, newValue)
+
+                            updateInput1(TextFieldValue(valueConverted))
+                        },
+                    )
+                }
 
                 Spacer(modifier = Modifier.height(it.maxHeight * 0.03f))
 
@@ -250,6 +297,7 @@ private fun NumberBase(
                 addDigit = { updateInput1(uiState.input.addTokens(it)) },
                 deleteDigit = { updateInput1(uiState.input.deleteTokens()) },
                 clearInput = { updateInput1(TextFieldValue()) },
+                basis = uiState.unitFrom,
             )
         },
     )
@@ -284,6 +332,20 @@ private fun Default(
     }
     var focusedOnInput1 by rememberSaveable { mutableStateOf(true) }
 
+    val density = LocalDensity.current
+    val dragState = remember {
+        AnchoredDraggableState(
+            initialValue = DragState.CLOSED,
+            anchors = DraggableAnchors {
+                DragState.CLOSED at 0f
+                DragState.OPEN at with(density) { -60.dp.toPx() }
+            },
+            positionalThreshold = { 0f },
+            velocityThreshold = { 0f },
+            animationSpec = tween(easing = LinearEasing, durationMillis = 50),
+        )
+    }
+
     LaunchedEffect(connection) {
         if ((connection == ConnectionState.Available) and (uiState.result is ConverterResult.Error)) {
             val unitFrom = uiState.unitFrom
@@ -304,7 +366,13 @@ private fun Default(
     PortraitLandscape(
         modifier = modifier.fillMaxSize(),
         content1 = { contentModifier ->
-            ColumnWithConstraints(modifier = contentModifier) { boxWithConstraintsScope ->
+            ColumnWithConstraints(
+                modifier = contentModifier
+                    .anchoredDraggable(
+                        state = dragState,
+                        orientation = Orientation.Vertical,
+                    ),
+            ) { boxWithConstraintsScope ->
                 val textFieldModifier = Modifier
                     .fillMaxWidth()
                     .weight(2f)
@@ -424,6 +492,18 @@ private fun Default(
                         },
                     ),
                 )
+
+                if (uiState.result is ConverterResult.Default && uiState.unitTo.factor >= BigDecimal.ZERO) {
+                    ValueOneSummary(
+                        modifier = with(density) {
+                            Modifier
+                                .fillMaxWidth()
+                                .height(dragState.offset.absoluteValue.toDp())
+                                .horizontalScroll(rememberScrollState())
+                        },
+                        uiState = uiState,
+                    )
+                }
 
                 Spacer(modifier = Modifier.height(boxWithConstraintsScope.maxHeight * 0.03f))
 
