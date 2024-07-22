@@ -493,7 +493,7 @@ private fun Default(
                     ),
                 )
 
-                if (uiState.result is ConverterResult.Default && uiState.unitTo.factor >= BigDecimal.ZERO) {
+                if (uiState.result is ConverterResult.Default && uiState.unitTo.factor > BigDecimal.ZERO) {
                     ValueOneSummary(
                         modifier = with(density) {
                             Modifier
