@@ -3,12 +3,24 @@ package app.myzel394.numberhub.core.ui.common.textfield
 import androidx.compose.ui.text.TextRange
 import app.myzel394.numberhub.core.base.Token
 
-// Smartly delete tokens
+/** Smartly delete tokens
+ * @param value the current value of the text field
+ * @param selection the current selection of the text field - Assumed to be a valid selection
+ */
 data class SmartDeleteHandler(
     private val value: String,
     private val selection: TextRange,
 ) {
+    /**
+     * Calculate the range to delete based on the current selection.
+     *
+     * @return the range to delete - [Inclusive, Exclusive]
+     */
     fun calculateDeleteRange(): TextRange {
+        if (value == "") {
+            return TextRange(0, 0)
+        }
+
         if (isSelectionARange()) {
             return selection
         }
@@ -30,14 +42,20 @@ data class SmartDeleteHandler(
 
             return if (rightBracketRelativeToLeftPosition == null) {
                 // 1+2(+5|+6
-                TextRange(leftBracketPosition + 1, position)
+                TextRange((leftBracketPosition + 1).coerceAtMost(position), position)
             } else {
                 // 1+2(6)+5|+6
-                TextRange(takeNextIfIsOperator(rightBracketRelativeToLeftPosition + 1), position)
+                TextRange(
+                    takeNextIfIsOperator(rightBracketRelativeToLeftPosition + 1).coerceAtMost(
+                        position,
+                    ),
+                    position,
+                )
             }
         }
 
-        return TextRange(leftBracketPosition + 1, findClosingParen(leftBracketPosition));
+        val end = findClosingParen(leftBracketPosition)
+        return TextRange((leftBracketPosition + 1).coerceAtMost(end), end);
     }
 
     private fun takeNextIfIsOperator(position: Int): Int {
