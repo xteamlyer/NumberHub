@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Unitto is a calculator for Android
+  ~ Copyright (c) 2024 Elshan Agaev
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/QNmUuI88wb1Fm5P8wRIZajZF.png -->
+    <string name="add_label">اضافه کردن</string>
+
+    <!-- Person's height -->
+    <string name="body_mass_height">قد</string>
+    <string name="body_mass_imperial">شاخص توده بدنی (امپریال)</string>
+    <string name="body_mass_metric">اندازه گیری</string>
+    <string name="body_mass_normal">وزن طبیعی</string>
+
+    <!-- Will be a text followed by a number like so: "Normal weight for your height - 60" -->
+    <string name="body_mass_normal_weight">وزن طبیعی برای قد شما</string>
+    <string name="body_mass_obese_1">چاق (کلاس ۱)</string>
+    <string name="body_mass_obese_2">چاق (کلاس ۲)</string>
+    <string name="body_mass_obese_3">چاق (کلاس ۳)</string>
+    <string name="body_mass_overweight">اضافه وزن</string>
+
+    <!-- Also known as Body mass index (BMI) -->
+    <string name="body_mass_title">توده بدن</string>
+    <string name="body_mass_underweight">کمبود وزن</string>
+
+    <!-- Person's weight -->
+    <string name="body_mass_weight">وزن</string>
+    <string name="calculator_clear_history_support">تمام عبارات تاریخچه برای همیشه حذف خواهند شد. این عمل قابل لغو نیست!</string>
+    <string name="calculator_divide_by_zero_error">نمی توان بر 0 تقسیم کرد</string>
+    <string name="calculator_no_history">بدون تاریخچه</string>
+    <string name="calculator_title">ماشین حساب</string>
+    <string name="cancel_label">لغو</string>
+    <string name="checked_filter_description">فیلتر بررسی شد</string>
+    <string name="clear_history_label">پاک کردن تاریخچه</string>
+    <string name="clear_input_description">پاک کردن ورودی</string>
+    <string name="clear_label">پاک کردن</string>
+    <string name="click_to_try_again_label">برای امتحان دوباره کلیک کنید</string>
+    <string name="comma">ویرگول</string>
+    <string name="converter_favorite_button_description">واحد را از موارد دلخواه اضافه یا حذف کنید</string>
+    <string name="converter_left_side_title">تبدیل از</string>
+    <string name="converter_no_results_support">مطمئن شوید که اشتباه املایی وجود ندارد، فیلترهای مختلف را امتحان کنید یا گروه های واحد غیرفعال را بررسی کنید.</string>
+    <string name="converter_right_side_title">تبدیل به</string>
+    <string name="converter_search_bar_placeholder">جستجوی واحدها</string>
+    <string name="converter_swap_units_description">تعویض واحدها</string>
+    <string name="copied_label">کپی شد %1$s!</string>
+    <string name="date_calculator_add">اضافه کردن</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/CfdIPBOo2IZnLb0elHvLcUQ3.png -->
+    <!-- Screen readers (accessibility) -->
+    <string name="date_calculator_create_event">ایجاد رویداد</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/33QTn2NVrjJT772cBDFRqSMH.png -->
+    <string name="date_calculator_days">روزها</string>
+    <string name="date_calculator_difference">تفاوت</string>
+    <string name="date_calculator_end">پایان</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/33QTn2NVrjJT772cBDFRqSMH.png -->
+    <string name="date_calculator_hours">ساعت</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/33QTn2NVrjJT772cBDFRqSMH.png -->
+    <string name="date_calculator_minutes">دقیقه</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/33QTn2NVrjJT772cBDFRqSMH.png -->
+    <string name="date_calculator_months">ماه ها</string>
+    <string name="date_calculator_start">شروع کن</string>
+    <string name="date_calculator_subtract">تفریق</string>
+    <string name="date_calculator_title">ماشین حساب تاریخ</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/33QTn2NVrjJT772cBDFRqSMH.png -->
+    <string name="date_calculator_years">سالها</string>
+    <string name="delete_label">حذف کنید</string>
+    <string name="disabled_label">غیر فعال شده است</string>
+    <string name="drop_down_description">منوی کشویی را باز یا ببندید</string>
+    <string name="enabled_label">فعال شد</string>
+    <string name="error_label">خطا</string>
+    <string name="hello_label">سلام!</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_actan">آرکتانژانت</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_arcos">آرکوزین</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_arsin">آرکسین</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_brackets">براکت ها</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_cos">کسینوسی</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_degree">مدرک</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_divide">تقسیم</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_dot">نقطه</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_equal">مساوی</string>
+
+    <!-- https://en.wikipedia.org/wiki/E_(mathematical_constant) -->
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_euler">عدد اویلر</string>
+
+    <!-- https://en.wikipedia.org/wiki/Exponential_function -->
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_exp">تابع نمایی</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_factorial">فاکتوریل</string>
+
+    <!-- It's ok not to use exact translation here -->
+    <!-- Screen readers (accessibility). The INV button -->
+    <string name="keyboard_inverse">معکوس</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_left_bracket">براکت چپ</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_ln">لگاریتم طبیعی</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_log">لگاریتم</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_minus">منهای</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_modulo">ماژول</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_multiply">ضرب</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_percent">درصد</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_pi">عدد پی</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_plus">بعلاوه</string>
+
+    <!-- Exponent or Power, same thing -->
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_power">توان</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_power_10">توان 10</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_radian">رادیان</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_right_bracket">براکت سمت راست</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_root">ریشه مربع</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_sin">سینوسی</string>
+
+    <!-- Screen readers (accessibility) -->
+    <string name="keyboard_tan">تانژانت</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/iqEp9rZZ9XqtJ3CKVpy33lre.png -->
+    <string name="label_label">برچسب</string>
+    <string name="loading_label">در حال بارگیری…</string>
+    <string name="navigate_up_description">حرکت به بالا</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/9lSfdkfKShwyQFEF4nvbVaIb.jpg 
+
+Used in this dialog window. Should be short -->
+    <string name="next_label">بعدی</string>
+    <string name="no_results_description">نتیجه جستجو خالی است</string>
+    <string name="no_results_label">هیچ نتیجه ای یافت نشد</string>
+    <string name="open_menu_description">منو را باز کنید</string>
+    <string name="open_settings_label">تنظیمات را باز کنید</string>
+    <string name="search_button_description">دکمه جستجو</string>
+    <string name="search_text_field_placeholder">جستجو…</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/uWOHJmIq9riqsq7PO82ZQp3a.png -->
+    <string name="select_time_label">زمان را انتخاب کنید</string>
+
+    <!-- Used in multiple places (check icons)
+https://s3.eu-west-1.amazonaws.com/po-pub/i/1oIHPj16krI0jyLmg4JaP2mk.png -->
+    <!-- Screen readers (accessibility) -->
+    <string name="selected_item">مورد انتخاب شده</string>
+    <string name="settings_about_unitto">درباره نامبرهاب</string>
+    <string name="settings_about_unitto_support">با برنامه آشنا شوید</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/p3aY3IWUI5m9Vjs6vZP3EXAo.png -->
+    <string name="settings_ac_button">دکمه AC</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/p3aY3IWUI5m9Vjs6vZP3EXAo.png -->
+    <string name="settings_ac_button_support">نمایش دکمه پاک جداگانه</string>
+    <string name="settings_additional">اضافی</string>
+    <string name="settings_amoled_dark">AMOLED تاریک</string>
+    <string name="settings_amoled_dark_support">از پس زمینه سیاه برای تم های تیره استفاده کنید</string>
+    <string name="settings_auto">خودکار</string>
+
+    <!-- Option in menu. Here it is used as a verb (action) - "back up", don't confuse with "backup".
+Alternatively you can use "Export" -->
+    <string name="settings_back_up">پشتیبان گیری کنید</string>
+    <string name="settings_calculator_support">نمایش تاریخچه</string>
+    <string name="settings_clear_cache">پاک کردن حافظه پنهان</string>
+    <string name="settings_color_scheme">طرح رنگ</string>
+    <string name="settings_color_theme">تم رنگ</string>
+    <string name="settings_color_theme_support">یک حالت طرح زمینه را انتخاب کنید</string>
+    <string name="settings_converter_support">گروه‌های واحد، مرتب‌سازی، قالب‌بندی</string>
+    <string name="settings_currency_rates_note_text">نرخ ارز روزانه به روز می شود. هیچ نظارت بر بازار در زمان واقعی در برنامه وجود ندارد</string>
+    <string name="settings_currency_rates_note_title">نرخ ارز اشتباه است؟</string>
+    <string name="settings_dark_mode">تاریک</string>
+    <string name="settings_decimal_separator">جداکننده اعشاری</string>
+    <string name="settings_disable_unit_group_description">گروه واحد را غیرفعال کنید</string>
+    <string name="settings_display">نمایش</string>
+    <string name="settings_display_support">ظاهر برنامه</string>
+    <string name="settings_dynamic_colors">رنگ های پویا</string>
+    <string name="settings_dynamic_colors_support">استفاده از رنگ های کاغذ دیواری</string>
+    <string name="settings_enable_unit_group_description">گروه واحد را فعال کنید</string>
+    <string name="settings_exponential_notation">نماد نمایی</string>
+    <string name="settings_exponential_notation_support">قسمتی از عدد را با E جایگزین کنید</string>
+    <string name="settings_format_time">قالب بندی زمان</string>
+    <string name="settings_format_time_support">مثال: 130 دقیقه را به صورت 2 ساعت و 10 دقیقه نشان دهید</string>
+    <string name="settings_formatting">قالب‌بندی</string>
+    <string name="settings_formatting_preview">پیش نمایش (برای جابجایی کلیک کنید)</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/Gj9ZCNPXIfKddDQgccvboVFz.jpg 
+https://s3.eu-west-1.amazonaws.com/po-pub/i/prtM85P6x1fMuLg1I0zbkceo.png 
+
+Maybe this can be labeled better? Let me know. It should be something that can describe content of the Formatting screen. -->
+    <string name="settings_formatting_support">دقت و ظاهر اعداد</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_language_support">زبان برنامه را تغییر دهید</string>
+    <string name="settings_light_mode">روشن</string>
+    <string name="settings_middle_zero">صفر در وسط</string>
+    <string name="settings_middle_zero_support">دکمه های صفر و اعشاری را جابجا کنید</string>
+    <string name="settings_note">نکته</string>
+    <string name="settings_partial_history_view">نمایش قسمتی از تاریخچه</string>
+    <string name="settings_partial_history_view_support">نگاهی به آخرین ورودی تاریخچه</string>
+    <string name="settings_period">دوره</string>
+    <string name="settings_precision">دقت</string>
+    <string name="settings_precision_info">مقادیر تبدیل شده ممکن است دقت بالاتری نسبت به ترجیح داده شده داشته باشند.</string>
+    <string name="settings_precision_max">(حداکثر) %1$s</string>
+    <string name="settings_precision_support">تعداد ارقام اعشار</string>
+    <string name="settings_privacy_policy">سیاست حفظ حریم خصوصی</string>
+    <string name="settings_rate_this_app">به این برنامه امتیاز دهید</string>
+    <string name="settings_reorder_unit_group_description">مرتب‌سازی مجدد گروه واحد</string>
+
+    <!-- Option in menu. Verb (action). Alternatively you can use "Import" -->
+    <string name="settings_restore">بازیابی</string>
+    <string name="settings_selected_color">انتخاب رنگ</string>
+    <string name="settings_selected_style">انتخاب ظاهر</string>
+    <string name="settings_separator">جداکننده</string>
+    <string name="settings_separator_support">نماد جداکننده گروه</string>
+    <string name="settings_sort_by_alphabetical">حروف الفبا</string>
+    <string name="settings_sort_by_scale_asc">مقیاس (صعودی)</string>
+    <string name="settings_sort_by_scale_desc">مقیاس (توضیح)</string>
+    <string name="settings_sort_by_usage">Usage</string>
+    <string name="settings_space">فاصله</string>
+    <string name="settings_starting_screen">صفحه شروع</string>
+    <string name="settings_starting_screen_support">انتخاب کنید هنگام راه اندازی برنامه کدام صفحه نمایش داده شود</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/r1VikAn70eXQP4da2hrntTGQ.jpg -->
+    <!-- Option name to use system default setting -->
+    <string name="settings_system">سیستم</string>
+    <string name="settings_system_font">فونت سیستم</string>
+    <string name="settings_system_font_support">از فونت سیستم برای متون در برنامه استفاده کنید</string>
+    <string name="settings_terms_and_conditions">شرایط و ضوابط</string>
+    <string name="settings_third_party_licenses">مجوزهای شخص ثالث</string>
+    <string name="settings_thousands_separator">جداکننده هزارگان</string>
+    <string name="settings_title">تنظیمات</string>
+    <string name="settings_translate_app">این برنامه را ترجمه کنید</string>
+    <string name="settings_translate_app_support">برای کمک به پروژه POEditor بپیوندید</string>
+    <string name="settings_unit_groups_support">غیرفعال کردن و تنظیم مجدد واحدها</string>
+    <string name="settings_unit_groups_title">گروه های واحد</string>
+    <string name="settings_units_sorting">مرتب سازی لیست واحدها</string>
+    <string name="settings_units_sorting_support">تغییر ترتیب واحدها</string>
+
+    <!-- Please keep "%1$s". It will be formatted in the app. Example (English): "Unitto has been updated" -->
+    <string name="settings_updated">%1$s به روز شده است</string>
+
+    <!-- Please keep "%1$s". It will be formatted in the app. Example (English): "See what's new in version Quick Silver" -->
+    <string name="settings_updated_support">%1$s ببینید چه چیزی در نسخه جدید است</string>
+    <string name="settings_version_name">نام نسخه</string>
+    <string name="settings_vibrations">لرزش ها</string>
+    <string name="settings_vibrations_support">بازخورد لمسی هنگام کلیک کردن روی دکمه‌های صفحه‌کلید</string>
+    <string name="settings_view_source_code">مشاهده کد منبع</string>
+    <string name="time_zone_add_title">منطقه زمانی را اضافه کنید</string>
+
+    <string name="settings_numberhub_newApp">اکنون یونیتو به نامبرهاب تغییر نام داده است</string>
+    <string name="settings_numberhub_newApp_message">اکنون یونیتو متوقف شده است. شما یکی از اولین کاربرانی هستید که نامبرهاب را امتحان  می‌کنید لطفا این خبر را پخش کنید و برنامه را با دوستان خود به اشتراک بگذارید</string>
+    <string name="settings_numberhub_newApp_announcement">نامبرهاب جایگزینی برای یونیتو است. این برنامه دارای همان ویژگی‌ها و موارد دیگر است. نامبرهاب هنوز در نسخه بتا است و ممکن است تغییراتی در آن رخ دهد. لطفا هر گونه مشکلی که پیدا کردید گزارش دهید. از اینکه یکی از اولین افرادی هستید که آن را امتحان می‌کنید، متشکریم</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/UCrz06kaEYxCGAE73ZLl9EtX.png -->
+    <string name="time_zone_no_results_button">خواندن مقاله</string>
+
+    <!-- https://s3.eu-west-1.amazonaws.com/po-pub/i/UCrz06kaEYxCGAE73ZLl9EtX.png -->
+    <string name="time_zone_no_results_support">به مناطق زمانی بیشتری نیاز دارید؟</string>
+
+    <!-- Description for Reset button
+https://s3.eu-west-1.amazonaws.com/po-pub/i/llhUZ6FzZenWAgtdNAcXfKWn.png -->
+    <!-- Screen readers (accessibility) -->
+    <string name="time_zone_reset">بازنشانی</string>
+    <string name="time_zone_title">مناطق زمانی</string>
+    <string name="tomorrow">فردا</string>
+    <string name="unit_acre">هکتار</string>
+    <string name="unit_acre_short">هکتار</string>
+    <string name="unit_angle_minute">دقیقه</string>
+    <string name="unit_angle_second">ثانیه</string>
+    <string name="unit_apostilb">اپوستیلب</string>
+    <string name="unit_apostilb_short">اپوستیلب</string>
+    <string name="unit_atomic_mass_unit">دالتون</string>
+    <string name="unit_atomic_mass_unit_short">دالتون</string>
+    <string name="unit_attofarad">آتوفاراد</string>
+    <string name="unit_attofarad_short">آتوفاراد</string>
+    <string name="unit_attojoule">آتوژول</string>
+    <string name="unit_attojoule_short">آتوژول</string>
+    <string name="unit_attoliter">آتولیت</string>
+    <string name="unit_attoliter_short">آتولیت</string>
+    <string name="unit_attometer">آتومتر</string>
+    <string name="unit_attometer_per_square_second">آتومتر بر مربع ثانیه</string>
+    <string name="unit_attometer_per_square_second_short">آتومتر بر مربع ثانیه</string>
+    <string name="unit_attometer_short">آتومتر</string>
+    <string name="unit_attonewton">آتونیتون</string>
+    <string name="unit_attonewton_short">آتونیتون</string>
+    <string name="unit_attopascal">آتوپاسکال</string>
+    <string name="unit_attopascal_short">آتوپاسکال</string>
+    <string name="unit_attosecond">آتوسکاند</string>
+    <string name="unit_attosecond_short">آتوسکاند</string>
+    <string name="unit_attowatt">آتووات</string>
+    <string name="unit_attowatt_short">آتووات</string>
+    <string name="unit_bar">بار</string>
+    <string name="unit_bar_short">بار</string>
+    <string name="unit_binary">دودویی</string>
+    <string name="unit_binary_short">دودویی</string>
+    <string name="unit_bit">بیت</string>
+    <string name="unit_bit_per_second">بیت بر ثانیه</string>
+    <string name="unit_bit_per_second_short">بیت بر ثانیه</string>
+    <string name="unit_bit_short">بیت</string>
+    <string name="unit_blondel">بلوندل</string>
+    <string name="unit_blondel_short">بلوندل</string>
+    <string name="unit_bril">بریل</string>
+    <string name="unit_bril_short">بریل</string>
+    <string name="unit_byte">بایت</string>
+    <string name="unit_byte_per_second">بایت بر ثانیه</string>
+    <string name="unit_byte_per_second_short">بایت بر ثانیه</string>
+    <string name="unit_byte_short">بایت</string>
+    <string name="unit_calorie_th">کالری (گرم)</string>
+    <string name="unit_calorie_th_short">کالری</string>
+    <string name="unit_candela_per_square_centimeter">کندلا بر سانتی‌متر مربع</string>
+    <string name="unit_candela_per_square_centimeter_short">کندلا بر سانتی‌متر مربع</string>
+    <string name="unit_candela_per_square_foot">کندلا بر فوت مربع</string>
+    <string name="unit_candela_per_square_foot_short">کندلا بر فوت مربع</string>
+    <string name="unit_candela_per_square_inch">کندلا بر اینچ مربع</string>
+    <string name="unit_candela_per_square_inch_short">کندلا بر اینچ مربع</string>
+    <string name="unit_candela_per_square_meter">کندلا بر متر مربع</string>
+    <string name="unit_candela_per_square_meter_short">کندلا بر متر مربع</string>
+    <string name="unit_carat">قیراط</string>
+    <string name="unit_carat_short">قیراط</string>
+    <string name="unit_celsius">سانتی‌گراد</string>
+    <string name="unit_cent">سنت</string>
+    <string name="unit_cent_short">سنت</string>
+    <string name="unit_centimeter">سانتی‌متر</string>
+    <string name="unit_centimeter_per_hour">سانتی‌متر بر ساعت</string>
+    <string name="unit_centimeter_per_hour_short">سانتی‌متر بر ساعت</string>
+    <string name="unit_centimeter_per_minute">سانتی‌متر بر دقیقه</string>
+    <string name="unit_centimeter_per_minute_short">سانتی‌متر بر دقیقه</string>
+    <string name="unit_centimeter_per_second">سانتی‌متر بر ثانیه</string>
+    <string name="unit_centimeter_per_second_short">سانتی‌متر بر ثانیه</string>
+    <string name="unit_centimeter_per_square_second">سانتی‌متر بر مربع ثانیه</string>
+    <string name="unit_centimeter_per_square_second_short">سانتی‌متر بر مربع ثانیه</string>
+    <string name="unit_centimeter_short">سانتی‌متر</string>
+    <string name="unit_centipascal">سانتی‌پاسکال</string>
+    <string name="unit_centipascal_short">سانتی‌پاسکال</string>
+    <string name="unit_converter_title">مبدل واحدها</string>
+    <string name="unit_cosmic_velocity_first">سرعت اول کیهانی</string>
+    <string name="unit_cosmic_velocity_second">سرعت دوم کیهانی</string>
+    <string name="unit_cosmic_velocity_third">سرعت سوم کیهانی</string>
+    <string name="unit_cubic_centimeter">سانتی‌متر مکعب</string>
+    <string name="unit_cubic_centimeter_short">سانتی‌متر مکعب</string>
+    <string name="unit_cubic_foot">فوت مکعب</string>
+    <string name="unit_cubic_foot_per_hour">فوت مکعب بر ساعت</string>
+    <string name="unit_cubic_foot_per_hour_short">فوت مکعب بر ساعت</string>
+    <string name="unit_cubic_foot_per_minute">فوت مکعب بر دقیقه</string>
+    <string name="unit_cubic_foot_per_minute_short">فوت مکعب بر دقیقه</string>
+    <string name="unit_cubic_foot_per_second">فوت مکعب بر ثانیه</string>
+    <string name="unit_cubic_foot_per_second_short">فوت مکعب بر ثانیه</string>
+    <string name="unit_cubic_foot_short">فوت مکعب</string>
+    <string name="unit_cubic_inch">اینچ مکعب</string>
+    <string name="unit_cubic_inch_short">اینچ مکعب</string>
+    <string name="unit_cubic_kilometer">کیلومتر مکعب</string>
+    <string name="unit_cubic_kilometer_short">کیلومتر مکعب</string>
+    <string name="unit_cubic_meter">متر مکعب</string>
+    <string name="unit_cubic_meter_per_hour">متر مکعب بر ساعت</string>
+    <string name="unit_cubic_meter_per_hour_short">متر مکعب بر ساعت</string>
+    <string name="unit_cubic_meter_per_minute">متر مکعب بر دقیقه</string>
+    <string name="unit_cubic_meter_per_minute_short">متر مکعب بر دقیقه</string>
+    <string name="unit_cubic_meter_per_second">متر مکعب بر ثانیه</string>
+    <string name="unit_cubic_meter_per_second_short">متر مکعب بر ثانیه</string>
+    <string name="unit_cubic_meter_short">متر مکعب</string>
+    <string name="unit_cubic_mile">مایل مکعب</string>
+    <string name="unit_cubic_mile_short">مایل مکعب</string>
+    <string name="unit_cubic_millimeter">میلی‌متر مکعب</string>
+    <string name="unit_cubic_millimeter_per_hour">میلی‌متر مکعب بر ساعت</string>
+    <string name="unit_cubic_millimeter_per_hour_short">میلی‌متر مکعب بر ساعت</string>
+    <string name="unit_cubic_millimeter_per_minute">میلی‌متر مکعب بر دقیقه</string>
+    <string name="unit_cubic_millimeter_per_minute_short">میلی‌متر مکعب بر دقیقه</string>
+    <string name="unit_cubic_millimeter_per_second">میلی‌متر مکعب بر ثانیه</string>
+    <string name="unit_cubic_millimeter_per_second_short">میلی‌متر مکعب بر ثانیه</string>
+    <string name="unit_cubic_millimeter_short">میلی‌متر مکعب</string>
+    <string name="unit_cubic_yard">یارد مکعب</string>
+    <string name="unit_cubic_yard_short">یارد مکعب</string>
+    <string name="unit_currency_ada">آدا</string>
+    <string name="unit_currency_aed">درهم امارات متحده عربی</string>
+    <string name="unit_currency_afn">افغانی</string>
+    <string name="unit_currency_all">لک آلبانیایی</string>
+    <string name="unit_currency_amd">درام ارمنی</string>
+    <string name="unit_currency_ang">گیلدر آنتیل هلند</string>
+    <string name="unit_currency_aoa">کوانزا آنگولا</string>
+    <string name="unit_currency_ars">پزو آرژانتین</string>
+    <string name="unit_currency_aud">دلار استرالیا</string>
+    <string name="unit_currency_awg">فلورین آروبا</string>
+    <string name="unit_currency_azn">مانات آذربایجان</string>
+    <string name="unit_currency_bam">مارک قابل تبدیل بوسنی و هرزگوین</string>
+    <string name="unit_currency_bbd">دلار باربادوس</string>
+    <string name="unit_currency_bdt">تکا بنگلادش</string>
+    <string name="unit_currency_bgn">لِو بلغاری</string>
+    <string name="unit_currency_bhd">دینار بحرین</string>
+    <string name="unit_currency_bif">فرانک بوروندی</string>
+    <string name="unit_currency_bmd">دلار برمودا</string>
+    <string name="unit_currency_bnd">دلار برونئی</string>
+    <string name="unit_currency_bob">بولیویانو بولیوی</string>
+    <string name="unit_currency_brl">ریال برزیل</string>
+    <string name="unit_currency_bsd">دلار باهاما</string>
+    <string name="unit_currency_btn">واحد پول بوتان</string>
+    <string name="unit_currency_bwp">پولا بوتسوانا</string>
+    <string name="unit_currency_byn">روبل جدید بلاروس</string>
+    <string name="unit_currency_byr">روبل بلاروس</string>
+    <string name="unit_currency_bzd">دلار بلیز</string>
+    <string name="unit_currency_cad">دلار کانادا</string>
+    <string name="unit_currency_cdf">فرانک کنگو</string>
+    <string name="unit_currency_chf">فرانک سوئیس</string>
+    <string name="unit_currency_clf">واحد حساب ارزی شیلی (UF)</string>
+    <string name="unit_currency_clp">پزو شیلی</string>
+    <string name="unit_currency_cny">یوان چین</string>
+    <string name="unit_currency_cop">پزو کلمبیا</string>
+    <string name="unit_currency_crc">کولون کاستاریکا</string>
+    <string name="unit_currency_cuc">پزو قابل تبدیل کوبا</string>
+    <string name="unit_currency_cup">پزو کوبا</string>
+    <string name="unit_currency_cve">اسکودو کیپ ورد</string>
+    <string name="unit_currency_czk">کرون جمهوری چک</string>
+    <string name="unit_currency_dai">دای</string>
+    <string name="unit_currency_djf">فرانک جیبوتی</string>
+    <string name="unit_currency_dkk">کرون دانمارک</string>
+    <string name="unit_currency_dop">پزو جمهوری دومینیکن</string>
+    <string name="unit_currency_dzd">دینار الجزایر</string>
+    <string name="unit_currency_egp">پوند مصر</string>
+    <string name="unit_currency_ern">نکفا اریتره</string>
+    <string name="unit_currency_etb">بیرر اتیوپی</string>
+    <string name="unit_currency_eur">یورو</string>
+    <string name="unit_currency_fjd">دلار فیجی</string>
+    <string name="unit_currency_fkp">پوند جزایر فالکلند</string>
+    <string name="unit_currency_gbp">پوند استرلینگ</string>
+    <string name="unit_currency_gel">لاری گرجستان</string>
+    <string name="unit_currency_ghs">سدی غنا</string>
+    <string name="unit_currency_gip">پوند جبل‌الطارق</string>
+    <string name="unit_currency_gmd">دالاسی گامبیا</string>
+    <string name="unit_currency_gnf">فرانک گینه</string>
+    <string name="unit_currency_gtq">کتزال گواتمالا</string>
+    <string name="unit_currency_gyd">دلار گویان</string>
+    <string name="unit_currency_hkd">دلار هنگ کنگ</string>
+    <string name="unit_currency_hnl">لمپیرا هندوراس</string>
+    <string name="unit_currency_hrk">کونا کرواسی</string>
+    <string name="unit_currency_htg">گورد هائیتی</string>
+    <string name="unit_currency_huf">فورینت مجارستان</string>
+    <string name="unit_currency_idr">روپیه اندونزی</string>
+    <string name="unit_currency_ils">شکل جدید اسرائیل</string>
+    <string name="unit_currency_inr">روپیه هند</string>
+    <string name="unit_currency_iqd">دینار عراق</string>
+    <string name="unit_currency_irr">ریال ایران</string>
+    <string name="unit_currency_isk">کرونا ایسلند</string>
+    <string name="unit_currency_jep">پوند جرسی</string>
+    <string name="unit_currency_jmd">دلار جامائیکا</string>
+    <string name="unit_currency_jod">دینار اردن</string>
+    <string name="unit_currency_jpy">ین ژاپن</string>
+    <string name="unit_currency_kes">شیلینگ کنیا</string>
+    <string name="unit_currency_kgs">سوم قرقیزستان</string>
+    <string name="unit_currency_khr">ریل کامبوج</string>
+    <string name="unit_currency_kmf">فرانک کامور</string>
+    <string name="unit_currency_kpw">ون کره شمالی</string>
+    <string name="unit_currency_krw">ون کره جنوبی</string>
+    <string name="unit_currency_kwd">دینار کویت</string>
+    <string name="unit_currency_kyd">دلار جزایر کیمن</string>
+    <string name="unit_currency_kzt">تنگه قزاقستان</string>
+    <string name="unit_currency_lak">کیپ لاوس</string>
+    <string name="unit_currency_lbp">پوند لبنان</string>
+    <string name="unit_currency_lkr">روپیه سریلانکا</string>
+    <string name="unit_currency_lrd">دلار لیبریا</string>
+    <string name="unit_currency_lsl">لوتی لسوتو</string>
+    <string name="unit_currency_ltl">لیتا لیتوانی</string>
+    <string name="unit_currency_lvl">لات لتونی</string>
+    <string name="unit_currency_lyd">دینار لیبی</string>
+    <string name="unit_currency_mad">درهم مراکش</string>
+    <string name="unit_currency_mdl">لیو مولداوی</string>
+    <string name="unit_currency_mga">آریاری ماداگاسکار</string>
+    <string name="unit_currency_mkd">دینار مقدونیه</string>
+    <string name="unit_currency_mmk">کیات میانمار</string>
+    <string name="unit_currency_mnt">توگریک مغولستان</string>
+    <string name="unit_currency_mop">پاتاکا ماکائو</string>
+    <string name="unit_currency_mro">اوقیه موریتانی</string>
+    <string name="unit_currency_mur">روپیه موریشوس</string>
+    <string name="unit_currency_mvr">روفییه مالدیو</string>
+    <string name="unit_currency_mwk">کواچا مالاوی</string>
+    <string name="unit_currency_mxn">پزو مکزیک</string>
+    <string name="unit_currency_myr">ریینگیت مالزی</string>
+    <string name="unit_currency_mzn">متیکال موزامبیک</string>
+    <string name="unit_currency_nad">دلار نامیبیا</string>
+    <string name="unit_currency_ngn">نایرا نیجریه</string>
+    <string name="unit_currency_nio">کوردوبا نیکاراگوئه</string>
+    <string name="unit_currency_nok">کرون نروژ</string>
+    <string name="unit_currency_npr">روپیه نپال</string>
+    <string name="unit_currency_nzd">دلار نیوزیلند</string>
+    <string name="unit_currency_omr">ریال عمان</string>
+    <string name="unit_currency_pab">بالبوآ پاناما</string>
+    <string name="unit_currency_pen">سول</string>
+    <string name="unit_currency_pgk">کینای پاپوآ گینه نو</string>
+    <string name="unit_currency_php">پزو فیلیپین</string>
+    <string name="unit_currency_pkr">روپیه پاکستان</string>
+    <string name="unit_currency_pln">زلوتی لهستان</string>
+    <string name="unit_currency_pyg">گوارانی پاراگوئه</string>
+    <string name="unit_currency_qar">ریال قطر</string>
+    <string name="unit_currency_ron">لیو رومانی</string>
+    <string name="unit_currency_rsd">دینار صربستان</string>
+    <string name="unit_currency_rub">روبل روسیه</string>
+    <string name="unit_currency_rwf">فرانک رواندا</string>
+    <string name="unit_currency_sar">ریال عربستان سعودی</string>
+    <string name="unit_currency_sbd">دلار جزایر سلیمان</string>
+    <string name="unit_currency_scr">روپیه سیشل</string>
+    <string name="unit_currency_sdg">پوند سودان</string>
+    <string name="unit_currency_sek">کرون سوئد</string>
+    <string name="unit_currency_sgd">دلار سنگاپور</string>
+    <string name="unit_currency_shib">شیبا اینو</string>
+    <string name="unit_currency_shp">پوند سنت هلنا</string>
+    <string name="unit_currency_sll">لئونه سیرالئون</string>
+    <string name="unit_currency_sos">شیلینگ سومالی</string>
+    <string name="unit_currency_srd">دلار سورینام</string>
+    <string name="unit_currency_std">دوبرا سائو تومه و پرینسیپ (قبل از 2018)</string>
+    <string name="unit_currency_svc">کولون السالوادور</string>
+    <string name="unit_currency_syp">پوند سوریه</string>
+    <string name="unit_currency_szl">لیلانژنی سوازیلند</string>
+    <string name="unit_currency_thb">بات تایلند</string>
+    <string name="unit_currency_theta">تتا</string>
+    <string name="unit_currency_tjs">سومونی تاجیکستان</string>
+    <string name="unit_currency_tmt">مانات ترکمنستان</string>
+    <string name="unit_currency_tnd">دینار تونس</string>
+    <string name="unit_currency_top">پاانگا تونگا</string>
+    <string name="unit_currency_try">لیر ترکیه</string>
+    <string name="unit_currency_ttd">دلار ترینیداد و توباگو</string>
+    <string name="unit_currency_twd">دلار جدید تایوان</string>
+    <string name="unit_currency_tzs">شیلینگ تانزانیا</string>
+    <string name="unit_currency_uah">هریونیا اوکراین</string>
+    <string name="unit_currency_ugx">شیلینگ اوگاندا</string>
+    <string name="unit_currency_uni">جهان</string>
+    <string name="unit_currency_usd">دلار آمریکا</string>
+    <string name="unit_currency_usdc">یو اس دی کوین</string>
+    <string name="unit_currency_uyu">پزو اروگوئه</string>
+    <string name="unit_currency_uzs">سوم ازبکستان</string>
+    <string name="unit_currency_vef">بولایور حاکم</string>
+    <string name="unit_currency_vnd">دونگ ویتنام</string>
+    <string name="unit_currency_vuv">واتو وانواتو</string>
+    <string name="unit_currency_wbtc">بیت کوین پیچیده</string>
+    <string name="unit_currency_wst">تالا ساموآ</string>
+    <string name="unit_currency_xaf">فرانک CFA آفریقای مرکزی</string>
+    <string name="unit_currency_xag">اونس نقره</string>
+    <string name="unit_currency_xcd">دلار کارائیب شرقی</string>
+    <string name="unit_currency_xdr">حقوق برداشت ویژه</string>
+    <string name="unit_currency_xof">فرانک CFA آفریقای غربی</string>
+    <string name="unit_currency_xpf">فرانک CFP</string>
+    <string name="unit_currency_yer">ریال یمن</string>
+    <string name="unit_currency_zar">راند آفریقای جنوبی</string>
+    <string name="unit_currency_zmk">کواچا زامبیا (قبل از 2012)</string>
+    <string name="unit_currency_zmw">کواچا زامبیا</string>
+    <string name="unit_currency_zwl">دلار زیمبابوه</string>
+    <string name="unit_day">روز</string>
+    <string name="unit_day_short">روز</string>
+    <string name="unit_decimal">اعشاری</string>
+    <string name="unit_decimal_short">اعشاری</string>
+    <string name="unit_decimeter">دسی‌متر</string>
+    <string name="unit_decimeter_per_square_second">دسی‌متر بر مربع ثانیه</string>
+    <string name="unit_decimeter_per_square_second_short">دسی‌متر بر مربع ثانیه</string>
+    <string name="unit_decimeter_short">دسی‌متر</string>
+    <string name="unit_decipascal">دسی‌پاسکال</string>
+    <string name="unit_decipascal_short">دسی‌پاسکال</string>
+    <string name="unit_degree">درجه</string>
+    <string name="unit_dekameter_per_square_second">دکامتر بر مربع ثانیه</string>
+    <string name="unit_dekameter_per_square_second_short">دکامتر بر مربع ثانیه</string>
+    <string name="unit_dekapascal">دکاپاسکال</string>
+    <string name="unit_dekapascal_short">دکاپاسکال</string>
+    <string name="unit_duodecimal">دودویی</string>
+    <string name="unit_duodecimal_short">دودویی</string>
+    <string name="unit_dyne">دین</string>
+    <string name="unit_dyne_centimeter">دین سانتی‌متر</string>
+    <string name="unit_dyne_centimeter_short">دین سانتی‌متر</string>
+    <string name="unit_dyne_meter">دین متر</string>
+    <string name="unit_dyne_meter_short">دین متر</string>
+    <string name="unit_dyne_millimeter">دین میلی‌متر</string>
+    <string name="unit_dyne_millimeter_short">دین میلی‌متر</string>
+    <string name="unit_dyne_short">دین</string>
+    <string name="unit_earth_equatorial_radius">شعاع استوایی زمین</string>
+    <string name="unit_earth_equatorial_radius_short">شعاع استوایی زمین</string>
+    <string name="unit_earth_mass">جرم زمین</string>
+    <string name="unit_earth_mass_short">جرم زمین</string>
+    <string name="unit_earth_surface_gravity">شتاب گرانش سطح زمین</string>
+    <string name="unit_earth_surface_gravity_short">شتاب گرانش سطح زمین</string>
+    <string name="unit_earths_orbital_speed">سرعت مداری زمین</string>
+    <string name="unit_electron_cross_section">مقطع عرضی الکترون</string>
+    <string name="unit_electron_cross_section_short">مقطع عرضی الکترون</string>
+    <string name="unit_electron_mass_rest">جرم سکون الکترون</string>
+    <string name="unit_electron_mass_rest_short">جرم سکون الکترون</string>
+    <string name="unit_electron_volt">ولت الکترون</string>
+    <string name="unit_electron_volt_short">ولت الکترون</string>
+    <string name="unit_energy_horse_power_metric">قدرت اسب بخار</string>
+    <string name="unit_energy_horse_power_metric_short">قدرت اسب بخار</string>
+    <string name="unit_energy_ton">تن TNT</string>
+    <string name="unit_energy_ton_short">تن TNT</string>
+    <string name="unit_exabit">اگزابیت</string>
+    <string name="unit_exabit_per_second">اگزابیت بر ثانیه</string>
+    <string name="unit_exabit_per_second_short">اگزابیت بر ثانیه</string>
+    <string name="unit_exabit_short">اگزابیت</string>
+    <string name="unit_exabyte">اگزابایت</string>
+    <string name="unit_exabyte_per_second">اگزابایت بر ثانیه</string>
+    <string name="unit_exabyte_per_second_short">اگزابایت بر ثانیه</string>
+    <string name="unit_exabyte_short">اگزابایت</string>
+    <string name="unit_exafarad">اکسافاراد</string>
+    <string name="unit_exafarad_short">اکسافاراد</string>
+    <string name="unit_exapascal">اکساپاسکال</string>
+    <string name="unit_exapascal_short">اکساپاسکال</string>
+    <string name="unit_fahrenheit">فارنهایت</string>
+    <string name="unit_farad">فاراد</string>
+    <string name="unit_farad_short">فاراد</string>
+    <string name="unit_femtometer_per_square_second">فمتومتر بر مربع ثانیه</string>
+    <string name="unit_femtometer_per_square_second_short">فمتومتر بر مربع ثانیه</string>
+    <string name="unit_femtopascal">فمتوپاسکال</string>
+    <string name="unit_femtopascal_short">فمتوپاسکال</string>
+    <string name="unit_foot">فوت</string>
+    <string name="unit_foot_lambert">فوت-لامبرت</string>
+    <string name="unit_foot_lambert_short">فوت-لامبرت</string>
+    <string name="unit_foot_per_hour">فوت بر ساعت</string>
+    <string name="unit_foot_per_hour_short">فوت بر ساعت</string>
+    <string name="unit_foot_per_minute">فوت بر دقیقه</string>
+    <string name="unit_foot_per_minute_short">فوت بر دقیقه</string>
+    <string name="unit_foot_per_second">فوت بر ثانیه</string>
+    <string name="unit_foot_per_second_short">فوت بر ثانیه</string>
+    <string name="unit_foot_short">فوت</string>
+    <string name="unit_gal">گال</string>
+    <string name="unit_gal_short">گال</string>
+    <string name="unit_gallon_per_hour_imperial">گالن بر ساعت (امپریال)</string>
+    <string name="unit_gallon_per_hour_imperial_short">گالن بر ساعت</string>
+    <string name="unit_gallon_per_hour_us">گالن بر ساعت (آمریکایی)</string>
+    <string name="unit_gallon_per_hour_us_short">گالن بر ساعت</string>
+    <string name="unit_gallon_per_minute_imperial">گالن بر دقیقه (امپریال)</string>
+    <string name="unit_gallon_per_minute_imperial_short">گالن بر دقیقه</string>
+    <string name="unit_gallon_per_minute_us">گالن بر دقیقه (آمریکایی)</string>
+    <string name="unit_gallon_per_minute_us_short">گالن بر دقیقه</string>
+    <string name="unit_gallon_per_second_imperial">گالن بر ثانیه (امپریال)</string>
+    <string name="unit_gallon_per_second_imperial_short">گالن بر ثانیه</string>
+    <string name="unit_gallon_per_second_us">گالن بر ثانیه (آمریکایی)</string>
+    <string name="unit_gallon_per_second_us_short">گالن بر ثانیه</string>
+    <string name="unit_gallon_uk_per_100_mile">گالن بر 100 مایل (بریتانیا)</string>
+    <string name="unit_gallon_uk_per_100_mile_short">گالن بر 100 مایل</string>
+    <string name="unit_gallon_uk_per_mile">گالن بر مایل (بریتانیا)</string>
+    <string name="unit_gallon_uk_per_mile_short">گالن بر مایل</string>
+    <string name="unit_gallon_us_per_100_mile">گالن بر 100 مایل (آمریکا)</string>
+    <string name="unit_gallon_us_per_100_mile_short">گالن بر 100 مایل</string>
+    <string name="unit_gallon_us_per_mile">گالن بر مایل (آمریکا)</string>
+    <string name="unit_gallon_us_per_mile_short">گالن بر مایل</string>
+    <string name="unit_gibibit">گیبی‌بیت</string>
+    <string name="unit_gibibit_per_second">گیبی‌بیت بر ثانیه</string>
+    <string name="unit_gibibit_per_second_short">گیبی‌بیت بر ثانیه</string>
+    <string name="unit_gibibit_short">گیبی‌بیت</string>
+    <string name="unit_gibibyte">گیبی‌بایت</string>
+    <string name="unit_gibibyte_per_second">گیبی‌بایت بر ثانیه</string>
+    <string name="unit_gibibyte_per_second_short">گیبی‌بایت بر ثانیه</string>
+    <string name="unit_gibibyte_short">گیبی‌بایت</string>
+    <string name="unit_gigabit">گیگابیت</string>
+    <string name="unit_gigabit_per_second">گیگابیت بر ثانیه</string>
+    <string name="unit_gigabit_per_second_short">گیگابیت بر ثانیه</string>
+    <string name="unit_gigabit_short">گیگابیت</string>
+    <string name="unit_gigabyte">گیگابایت</string>
+    <string name="unit_gigabyte_per_second">گیگابایت بر ثانیه</string>
+    <string name="unit_gigabyte_per_second_short">گیگابایت بر ثانیه</string>
+    <string name="unit_gigabyte_short">گیگابایت</string>
+    <string name="unit_gigafarad">گیگافاراد</string>
+    <string name="unit_gigafarad_short">گیگافاراد</string>
+    <string name="unit_gigajoule">گیگاجول</string>
+    <string name="unit_gigajoule_short">گیگاجول</string>
+    <string name="unit_gigapascal">گیگاپاسکال</string>
+    <string name="unit_gigapascal_short">گیگاپاسکال</string>
+    <string name="unit_gigaton">گیگاتن TNT</string>
+    <string name="unit_gigaton_short">گیگاتن TNT</string>
+    <string name="unit_gigaweber">گیگاوبر</string>
+    <string name="unit_gigaweber_short">گیگاوبر</string>
+
+    <!-- Unit of mass -->
+    <string name="unit_grain">گران</string>
+    <string name="unit_grain_short">گران</string>
+    <string name="unit_gram">گرم</string>
+    <string name="unit_gram_force">گرم نیرو</string>
+    <string name="unit_gram_force_centimeter">گرم نیرو سانتی‌متر</string>
+    <string name="unit_gram_force_centimeter_short">گرم نیرو سانتی‌متر</string>
+    <string name="unit_gram_force_meter">گرم نیرو متر</string>
+    <string name="unit_gram_force_meter_short">گرم نیرو متر</string>
+    <string name="unit_gram_force_millimeter">گرم نیرو میلی‌متر</string>
+    <string name="unit_gram_force_millimeter_short">گرم نیرو میلی‌متر</string>
+    <string name="unit_gram_force_per_square_centimeter">گرم نیرو بر سانتی‌متر مربع</string>
+    <string name="unit_gram_force_per_square_centimeter_short">گرم نیرو بر سانتی‌متر مربع</string>
+    <string name="unit_gram_force_short">گرم نیرو</string>
+    <string name="unit_gram_short">گرم</string>
+    <string name="unit_group_acceleration">شتاب</string>
+    <string name="unit_group_angle">زاویه</string>
+    <string name="unit_group_area">مساحت</string>
+    <string name="unit_group_currency">واحد پول</string>
+    <string name="unit_group_data">داده</string>
+    <string name="unit_group_data_transfer">انتقال داده</string>
+    <string name="unit_group_electrostatic_capacitance">ظرفیت خازنی</string>
+    <string name="unit_group_energy">انرژی</string>
+    <string name="unit_group_flow_rate">دبی</string>
+    <string name="unit_group_flux">شار</string>
+    <string name="unit_group_force">نیرو</string>
+    <string name="unit_group_fuel_consumption">مصرف سوخت</string>
+    <string name="unit_group_length">طول</string>
+    <string name="unit_group_luminance">روشنایی</string>
+    <string name="unit_group_mass">جرم</string>
+    <string name="unit_group_number_base">پایه عددی</string>
+    <string name="unit_group_power">توان</string>
+    <string name="unit_group_prefix">پیشوند</string>
+    <string name="unit_group_pressure">فشار</string>
+    <string name="unit_group_speed">سرعت</string>
+    <string name="unit_group_temperature">دما</string>
+    <string name="unit_group_time">زمان</string>
+    <string name="unit_group_torque">گشتاور</string>
+    <string name="unit_group_volume">حجم</string>
+    <string name="unit_hectare">هکتار</string>
+    <string name="unit_hectare_short">هکتار</string>
+    <string name="unit_hectometer_per_square_second">هکتومتر بر مربع ثانیه</string>
+    <string name="unit_hectometer_per_square_second_short">هکتومتر بر مربع ثانیه</string>
+    <string name="unit_hectopascal">هکتوپاسکال</string>
+    <string name="unit_hectopascal_short">هکتوپاسکال</string>
+    <string name="unit_hexadecimal">هگزادسیمال</string>
+    <string name="unit_hexadecimal_short">هگزادسیمال</string>
+    <string name="unit_horse_power_mechanical">قدرت اسب بخار</string>
+    <string name="unit_horse_power_mechanical_short">قدرت اسب بخار</string>
+    <string name="unit_hour">ساعت</string>
+    <string name="unit_hour_per_kilometer">ساعت بر کیلومتر</string>
+    <string name="unit_hour_per_kilometer_short">ساعت بر کیلومتر</string>
+    <string name="unit_hour_per_mile">ساعت بر مایل</string>
+    <string name="unit_hour_per_mile_short">ساعت بر مایل</string>
+    <string name="unit_hour_short">ساعت</string>
+    <string name="unit_imperial_cup">فنجان امپریال</string>
+    <string name="unit_imperial_cup_short">فنجان</string>
+    <string name="unit_imperial_fluid_ounce">اونس مایع امپریال</string>
+    <string name="unit_imperial_fluid_ounce_short">اونس مایع</string>
+    <string name="unit_imperial_gallon">گالن امپریال</string>
+    <string name="unit_imperial_gallon_short">گالن</string>
+    <string name="unit_imperial_pint">پینت امپریال</string>
+    <string name="unit_imperial_pint_short">پینت</string>
+    <string name="unit_imperial_quart">کوارت امپریال</string>
+    <string name="unit_imperial_quart_short">کوارت</string>
+    <string name="unit_imperial_tablespoon">قاشق غذاخوری امپریال</string>
+    <string name="unit_imperial_tablespoon_short">قاشق غذاخوری</string>
+    <string name="unit_imperial_teaspoon">قاشق چای‌خوری امپریال</string>
+    <string name="unit_imperial_teaspoon_short">قاشق چای‌خوری</string>
+    <string name="unit_imperial_ton">تن امپریال</string>
+    <string name="unit_imperial_ton_short">تن</string>
+    <string name="unit_inch">اینچ</string>
+    <string name="unit_inch_short">اینچ</string>
+    <string name="unit_jiffy">جفی</string>
+    <string name="unit_jiffy_short">جفی</string>
+    <string name="unit_joule">ژول</string>
+    <string name="unit_joule_per_centimeter">ژول بر سانتی‌متر</string>
+    <string name="unit_joule_per_centimeter_short">ژول بر سانتی‌متر</string>
+    <string name="unit_joule_per_meter">ژول بر متر</string>
+    <string name="unit_joule_per_meter_short">ژول بر متر</string>
+    <string name="unit_joule_short">ژول</string>
+    <string name="unit_jupiter_equatorial_radius">شعاع استوایی مشتری</string>
+    <string name="unit_jupiter_equatorial_radius_short">شعاع استوایی مشتری</string>
+    <string name="unit_jupiter_mass">جرم مشتری</string>
+    <string name="unit_jupiter_mass_short">جرم مشتری</string>
+    <string name="unit_jupiter_surface_gravity">شتاب گرانش سطح مشتری</string>
+    <string name="unit_jupiter_surface_gravity_short">شتاب گرانش سطح مشتری</string>
+    <string name="unit_kelvin">کلوین</string>
+    <string name="unit_kibibit">کیبی‌بیت</string>
+    <string name="unit_kibibit_per_second">کیبی‌بیت بر ثانیه</string>
+    <string name="unit_kibibit_per_second_short">کیبی‌بیت بر ثانیه</string>
+    <string name="unit_kibibit_short">کیبی‌بیت</string>
+    <string name="unit_kibibyte">کیبی‌بایت</string>
+    <string name="unit_kibibyte_per_second">کیبی‌بایت بر ثانیه</string>
+    <string name="unit_kibibyte_per_second_short">کیبی‌بایت بر ثانیه</string>
+    <string name="unit_kibibyte_short">کیبی‌بایت</string>
+    <string name="unit_kilobit">کیلوبیت</string>
+    <string name="unit_kilobit_per_second">کیلوبیت بر ثانیه</string>
+    <string name="unit_kilobit_per_second_short">کیلوبیت بر ثانیه</string>
+    <string name="unit_kilobit_short">کیلوبیت</string>
+    <string name="unit_kilobyte">کیلوبایت</string>
+    <string name="unit_kilobyte_per_second">کیلوبایت بر ثانیه</string>
+    <string name="unit_kilobyte_per_second_short">کیلوبایت بر ثانیه</string>
+    <string name="unit_kilobyte_short">کیلوبایت</string>
+    <string name="unit_kilocalorie_th">کیلوکالری (گرم)</string>
+    <string name="unit_kilocalorie_th_short">کیلوکالری</string>
+    <string name="unit_kilocandela_per_square_meter">کیلوکاندلا بر متر مربع</string>
+    <string name="unit_kilocandela_per_square_meter_short">کیلوکاندلا بر متر مربع</string>
+    <string name="unit_kilofarad">کیلوفاراد</string>
+    <string name="unit_kilofarad_short">کیلوفاراد</string>
+    <string name="unit_kilogram">کیلوگرم</string>
+    <string name="unit_kilogram_force">کیلوگرم نیرو</string>
+    <string name="unit_kilogram_force_centimeter">کیلوگرم نیرو سانتی‌متر</string>
+    <string name="unit_kilogram_force_centimeter_short">کیلوگرم نیرو سانتی‌متر</string>
+    <string name="unit_kilogram_force_meter">کیلوگرم نیرو متر</string>
+    <string name="unit_kilogram_force_meter_short">کیلوگرم نیرو متر</string>
+    <string name="unit_kilogram_force_millimeter">کیلوگرم نیرو میلی‌متر</string>
+    <string name="unit_kilogram_force_millimeter_short">کیلوگرم نیرو میلی‌متر</string>
+    <string name="unit_kilogram_force_per_square_centimeter">کیلوگرم نیرو بر سانتی‌متر مربع</string>
+    <string name="unit_kilogram_force_per_square_centimeter_short">کیلوگرم نیرو بر سانتی‌متر مربع</string>
+    <string name="unit_kilogram_force_per_square_meter">کیلوگرم نیرو بر متر مربع</string>
+    <string name="unit_kilogram_force_per_square_meter_short">کیلوگرم نیرو بر متر مربع</string>
+    <string name="unit_kilogram_force_short">کیلوگرم نیرو</string>
+    <string name="unit_kilogram_short">کیلوگرم</string>
+    <string name="unit_kilojoule">کیلوژول</string>
+    <string name="unit_kilojoule_short">کیلوژول</string>
+    <string name="unit_kilometer">کیلومتر</string>
+    <string name="unit_kilometer_per_hour">کیلومتر بر ساعت</string>
+    <string name="unit_kilometer_per_hour_short">کیلومتر بر ساعت</string>
+    <string name="unit_kilometer_per_minute">کیلومتر بر دقیقه</string>
+    <string name="unit_kilometer_per_minute_short">کیلومتر بر دقیقه</string>
+    <string name="unit_kilometer_per_second">کیلومتر بر ثانیه</string>
+    <string name="unit_kilometer_per_second_short">کیلومتر بر ثانیه</string>
+    <string name="unit_kilometer_per_square_second">کیلومتر بر مربع ثانیه</string>
+    <string name="unit_kilometer_per_square_second_short">کیلومتر بر مربع ثانیه</string>
+    <string name="unit_kilometer_short">کیلومتر</string>
+    <string name="unit_kilonewton">کیلونیوتون</string>
+    <string name="unit_kilonewton_meter">کیلونیوتون متر</string>
+    <string name="unit_kilonewton_meter_short">کیلونیوتون متر</string>
+    <string name="unit_kilonewton_short">کیلونیوتون</string>
+    <string name="unit_kiloparsec">کیلوپارسک</string>
+    <string name="unit_kiloparsec_short">کیلوپارسک</string>
+    <string name="unit_kilopascal">کیلوپاسکال</string>
+    <string name="unit_kilopascal_short">کیلوپاسکال</string>
+    <string name="unit_kilopond">کیلوپوند</string>
+    <string name="unit_kilopond_short">کیلوپوند</string>
+    <string name="unit_kilopound_force">کیلوپوند نیرو</string>
+    <string name="unit_kilopound_force_short">کیلوپوند نیرو</string>
+    <string name="unit_kiloton">کیلوکوب TNT</string>
+    <string name="unit_kiloton_short">کیلوکوب TNT</string>
+    <string name="unit_kilowatt">کیلووات</string>
+    <string name="unit_kilowatt_short">کیلووات</string>
+    <string name="unit_kiloweber">کیلووبر</string>
+    <string name="unit_kiloweber_short">کیلووبر</string>
+    <string name="unit_km_per_l">کیلومتر بر لیتر</string>
+    <string name="unit_km_per_l_short">کیلومتر بر لیتر</string>
+    <string name="unit_knot">گره</string>
+    <string name="unit_knot_short">گره</string>
+    <string name="unit_ksi">کیلوپوند بر اینچ مربع</string>
+    <string name="unit_l_per_100_km">لیتر بر 100 کیلومتر</string>
+    <string name="unit_l_per_100_km_short">لیتر بر 100 کیلومتر</string>
+    <string name="unit_l_per_km">لیتر بر کیلومتر</string>
+    <string name="unit_l_per_km_short">لیتر بر کیلومتر</string>
+    <string name="unit_lambert">لامبرت</string>
+    <string name="unit_lambert_short">لامبرت</string>
+    <string name="unit_light_year">سال نوری</string>
+    <string name="unit_light_year_short">سال نوری</string>
+    <string name="unit_liter">لیتر</string>
+    <string name="unit_liter_per_hour">لیتر بر ساعت</string>
+    <string name="unit_liter_per_hour_short">لیتر بر ساعت</string>
+    <string name="unit_liter_per_minute">لیتر بر دقیقه</string>
+    <string name="unit_liter_per_minute_short">لیتر بر دقیقه</string>
+    <string name="unit_liter_per_second">لیتر بر ثانیه</string>
+    <string name="unit_liter_per_second_short">لیتر بر ثانیه</string>
+    <string name="unit_liter_short">لیتر</string>
+    <string name="unit_lumen_per_square_centimeter_per_steradian">لومن بر سانتی‌متر مربع بر استرادیان</string>
+    <string name="unit_lumen_per_square_centimeter_per_steradian_short">لومن بر سانتی‌متر مربع بر استرادیان</string>
+    <string name="unit_lumen_per_square_foot_per_steradian">لومن بر فوت مربع بر استرادیان</string>
+    <string name="unit_lumen_per_square_foot_per_steradian_short">لومن بر فوت مربع بر استرادیان</string>
+    <string name="unit_lumen_per_square_meter_per_steradian">لومن بر متر مربع بر استرادیان</string>
+    <string name="unit_lumen_per_square_meter_per_steradian_short">لومن بر متر مربع بر استرادیان</string>
+    <string name="unit_mach">ماخ</string>
+    <string name="unit_mach_si_standard">ماخ (SI)</string>
+    <string name="unit_mars_equatorial_radius">شعاع استوایی مریخ</string>
+    <string name="unit_mars_equatorial_radius_short">شعاع استوایی مریخ</string>
+    <string name="unit_mars_mass">جرم مریخ</string>
+    <string name="unit_mars_mass_short">جرم مریخ</string>
+    <string name="unit_mars_surface_gravity">شتاب گرانش سطح مریخ</string>
+    <string name="unit_mars_surface_gravity_short">شتاب گرانش سطح مریخ</string>
+    <string name="unit_maxwell">مکسول</string>
+    <string name="unit_maxwell_short">مکسول</string>
+    <string name="unit_mebibit">مبی‌بیت</string>
+    <string name="unit_mebibit_per_second">مبی‌بیت بر ثانیه</string>
+    <string name="unit_mebibit_per_second_short">مبی‌بیت بر ثانیه</string>
+    <string name="unit_mebibit_short">مبی‌بیت</string>
+    <string name="unit_mebibyte">مبی‌بایت</string>
+    <string name="unit_mebibyte_per_second">مبی‌بایت بر ثانیه</string>
+    <string name="unit_mebibyte_per_second_short">مبی‌بایت بر ثانیه</string>
+    <string name="unit_mebibyte_short">مبی‌بایت</string>
+    <string name="unit_megabit">مگابیت</string>
+    <string name="unit_megabit_per_second">مگابیت بر ثانیه</string>
+    <string name="unit_megabit_per_second_short">مگابیت بر ثانیه</string>
+    <string name="unit_megabit_short">مگابیت</string>
+    <string name="unit_megabyte">مگابایت</string>
+    <string name="unit_megabyte_per_second">مگابایت بر ثانیه</string>
+    <string name="unit_megabyte_per_second_short">مگابایت بر ثانیه</string>
+    <string name="unit_megabyte_short">مگابایت</string>
+    <string name="unit_megafarad">مگافاراد</string>
+    <string name="unit_megafarad_short">مگافاراد</string>
+    <string name="unit_megajoule">گیگاجول</string>
+    <string name="unit_megajoule_short">گیگاجول</string>
+    <string name="unit_megaparsec">مگاپارسک</string>
+    <string name="unit_megaparsec_short">مگاپارسک</string>
+    <string name="unit_megapascal">مگاپاسکال</string>
+    <string name="unit_megapascal_short">مگاپاسکال</string>
+    <string name="unit_megaton">مگاتن TNT</string>
+    <string name="unit_megaton_short">مگاتن TNT</string>
+    <string name="unit_megawatt">مگاوات</string>
+    <string name="unit_megawatt_short">مگاوات</string>
+    <string name="unit_megaweber">مگاوبر</string>
+    <string name="unit_megaweber_short">مگاوبر</string>
+    <string name="unit_mercury_equatorial_radius">شعاع استوایی عطارد</string>
+    <string name="unit_mercury_equatorial_radius_short">شعاع استوایی عطارد</string>
+    <string name="unit_mercury_mass">جرم عطارد</string>
+    <string name="unit_mercury_mass_short">جرم عطارد</string>
+    <string name="unit_mercury_surface_gravity">شتاب گرانش سطح عطارد</string>
+    <string name="unit_mercury_surface_gravity_short">شتاب گرانش سطح عطارد</string>
+    <string name="unit_meter">متر</string>
+    <string name="unit_meter_per_hour">متر بر ساعت</string>
+    <string name="unit_meter_per_hour_short">متر بر ساعت</string>
+    <string name="unit_meter_per_minute">متر بر دقیقه</string>
+    <string name="unit_meter_per_minute_short">متر بر دقیقه</string>
+    <string name="unit_meter_per_second">متر بر ثانیه</string>
+    <string name="unit_meter_per_second_short">متر بر ثانیه</string>
+    <string name="unit_meter_per_square_second">متر بر مربع ثانیه</string>
+    <string name="unit_meter_per_square_second_short">متر بر مربع ثانیه</string>
+    <string name="unit_meter_short">متر</string>
+    <string name="unit_metric_ton">تن متریک</string>
+    <string name="unit_metric_ton_short">تن</string>
+    <string name="unit_mi_per_gallon_uk">مایل بر گالن (بریتانیا)</string>
+    <string name="unit_mi_per_gallon_uk_short">مایل بر گالن</string>
+    <string name="unit_mi_per_gallon_us">مایل بر گالن (آمریکا)</string>
+    <string name="unit_mi_per_gallon_us_short">مایل بر گالن</string>
+    <string name="unit_mi_us_per_l">مایل بر لیتر (آمریکا)</string>
+    <string name="unit_mi_us_per_l_short">مایل بر لیتر</string>
+    <string name="unit_microfarad">میکروفاراد</string>
+    <string name="unit_microfarad_short">میکروفاراد</string>
+    <string name="unit_microgram">میکروگرم</string>
+    <string name="unit_microgram_short">میکروگرم</string>
+    <string name="unit_micrometer">میکرومتر</string>
+    <string name="unit_micrometer_per_square_second">میکرومتر بر مربع ثانیه</string>
+    <string name="unit_micrometer_per_square_second_short">میکرومتر بر مربع ثانیه</string>
+    <string name="unit_micrometer_short">میکرومتر</string>
+    <string name="unit_micron_of_mercury">میکرون جیوه</string>
+    <string name="unit_micron_of_mercury_short">میکرون جیوه</string>
+    <string name="unit_micropascal">میکروپاسکال</string>
+    <string name="unit_micropascal_short">میکروپاسکال</string>
+    <string name="unit_microsecond">میکروثانیه</string>
+    <string name="unit_microsecond_short">میکروثانیه</string>
+    <string name="unit_microweber">میکرووبر</string>
+    <string name="unit_microweber_short">میکرووبر</string>
+    <string name="unit_mile">مایل</string>
+    <string name="unit_mile_per_hour">مایل بر ساعت</string>
+    <string name="unit_mile_per_hour_short">مایل بر ساعت</string>
+    <string name="unit_mile_per_minute">مایل بر دقیقه</string>
+    <string name="unit_mile_per_minute_short">مایل بر دقیقه</string>
+    <string name="unit_mile_per_second">مایل بر ثانیه</string>
+    <string name="unit_mile_per_second_short">مایل بر ثانیه</string>
+    <string name="unit_mile_short">مایل</string>
+    <string name="unit_millibar">میلی‌بار</string>
+    <string name="unit_millibar_short">میلی‌بار</string>
+    <string name="unit_millifarad">میلی‌فاراد</string>
+    <string name="unit_millifarad_short">میلی‌فاراد</string>
+    <string name="unit_milligram">میلی‌گرم</string>
+    <string name="unit_milligram_short">میلی‌گرم</string>
+    <string name="unit_millilambert">میلی‌لامبرت</string>
+    <string name="unit_millilambert_short">میلی‌لامبرت</string>
+    <string name="unit_milliliter">میلی‌لیتر</string>
+    <string name="unit_milliliter_per_hour">میلی‌لیتر بر ساعت</string>
+    <string name="unit_milliliter_per_hour_short">میلی‌لیتر بر ساعت</string>
+    <string name="unit_milliliter_per_minute">میلی‌لیتر بر دقیقه</string>
+    <string name="unit_milliliter_per_minute_short">میلی‌لیتر بر دقیقه</string>
+    <string name="unit_milliliter_per_second">میلی‌لیتر بر ثانیه</string>
+    <string name="unit_milliliter_per_second_short">میلی‌لیتر بر ثانیه</string>
+    <string name="unit_milliliter_short">میلی‌لیتر</string>
+    <string name="unit_millimeter">میلی‌متر</string>
+    <string name="unit_millimeter_of_mercury">میلی‌متر جیوه</string>
+    <string name="unit_millimeter_of_mercury_short">میلی‌متر جیوه</string>
+    <string name="unit_millimeter_per_hour">میلی‌متر بر ساعت</string>
+    <string name="unit_millimeter_per_hour_short">میلی‌متر بر ساعت</string>
+    <string name="unit_millimeter_per_minute">میلی‌متر بر دقیقه</string>
+    <string name="unit_millimeter_per_minute_short">میلی‌متر بر دقیقه</string>
+    <string name="unit_millimeter_per_second">میلی‌متر بر ثانیه</string>
+    <string name="unit_millimeter_per_second_short">میلی‌متر بر ثانیه</string>
+    <string name="unit_millimeter_per_square_second">میلی‌متر بر مربع ثانیه</string>
+    <string name="unit_millimeter_per_square_second_short">میلی‌متر بر مربع ثانیه</string>
+    <string name="unit_millimeter_short">میلی‌متر</string>
+    <string name="unit_millinewton">میلی‌نیوتون</string>
+    <string name="unit_millinewton_short">میلی‌نیوتون</string>
+    <string name="unit_millinit">میلی‌نیت</string>
+    <string name="unit_millinit_short">میلی‌نیت</string>
+    <string name="unit_millipascal">میلی‌پاسکال</string>
+    <string name="unit_millipascal_short">میلی‌پاسکال</string>
+    <string name="unit_millisecond">میلی‌ثانیه</string>
+    <string name="unit_millisecond_short">میلی‌ثانیه</string>
+    <string name="unit_milliweber">میلی‌وبر</string>
+    <string name="unit_milliweber_short">میلی‌وبر</string>
+    <string name="unit_minute">دقیقه</string>
+    <string name="unit_minute_per_kilometer">دقیقه بر کیلومتر</string>
+    <string name="unit_minute_per_kilometer_short">دقیقه بر کیلومتر</string>
+    <string name="unit_minute_per_mile">دقیقه بر مایل</string>
+    <string name="unit_minute_per_mile_short">دقیقه بر مایل</string>
+    <string name="unit_minute_short">دقیقه</string>
+    <string name="unit_month_short">ماه</string>
+    <string name="unit_nanofarad">نانوفاراد</string>
+    <string name="unit_nanofarad_short">نانوفاراد</string>
+    <string name="unit_nanometer">نانومتر</string>
+    <string name="unit_nanometer_per_square_second">نانومتر بر مربع ثانیه</string>
+    <string name="unit_nanometer_per_square_second_short">نانومتر بر مربع ثانیه</string>
+    <string name="unit_nanometer_short">نانومتر</string>
+    <string name="unit_nanopascal">نانوپاسکال</string>
+    <string name="unit_nanopascal_short">نانوپاسکال</string>
+    <string name="unit_nanosecond">نانوثانیه</string>
+    <string name="unit_nanosecond_short">نانوثانیه</string>
+    <string name="unit_nautical_mile">مایل دریایی</string>
+    <string name="unit_nautical_mile_short">مایل دریایی</string>
+    <string name="unit_neptune_equatorial_radius">شعاع استوایی نپتون</string>
+    <string name="unit_neptune_equatorial_radius_short">شعاع استوایی نپتون</string>
+    <string name="unit_neptune_mass">جرم نپتون</string>
+    <string name="unit_neptune_mass_short">جرم نپتون</string>
+    <string name="unit_neptune_surface_gravity">شتاب گرانش سطح نپتون</string>
+    <string name="unit_neptune_surface_gravity_short">شتاب گرانش سطح نپتون</string>
+    <string name="unit_newton">نیوتون</string>
+    <string name="unit_newton_centimeter">نیوتون سانتی‌متر</string>
+    <string name="unit_newton_centimeter_short">نیوتون سانتی‌متر</string>
+    <string name="unit_newton_meter">نیوتون متر</string>
+    <string name="unit_newton_meter_short">نیوتون متر</string>
+    <string name="unit_newton_millimeter">نیوتون میلی‌متر</string>
+    <string name="unit_newton_millimeter_short">نیوتون میلی‌متر</string>
+    <string name="unit_newton_short">نیوتون</string>
+    <string name="unit_nit">نیت</string>
+    <string name="unit_nit_short">نیت</string>
+    <string name="unit_nonary">نُه ‌تایی</string>
+    <string name="unit_nonary_short">نُه ‌تایی</string>
+    <string name="unit_octal">هشت‌تایی</string>
+    <string name="unit_octal_short">هشت‌تایی</string>
+    <string name="unit_ounce">اونس</string>
+    <string name="unit_ounce_force">اونس نیرو</string>
+    <string name="unit_ounce_force_foot">اونس نیرو فوت</string>
+    <string name="unit_ounce_force_foot_short">اونس نیرو فوت</string>
+    <string name="unit_ounce_force_inch">اونس نیرو اینچ</string>
+    <string name="unit_ounce_force_inch_short">اونس نیرو اینچ</string>
+    <string name="unit_ounce_force_short">اونس نیرو</string>
+    <string name="unit_ounce_short">اونس</string>
+    <string name="unit_parsec">پارسک</string>
+    <string name="unit_parsec_short">پارسک</string>
+    <string name="unit_pascal">پاسکال</string>
+    <string name="unit_pascal_short">پاسکال</string>
+    <string name="unit_pentadecimal">پانزده‌تایی</string>
+    <string name="unit_pentadecimal_short">پانزده‌تایی</string>
+    <string name="unit_petabit">پتابیت</string>
+    <string name="unit_petabit_per_second">پتابیت بر ثانیه</string>
+    <string name="unit_petabit_per_second_short">پتابیت بر ثانیه</string>
+    <string name="unit_petabit_short">پتابیت</string>
+    <string name="unit_petabyte">پتابایت</string>
+    <string name="unit_petabyte_per_second">پتابایت بر ثانیه</string>
+    <string name="unit_petabyte_per_second_short">پتابایت بر ثانیه</string>
+    <string name="unit_petabyte_short">پتابایت</string>
+    <string name="unit_petafarad">پتافاراد</string>
+    <string name="unit_petafarad_short">پتافاراد</string>
+    <string name="unit_petapascal">پتاپاسکال</string>
+    <string name="unit_petapascal_short">پتاپاسکال</string>
+    <string name="unit_picofarad">پیکوفاراد</string>
+    <string name="unit_picofarad_short">پیکوفاراد</string>
+    <string name="unit_picometer_per_square_second">پیکومتر بر مربع ثانیه</string>
+    <string name="unit_picometer_per_square_second_short">پیکومتر بر مربع ثانیه</string>
+    <string name="unit_picopascal">پیکوپاسکال</string>
+    <string name="unit_picopascal_short">پیکوپاسکال</string>
+    <string name="unit_pond">پوند</string>
+    <string name="unit_pond_short">پوند</string>
+    <string name="unit_pound">پوند</string>
+    <string name="unit_pound_force">پوند نیرو</string>
+    <string name="unit_pound_force_foot">پوند نیرو فوت</string>
+    <string name="unit_pound_force_foot_short">پوند نیرو فوت</string>
+    <string name="unit_pound_force_inch">پوند نیرو اینچ</string>
+    <string name="unit_pound_force_inch_short">پوند نیرو اینچ</string>
+    <string name="unit_pound_force_per_square_foot">پوند نیرو بر فوت مربع</string>
+    <string name="unit_pound_force_per_square_foot_short">پوند نیرو بر فوت مربع</string>
+    <string name="unit_pound_force_per_square_inch">پوند نیرو بر اینچ مربع</string>
+    <string name="unit_pound_force_per_square_inch_short">پوند نیرو بر اینچ مربع</string>
+    <string name="unit_pound_force_short">پوند نیرو</string>
+    <string name="unit_pound_short">پوند</string>
+    <string name="unit_prefix_atto">آتو</string>
+    <string name="unit_prefix_atto_short">آتو</string>
+    <string name="unit_prefix_base">پایه</string>
+    <string name="unit_prefix_base_short">پایه</string>
+    <string name="unit_prefix_centi">سانتی</string>
+    <string name="unit_prefix_centi_short">سانتی</string>
+    <string name="unit_prefix_deca">دکا</string>
+    <string name="unit_prefix_deca_short">دکا</string>
+    <string name="unit_prefix_deci">دسی</string>
+    <string name="unit_prefix_deci_short">دسی</string>
+    <string name="unit_prefix_exa">اگزا</string>
+    <string name="unit_prefix_exa_short">اگزا</string>
+    <string name="unit_prefix_femto">فمتو</string>
+    <string name="unit_prefix_femto_short">فمتو</string>
+    <string name="unit_prefix_giga">گیگا</string>
+    <string name="unit_prefix_giga_short">گیگا</string>
+    <string name="unit_prefix_hecto">هکتو</string>
+    <string name="unit_prefix_hecto_short">هکتو</string>
+    <string name="unit_prefix_kilo">کیلو</string>
+    <string name="unit_prefix_kilo_short">کیلو</string>
+    <string name="unit_prefix_mega">مگا</string>
+    <string name="unit_prefix_mega_short">مگا</string>
+    <string name="unit_prefix_micro">میکرو</string>
+    <string name="unit_prefix_micro_short">میکرو</string>
+    <string name="unit_prefix_milli">میلی</string>
+    <string name="unit_prefix_milli_short">میلی</string>
+    <string name="unit_prefix_nano">نانو</string>
+    <string name="unit_prefix_nano_short">نانو</string>
+    <string name="unit_prefix_peta">پتا</string>
+    <string name="unit_prefix_peta_short">پتا</string>
+    <string name="unit_prefix_pico">پیکو</string>
+    <string name="unit_prefix_pico_short">پیکو</string>
+    <string name="unit_prefix_quecto">کوئکتو</string>
+    <string name="unit_prefix_quecto_short">کوئکتو</string>
+    <string name="unit_prefix_quetta">کوئتا</string>
+    <string name="unit_prefix_quetta_short">کوئتا</string>
+    <string name="unit_prefix_ronna">رونا</string>
+    <string name="unit_prefix_ronna_short">رونا</string>
+    <string name="unit_prefix_ronto">رونتو</string>
+    <string name="unit_prefix_ronto_short">رونتو</string>
+    <string name="unit_prefix_tera">ترا</string>
+    <string name="unit_prefix_tera_short">ترا</string>
+    <string name="unit_prefix_yocto">یوکتو</string>
+    <string name="unit_prefix_yocto_short">یوکتو</string>
+    <string name="unit_prefix_yotta">یوتا</string>
+    <string name="unit_prefix_yotta_short">یوتا</string>
+    <string name="unit_prefix_zepto">زپتو</string>
+    <string name="unit_prefix_zepto_short">زپتو</string>
+    <string name="unit_prefix_zetta">زتا</string>
+    <string name="unit_prefix_zetta_short">زتا</string>
+    <string name="unit_psi">پوند بر اینچ مربع</string>
+    <string name="unit_quaternary">چهارتایی</string>
+    <string name="unit_quaternary_short">چهارتایی</string>
+    <string name="unit_quinary">پنج‌تایی</string>
+    <string name="unit_quinary_short">پنج‌تایی</string>
+    <string name="unit_radian">رادیان</string>
+    <string name="unit_radian_short">رادیان</string>
+    <string name="unit_saturn_equatorial_radius">شعاع استوایی زحل</string>
+    <string name="unit_saturn_equatorial_radius_short">شعاع استوایی زحل</string>
+    <string name="unit_saturn_mass">جرم زحل</string>
+    <string name="unit_saturn_mass_short">جرم زحل</string>
+    <string name="unit_saturn_surface_gravity">شتاب گرانش سطح زحل</string>
+    <string name="unit_saturn_surface_gravity_short">شتاب گرانش سطح زحل</string>
+    <string name="unit_second">ثانیه</string>
+    <string name="unit_second_short">ثانیه</string>
+    <string name="unit_senary">شش‌تایی</string>
+    <string name="unit_senary_short">شش‌تایی</string>
+    <string name="unit_septenary">هفت‌تایی</string>
+    <string name="unit_septenary_short">هفت‌تایی</string>
+    <string name="unit_sextant">سکسانت</string>
+    <string name="unit_sextant_short">سکسانت</string>
+    <string name="unit_skot">اسکوت</string>
+    <string name="unit_skot_short">اسکوت</string>
+    <string name="unit_square_centimeter">سانتی‌متر مربع</string>
+    <string name="unit_square_centimeter_short">سانتی‌متر مربع</string>
+    <string name="unit_square_decimeter">دسی‌متر مربع</string>
+    <string name="unit_square_decimeter_short">دسی‌متر مربع</string>
+    <string name="unit_square_foot">فوت مربع</string>
+    <string name="unit_square_foot_short">فوت مربع</string>
+    <string name="unit_square_inch">اینچ مربع</string>
+    <string name="unit_square_inch_short">اینچ مربع</string>
+    <string name="unit_square_kilometer">کیلومتر مربع</string>
+    <string name="unit_square_kilometer_short">کیلومتر مربع</string>
+    <string name="unit_square_meter">متر مربع</string>
+    <string name="unit_square_meter_short">متر مربع</string>
+    <string name="unit_square_micrometer">میکرومتر مربع</string>
+    <string name="unit_square_micrometer_short">میکرومتر مربع</string>
+    <string name="unit_square_mile">مایل مربع</string>
+    <string name="unit_square_mile_short">مایل مربع</string>
+    <string name="unit_square_millimeter">میلی‌متر مربع</string>
+    <string name="unit_square_millimeter_short">میلی‌متر مربع</string>
+    <string name="unit_square_yard">یارد مربع</string>
+    <string name="unit_square_yard_short">یارد مربع</string>
+    <string name="unit_standard_atmosphere">اتمسفر استاندارد</string>
+    <string name="unit_standard_atmosphere_short">اتمسفر استاندارد</string>
+    <string name="unit_statfarad">استاتفاراد</string>
+    <string name="unit_statfarad_short">استاتفاراد</string>
+    <string name="unit_stilb">استیلب</string>
+    <string name="unit_stilb_short">استیلب</string>
+    <string name="unit_sun_equatorial_radius">شعاع استوایی خورشید</string>
+    <string name="unit_sun_equatorial_radius_short">شعاع استوایی خورشید</string>
+    <string name="unit_sun_mass">جرم خورشید</string>
+    <string name="unit_sun_mass_short">جرم خورشید</string>
+    <string name="unit_sun_surface_gravity">شتاب گرانش سطح خورشید</string>
+    <string name="unit_sun_surface_gravity_short">شتاب گرانش سطح خورشید</string>
+    <string name="unit_terabit">ترا بیت</string>
+    <string name="unit_terabit_per_second">ترا بیت بر ثانیه</string>
+    <string name="unit_terabit_per_second_short">ترا بیت بر ثانیه</string>
+    <string name="unit_terabit_short">ترا بیت</string>
+    <string name="unit_terabyte">ترا بایت</string>
+    <string name="unit_terabyte_per_second">ترا بایت بر ثانیه</string>
+    <string name="unit_terabyte_per_second_short">ترا بایت بر ثانیه</string>
+    <string name="unit_terabyte_short">ترا بایت</string>
+    <string name="unit_terapascal">تراپاسکال</string>
+    <string name="unit_terapascal_short">تراپاسکال</string>
+    <string name="unit_ternary">سه‌تایی</string>
+    <string name="unit_ternary_short">سه‌تایی</string>
+    <string name="unit_tetradecimal">چهارده‌تایی</string>
+    <string name="unit_tetradecimal_short">چهارده‌تایی</string>
+    <string name="unit_ton_force">تن نیرو</string>
+    <string name="unit_ton_force_short">تن نیرو</string>
+    <string name="unit_torr">تور</string>
+    <string name="unit_torr_short">تور</string>
+    <string name="unit_tridecimal">سیزده‌تایی</string>
+    <string name="unit_tridecimal_short">سیزده‌تایی</string>
+    <string name="unit_turn">دور</string>
+    <string name="unit_turn_short">دور</string>
+    <string name="unit_undecimal">یازده‌تایی</string>
+    <string name="unit_undecimal_short">یازده‌تایی</string>
+    <string name="unit_uranus_equatorial_radius">شعاع استوایی اورانوس</string>
+    <string name="unit_uranus_equatorial_radius_short">شعاع استوایی اورانوس</string>
+    <string name="unit_uranus_mass">جرم اورانوس</string>
+    <string name="unit_uranus_mass_short">جرم اورانوس</string>
+    <string name="unit_uranus_surface_gravity">شتاب گرانش سطح اورانوس</string>
+    <string name="unit_uranus_surface_gravity_short">شتاب گرانش سطح اورانوس</string>
+    <string name="unit_us_fluid_ounce">اونس مایع آمریکا</string>
+    <string name="unit_us_fluid_ounce_short">اونس مایع</string>
+    <string name="unit_us_legal_cup">فنجان قانونی آمریکا</string>
+    <string name="unit_us_legal_cup_short">فنجان</string>
+    <string name="unit_us_liquid_gallon">گالن مایع آمریکا</string>
+    <string name="unit_us_liquid_gallon_short">گالن</string>
+    <string name="unit_us_liquid_pint">پینت مایع آمریکا</string>
+    <string name="unit_us_liquid_pint_short">پینت</string>
+    <string name="unit_us_liquid_quart">کوارت مایع آمریکا</string>
+    <string name="unit_us_liquid_quart_short">کوارت</string>
+    <string name="unit_us_tablespoon">قاشق غذاخوری آمریکا</string>
+    <string name="unit_us_tablespoon_short">قاشق غذاخوری</string>
+    <string name="unit_us_teaspoon">قاشق چای‌خوری آمریکا</string>
+    <string name="unit_us_teaspoon_short">قاشق چای‌خوری</string>
+    <string name="unit_velocity_of_light_in_vacuum">سرعت نور در خلا</string>
+    <string name="unit_venus_equatorial_radius">شعاع استوایی زهره</string>
+    <string name="unit_venus_equatorial_radius_short">شعاع استوایی زهره</string>
+    <string name="unit_venus_mass">جرم زهره</string>
+    <string name="unit_venus_mass_short">جرم زهره</string>
+    <string name="unit_venus_surface_gravity">شتاب گرانش سطح زهره</string>
+    <string name="unit_venus_surface_gravity_short">شتاب گرانش سطح زهره</string>
+    <string name="unit_watt">وات</string>
+    <string name="unit_watt_per_square_centimeter_per_steradian">وات بر سانتی‌متر مربع بر استرادیان</string>
+    <string name="unit_watt_per_square_centimeter_per_steradian_short">وات بر سانتی‌متر مربع بر استرادیان</string>
+    <string name="unit_watt_short">وات</string>
+    <string name="unit_weber">وبر</string>
+    <string name="unit_weber_short">وبر</string>
+    <string name="unit_week">هفته</string>
+    <string name="unit_week_short">هفته</string>
+    <string name="unit_yard">یارد</string>
+    <string name="unit_yard_per_hour">یارد بر ساعت</string>
+    <string name="unit_yard_per_hour_short">یارد بر ساعت</string>
+    <string name="unit_yard_per_minute">یارد بر دقیقه</string>
+    <string name="unit_yard_per_minute_short">یارد بر دقیقه</string>
+    <string name="unit_yard_per_second">یارد بر ثانیه</string>
+    <string name="unit_yard_per_second_short">یارد بر ثانیه</string>
+    <string name="unit_yard_short">یارد</string>
+    <string name="unit_year_short">سال</string>
+    <string name="yesterday">دیروز</string>
+</resources>
