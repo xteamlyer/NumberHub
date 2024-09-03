@@ -27,35 +27,47 @@ data class SmartDeleteHandler(
 
         val position = selection.start
 
-        val rightBracketPosition =
-            findRightBracket(position);
-        val leftBracketPosition =
-            findLeftBracket(position)
-                ?: return TextRange(
-                    rightBracketPosition?.let { takeNextIfIsOperator(it) }
-                        ?.let { if (it > position) 0 else it } ?: 0,
-                    position,
-                );
+        when (position) {
+            0 -> return TextRange(0, 0)
+            1 -> return TextRange(0, 1)
+        }
 
-        if (rightBracketPosition == null) {
-            val rightBracketRelativeToLeftPosition = findRightBracket(leftBracketPosition + 1)
+        val bracketPos = findPreviousBracket(position.coerceAtMost(value.length - 1) - 1)
 
-            return if (rightBracketRelativeToLeftPosition == null) {
-                // 1+2(+5|+6
-                TextRange((leftBracketPosition + 1).coerceAtMost(position), position)
+        if (bracketPos == null) {
+            return TextRange(0, position)
+        }
+
+        val isAtLeftEdge =
+            position - 1 == bracketPos && value[bracketPos] == Token.Operator.leftBracket[0]
+        val isAtRightEdge =
+            position - 1 == bracketPos && value[bracketPos] == Token.Operator.rightBracket[0]
+
+        if (!isAtLeftEdge && !isAtRightEdge) {
+            return TextRange(bracketPos + 1, position)
+        }
+
+        if (isAtRightEdge) {
+            val leftBracketPos = findClosingParenBackwards(bracketPos)
+
+            return if (leftBracketPos != null) {
+                TextRange(leftBracketPos + 1, position)
             } else {
-                // 1+2(6)+5|+6
-                TextRange(
-                    takeNextIfIsOperator(rightBracketRelativeToLeftPosition + 1).coerceAtMost(
-                        position,
-                    ),
-                    position,
-                )
+                // Weird case, should not happen
+                TextRange(0, position + 1)
             }
         }
 
-        val end = findClosingParen(leftBracketPosition)
-        return TextRange((leftBracketPosition + 1).coerceAtMost(end), end);
+        val rightBracketPos = findClosingParen(bracketPos)
+
+        if (rightBracketPos != null) {
+            return TextRange(bracketPos + 1, rightBracketPos)
+        }
+
+        // Find previous bracket and return range from there to cursor position
+        val previousBracketPos = findPreviousBracket(bracketPos - 1)?.let { it + 1 } ?: 0
+
+        return TextRange(previousBracketPos, position)
     }
 
     private fun takeNextIfIsOperator(position: Int): Int {
@@ -68,6 +80,16 @@ data class SmartDeleteHandler(
 
     private fun isSelectionARange(): Boolean = selection.start != selection.end
 
+    private fun findPreviousBracket(startPosition: Int): Int? {
+        for (index in startPosition.coerceAtMost(value.length - 1) downTo 0) {
+            if (value[index] == Token.Operator.rightBracket[0] || value[index] == Token.Operator.leftBracket[0]) {
+                return index
+            }
+        }
+
+        return null
+    }
+
     private fun findLeftBracket(startPosition: Int): Int? {
         for (index in startPosition.coerceAtMost(value.length - 1) downTo 0) {
             if (value[index] == Token.Operator.leftBracket[0]) {
@@ -79,7 +101,7 @@ data class SmartDeleteHandler(
     }
 
     private fun findRightBracket(startPosition: Int): Int? {
-        for (index in startPosition.coerceAtMost(value.length - 1) until value.length) {
+        for (index in startPosition.coerceAtMost(value.length - 1) downTo 0) {
             if (value[index] == Token.Operator.rightBracket[0]) {
                 return index
             }
@@ -88,19 +110,60 @@ data class SmartDeleteHandler(
         return null
     }
 
+    private fun isAtEdge(position: Int): Boolean {
+        if (position == 0) {
+            return false
+        }
+
+        val previousCharacter = value[position.coerceAtMost(value.length - 1) - 1]
+
+        return previousCharacter == Token.Operator.leftBracket[0] || previousCharacter == Token.Operator.rightBracket[0]
+    }
+
     // Based of https://stackoverflow.com/a/12752226/9878135
-    fun findClosingParen(openPos: Int): Int {
+    fun findClosingParen(openPos: Int): Int? {
         var closePos = openPos
         var counter = 1
 
         while (counter > 0) {
-            val c = value[++closePos]
+            val nextPos = ++closePos
+
+            if (nextPos >= value.length) {
+                return null
+            }
+
+            val c = value[nextPos]
             if (c == Token.Operator.leftBracket[0]) {
                 counter++
             } else if (c == Token.Operator.rightBracket[0]) {
                 counter--
             }
         }
+
+        if (closePos == openPos) {
+            return null
+        }
+
+        return closePos
+    }
+
+    fun findClosingParenBackwards(openPos: Int): Int? {
+        var closePos = openPos
+        var counter = 1
+
+        while (counter > 0) {
+            val c = value[--closePos]
+            if (c == Token.Operator.leftBracket[0]) {
+                counter--
+            } else if (c == Token.Operator.rightBracket[0]) {
+                counter++
+            }
+        }
+
+        if (closePos == openPos) {
+            return null
+        }
+
         return closePos
     }
 }

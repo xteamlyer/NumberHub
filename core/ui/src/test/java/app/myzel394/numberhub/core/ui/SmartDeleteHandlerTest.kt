@@ -19,7 +19,7 @@ class SmartDeleteHandlerTest {
         assertDeleteRange(
             "1+(2+3)",
             TextRange(4, 4),
-            TextRange(3, 6),
+            TextRange(3, 4),
         )
     }
 
@@ -64,7 +64,7 @@ class SmartDeleteHandlerTest {
         assertDeleteRange(
             "1+(2+3)×54",
             TextRange(9, 9),
-            TextRange(8, 9),
+            TextRange(7, 9),
         )
     }
 
@@ -73,7 +73,7 @@ class SmartDeleteHandlerTest {
         assertDeleteRange(
             "1+(2+(3+4))",
             TextRange(8, 8),
-            TextRange(6, 9),
+            TextRange(6, 8),
         )
     }
 
@@ -82,6 +82,15 @@ class SmartDeleteHandlerTest {
         assertDeleteRange(
             "1+(2+(3+4))",
             TextRange(4, 4),
+            TextRange(3, 4),
+        )
+    }
+
+    @Test
+    fun `test nested brackets, inside the outside one, at edge`() {
+        assertDeleteRange(
+            "1+(2+(3+4))",
+            TextRange(3, 3),
             TextRange(3, 10),
         )
     }
@@ -89,18 +98,9 @@ class SmartDeleteHandlerTest {
     @Test
     fun `test nested empty brackets`() {
         assertDeleteRange(
-            "1+(2+())",
-            TextRange(4, 4),
-            TextRange(3, 7),
-        )
-    }
-
-    @Test
-    fun `test pure empty nested brackets`() {
-        assertDeleteRange(
-            "1+((()))",
-            TextRange(5, 5),
-            TextRange(5, 5),
+            "1+(2+(6))",
+            TextRange(3, 3),
+            TextRange(3, 8),
         )
     }
 
@@ -123,6 +123,24 @@ class SmartDeleteHandlerTest {
     }
 
     @Test
+    fun `test right bracket cursor after it`() {
+        assertDeleteRange(
+            "5+(2+6)+4",
+            TextRange(8, 8),
+            TextRange(7, 8),
+        )
+    }
+
+    @Test
+    fun `test right bracket cursor at edge`() {
+        assertDeleteRange(
+            "5+(2+6)+4",
+            TextRange(7, 7),
+            TextRange(3, 7),
+        )
+    }
+
+    @Test
     fun `test single bracket with cursor at 0,0`() {
         assertDeleteRange(
             "(",
@@ -135,7 +153,7 @@ class SmartDeleteHandlerTest {
     fun `test nested brackets with operators`() {
         assertDeleteRange(
             "1+(2*(3+4))",
-            TextRange(8, 8),
+            TextRange(6, 6),
             TextRange(6, 9),
         )
     }
@@ -146,6 +164,42 @@ class SmartDeleteHandlerTest {
             "1+(2+3)*4",
             TextRange(2, 6),
             TextRange(2, 6),
+        )
+    }
+
+    @Test
+    fun `test empty brackets deletes rest`() {
+        assertDeleteRange(
+            "5+(",
+            TextRange(3, 3),
+            TextRange(0, 3),
+        )
+    }
+
+    @Test
+    fun `left bracket, no right bracket`() {
+        assertDeleteRange(
+            "1+(5+6+",
+            TextRange(8, 8),
+            TextRange(3, 8),
+        )
+    }
+
+    @Test
+    fun `no bracket`() {
+        assertDeleteRange(
+            "1+5+6",
+            TextRange(5, 5),
+            TextRange(0, 5),
+        )
+    }
+
+    @Test
+    fun `closed bracket before, but left bracket after`() {
+        assertDeleteRange(
+            "1+(5+6)+(5+",
+            TextRange(11, 11),
+            TextRange(9, 11),
         )
     }
 
