@@ -33,18 +33,6 @@ android {
     namespace = "app.myzel394.numberhub"
     compileSdk = 34
 
-    signingConfigs {
-        create("release") {
-            val properties = Properties().apply {
-                load(rootProject.file("key.properties").reader())
-            }
-            storeFile = File(properties.getProperty("storeFile"))
-            storePassword = properties.getProperty("storePassword")
-            keyPassword = properties.getProperty("keyPassword")
-            keyAlias = properties.getProperty("keyAlias")
-        }
-    }
-
     defaultConfig {
         applicationId = "app.myzel394.numberhub"
         minSdk = 21
@@ -87,12 +75,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-
-            signingConfig = signingConfigs.getByName("release")
         }
         create("benchmark") {
             initWith(getByName("debug"))
-            signingConfig = signingConfigs.getByName("debug")
             isDebuggable = false
             isMinifyEnabled = true
             isShrinkResources = true
