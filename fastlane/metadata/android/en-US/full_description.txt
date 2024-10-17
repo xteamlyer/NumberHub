@@ -2,24 +2,27 @@ Calculator, converter and so much more!
 
 NumberHub will be installed as "Calculator" on your home screen.
 
-• No ads or in-app purchases
-• Open source
+* No ads or in-app purchases
+* Open source
 
 Calculator
 
-• Copy, paste, save and share expression results
-• Trigonometric functions
-• Fractional output
+* Copy, paste, save and share expression results
+* Trigonometric functions
+* Fractional output
 
-Unit converter
+**Unit converter**
 
 Over 500 units! Convert miles to kilometers, Dollar to Euro, Bytes to Gigabytes and so much more!
 
-Date calculator
+**Date calculator**
+
 Add and subtract dates with ease
 
-Time converter
+**Time converter**
+
 Convert time zones
+
 
 The app uses https://github.com/fawazahmed0/currency-api by https://github.com/fawazahmed0
 Requests are sent to cdn.jsdelivr.net.
